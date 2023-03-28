@@ -1,9 +1,7 @@
 package arcolab.proyect.akhanta.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
+import jakarta.persistence.*;
 import lombok.*;
-import jakarta.persistence.Id;
 
 import java.sql.Date;
 
@@ -16,7 +14,6 @@ import java.sql.Date;
 public class Post {
 
     @Id
-    @Column(name = "post_id", unique = true, nullable = false)
     private Long id;
 
     private String title;
@@ -29,6 +26,8 @@ public class Post {
     @Column(name = "creation_date", nullable = false)
     private Date creationDate;
 
-    @Column(name = "expiration_date", nullable = false)
-    private Date expirationDate;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "image_id")
+    private PostImage image;
+
 }
