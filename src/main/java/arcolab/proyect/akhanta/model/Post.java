@@ -6,14 +6,16 @@ import lombok.*;
 import java.sql.Date;
 
 @Data
-@Setter
 @Getter
+@Setter
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "posts")
 public class Post {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String title;

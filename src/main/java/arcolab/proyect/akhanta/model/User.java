@@ -9,18 +9,21 @@ import lombok.*;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "posts_images")
-public class PostImage {
+@Table(name = "users")
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nombre;
+    private String name;
 
-    @Lob
-    @Column(name = "image_data")
-    private byte[] datosImagen;
+    private String lastname;
 
+    private String email;
+
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    private Role role;
 
 }

@@ -3,18 +3,17 @@ package arcolab.proyect.akhanta.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Data
-@Entity
 @Getter
 @Setter
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "associates")
 public class Associate {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
