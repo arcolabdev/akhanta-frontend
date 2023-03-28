@@ -16,11 +16,11 @@ public class PostImage {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String nombre;
 
     @Lob
-    @Column(name = "image_data")
+    @Column(name = "image_data", nullable = false)
     private byte[] datosImagen;
-
 
 }

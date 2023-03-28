@@ -17,6 +17,6 @@ public class AssociateImage {
     private Long id;
 
     @Lob
-    @Column(name = "image_data")
+    @Column(name = "image_data", nullable = false)
     private byte[] datosImagen;
 }
