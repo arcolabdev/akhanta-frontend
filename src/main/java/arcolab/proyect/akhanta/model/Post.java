@@ -35,7 +35,7 @@ public class Post {
     private PostImage image;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id")
     private User createdBy;
 
 }
