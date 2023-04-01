@@ -1,0 +1,11 @@
+.reel-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 3rem;
+}
+
+.reel-title{
+    text-align: center;
+}

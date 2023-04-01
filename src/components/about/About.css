@@ -1,0 +1,13 @@
+.about-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 6rem;
+    padding: 4rem 8rem;
+    color: #421400;
+}
+
+.about-content h2, p{
+    text-align: center;
+}

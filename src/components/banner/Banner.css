@@ -1,0 +1,32 @@
+.banner-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 3rem;
+    
+   
+
+}
+
+.banner-flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.1rem;
+    width: 50%;
+    color: #E2E2E2;
+    line-height: 3rem;
+}
+
+.banner-title{
+    font-size: 2.3rem;
+}
+
+.banner-title span{
+    font-size: 0.9rem;
+}
+
+.banner-author{
+    text-align: end;
+    
+}

@@ -1,0 +1,32 @@
+.footer-section{
+    height: auto;
+    background-image: url(../../assets//banner-footer.png);
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.footer-title{
+    text-align: center;
+    padding-bottom: 3rem;
+}
+
+.footer-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.footer-nav-media{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    list-style: none;
+    align-items: center;
+}

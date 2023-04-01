@@ -1,0 +1,20 @@
+.header-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.header-nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding-inline-start:0;
+}
+
+.header-nav li {
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: #E2E2E2;
+}
