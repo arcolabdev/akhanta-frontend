@@ -1,0 +1,28 @@
+stages:
+    - test
+    - build
+    - deploy
+
+.test website:
+    image: node:16-alpine
+    stage: test
+    script:
+        - yarn install
+        - yarn test
+
+build website:
+    image: node:16-alpine
+    stage: build
+    script:
+        - yarn install
+        - yarn build
+    artifacts:
+        paths:
+            - build/
+
+netlify:
+    stage: deploy
+    image: node:16-alpine
+    script:
+        - npm install -g netlify-cli
+        - netlify deploy --dir=build --prod
