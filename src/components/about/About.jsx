@@ -3,7 +3,7 @@ import './About.css'
 import clip from '../../assets/clip.png'
 const About = () => {
   return (
-    <section className='about-content container'>
+    <section className='about-content container' id='about'>
         <div>
           <h2>
             ¿Qué es Akhanta?
