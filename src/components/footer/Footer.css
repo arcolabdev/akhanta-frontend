@@ -3,6 +3,21 @@
   font-family: "Times";
 }
 
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-box {
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3.5rem;
+}
+
 .footer-title {
   text-align: center;
   padding-bottom: 3rem;
@@ -48,25 +63,13 @@ button {
   padding: 3rem 0 5rem 0;
 }
 
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.footer-box {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 20rem;
-}
-
 .footer-nav-media {
   display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  list-style: none;
-  align-items: center;
+  gap: 1rem;
+}
+
+.footer-nav-media p {
+  font-size: 38px;
 }
 
 .contact-button {
@@ -74,4 +77,9 @@ button {
   align-self: center;
   padding: 5px;
   font-size: inherit;
+}
+
+.footer-nav-icon {
+  width: auto;
+  height: 50px;
 }

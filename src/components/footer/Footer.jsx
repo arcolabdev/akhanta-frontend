@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Footer.css";
+import instagramIcon from "../../assets/icons/instagram.png";
 
 const Footer = () => {
   const [name, setName] = useState("");
@@ -44,10 +45,12 @@ const Footer = () => {
               Enviar
             </button>
           </form>
-          <ul className="footer-nav-media">
-            <li>Facebook</li>
-            <li>Instagram</li>
-          </ul>
+          <div className="footer-nav-media">
+            <p>Siguenos... </p>
+            <a href="https://www.instagram.com/akhanta.arg/" target="_blank">
+              <img src={instagramIcon} className="footer-nav-icon" />
+            </a>
+          </div>
         </div>
       </div>
     </footer>
