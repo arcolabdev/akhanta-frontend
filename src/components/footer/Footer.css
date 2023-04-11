@@ -1,16 +1,25 @@
 .footer-section {
   color: white;
+  font-family: "Times";
 }
 
+.footer-title {
+  text-align: center;
+  padding-bottom: 3rem;
+  font-size: 3rem;
+}
 .footer-form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1rem;
+  width: 25rem;
 }
 
 .footer-form input,
 textarea,
 button {
+  font-family: "Times";
+  font-weight: 700;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 5px;
   border: none;
@@ -21,12 +30,22 @@ button {
   resize: none;
 }
 
+.footer-form button {
+  background: #96a7a1;
+  padding: 1.2rem 4rem;
+  color: white;
+  font-size: large;
+  font-weight: 600;
+}
+
 .footer-section {
   height: auto;
   background-image: url(../../assets//banner-footer.png);
-  background-position: center;
-  background-size: cover;
-  width: 100%;
+  background-size: 140% auto;
+  background-position-y: 56%;
+  background-position-x: 90%;
+  height: fit-content;
+  padding: 3rem 0 5rem 0;
 }
 
 .footer-content {
@@ -35,15 +54,11 @@ button {
   justify-content: space-around;
 }
 
-.footer-title {
-  text-align: center;
-  padding-bottom: 3rem;
-}
-
 .footer-box {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 20rem;
 }
 
 .footer-nav-media {

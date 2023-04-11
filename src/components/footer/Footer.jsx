@@ -18,7 +18,7 @@ const Footer = () => {
   return (
     <footer className="footer-section" id="contact">
       <div className="footer-content container">
-        <h1 className="footer-title">Contáctanos</h1>
+        <span className="footer-title">Contáctanos</span>
         <div className="footer-box">
           <form className="footer-form" onSubmit={handleSubmit}>
             <div className="footer-form-div">
@@ -41,7 +41,7 @@ const Footer = () => {
               ></textarea>
             </div>
             <button type="submit" className="contact-button">
-              Enviar mensaje
+              Enviar
             </button>
           </form>
           <ul className="footer-nav-media">

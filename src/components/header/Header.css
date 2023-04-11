@@ -3,22 +3,23 @@
   flex-direction: row;
   justify-content: space-evenly;
   width: 100%;
-  background: #000;
   height: 15%;
 }
 
 .header-nav {
-  background: blue;
+  /* background: blue; */
   width: 100%;
 }
 
 .header-nav ul {
   width: 100%;
+  height: 100%;
   display: flex;
-  background: red;
+  align-items: flex-end;
+  justify-content: center;
+  /* background: red; */
   list-style: none;
-  align-items: center;
-  gap: 1rem;
+  gap: 7rem;
   padding-inline-start: 0;
 }
 
