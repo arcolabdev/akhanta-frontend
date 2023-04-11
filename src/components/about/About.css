@@ -1,11 +1,17 @@
+.about-container{
+    display: flex;
+    justify-content: space-around;
+}
+
 .about-content{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     gap: 6rem;
-    padding: 4rem 8rem;
+    padding: 4rem 0rem;
     color: #421400;
+    width: 90%;
 }
 
 .about-content h2, p{

@@ -47,8 +47,8 @@ const Footer = () => {
           </form>
           <div className="footer-nav-media">
             <p>Siguenos... </p>
-            <a href="https://www.instagram.com/akhanta.arg/" target="_blank">
-              <img src={instagramIcon} className="footer-nav-icon" />
+            <a href="https://www.instagram.com/akhanta.arg/" target="_blank" rel="noreferrer">
+              <img src={instagramIcon} className="footer-nav-icon" alt="insta_icon"/>
             </a>
           </div>
         </div>
