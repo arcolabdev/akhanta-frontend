@@ -1,0 +1,14 @@
+.reel-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding-bottom: 3rem;
+}
+
+.reel-content h2 {
+  text-align: center;
+  color: #421400;
+  font-size: 400;
+  font-size: 30px;
+}

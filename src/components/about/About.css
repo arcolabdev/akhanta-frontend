@@ -1,0 +1,35 @@
+.about-container {
+  display: flex;
+  justify-content: space-around;
+  line-height: 2rem;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 6rem;
+  padding: 4rem 0rem;
+  color: #421400;
+  width: 90%;
+}
+
+.about-content div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-content div h2 {
+  font-size: 35px;
+  font-weight: 400;
+  margin: 0 0 2rem 0;
+  text-align: center;
+}
+
+.about-content div p {
+  text-align: center;
+  width: 80%;
+  margin: 0;
+}
