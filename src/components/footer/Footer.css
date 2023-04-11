@@ -70,7 +70,7 @@ button {
 }
 
 .contact-button {
-  width: fit-content;
+  width: 60%;
   align-self: center;
   padding: 5px;
   font-size: inherit;
