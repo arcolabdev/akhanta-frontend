@@ -1,9 +1,9 @@
 .background-header-banner {
   height: 740px;
   background-image: url(../assets/banner.png);
-  background-size: 158% auto;
+  background-size: 130% auto;
   background-position-y: 56%;
-  background-position-x: 10%;
+  background-position-x: 0%;
 }
 
 .background-about-reel {
