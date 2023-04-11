@@ -7,9 +7,11 @@ const Footer = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const phoneNumber = '573142716508'; // Número de teléfono al que se enviará el mensaje
+    const phoneNumber = "573142716508"; // Número de teléfono al que se enviará el mensaje
     const whatsappMessage = `Hola, soy ${name} y quiero enviar el siguiente mensaje: ${message}`;
-    const fullUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`; 
+    const fullUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      whatsappMessage
+    )}`;
     window.open(fullUrl, "_blank");
   };
 

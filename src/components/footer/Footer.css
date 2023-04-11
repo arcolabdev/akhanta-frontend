@@ -1,3 +1,7 @@
+.footer-section {
+  color: white;
+}
+
 .footer-form {
   display: flex;
   flex-direction: column;
