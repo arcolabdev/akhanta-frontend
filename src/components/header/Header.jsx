@@ -30,7 +30,7 @@ const Header = () => {
                   : "nav__link"
               }
             >
-              Asociados{" "}
+              Asociados
             </a>
           </li>
         </ul>
