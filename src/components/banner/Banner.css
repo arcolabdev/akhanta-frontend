@@ -1,32 +1,36 @@
-.banner-content{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    padding-top: 3rem;
-    
-   
-
+.banner-content {
+  display: flex;
+  position: relative;
+  top: 80px;
+  width: fit-content;
 }
 
-.banner-flex{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.1rem;
-    width: 50%;
-    color: #E2E2E2;
-    line-height: 3rem;
+.banner-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  width: 50%;
+  color: #e2e2e2;
+  line-height: 3rem;
 }
 
-.banner-title{
-    font-size: 2.3rem;
+.banner-title {
+  font-size: 4.5rem;
+  line-height: 100px;
 }
 
-.banner-title span{
-    font-size: 0.9rem;
+.banner-title-quotes {
+  font-size: 5rem;
 }
 
-.banner-author{
-    text-align: end;
-    
+.banner-title-phrase-2 {
+  font-size: 2.3rem;
+}
+
+.banner-author {
+  width: 100%;
+  font-size: larger;
+  text-align: end;
+  justify-self: flex-end;
 }

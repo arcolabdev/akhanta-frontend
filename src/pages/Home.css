@@ -1,12 +1,12 @@
-.background-header-banner{
- height: 500px;
- background-image: url(../assets/banner.png);
- background-position: center;
- background-size: cover;
+.background-header-banner {
+  height: 740px;
+  background-image: url(../assets/banner.png);
+  background-size: 130% auto;
+  background-position-y: 56%;
+  background-position-x: 0%;
 }
 
-.background-about-reel{
-    height: auto;
-    background-color: beige;
-
+.background-about-reel {
+  height: auto;
+  background-color: #FFFCF0;
 }

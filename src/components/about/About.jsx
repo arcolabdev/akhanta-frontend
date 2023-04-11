@@ -1,9 +1,16 @@
 import React from 'react'
 import './About.css'
 import clip from '../../assets/clip.png'
+import mandala_left from '../../assets/mandalas-left.png'
+import mandala_right from '../../assets/mandalas-right.png'
+
 const About = () => {
   return (
-    <section className='about-content container' id='about'>
+    <section className='about-container' id='about'>
+      <div>
+        <img src={mandala_left} alt="" />
+      </div>
+      <div className='about-content'>
         <div>
           <h2>
             ¿Qué es Akhanta?
@@ -23,6 +30,11 @@ const About = () => {
           </h2>
           <p>En Akhanta, podemos ayudarte a mejorar tu salud y bienestar en todos los aspectos a través de nuestras actividades y cursos taoístas. Ya sea que desees mejorar tu flexibilidad, reducir el estrés o simplemente encontrar una mayor armonía y equilibrio en tu vida, nuestro equipo de expertos en taoísmo está aquí para ayudarte a lograr tus objetivos. Únete a nuestra comunidad y comienza tu camino hacia una vida más saludable y plena.</p>
         </div>
+      </div>
+      <div>
+        <img src={mandala_right} alt="" />
+      </div>
+        
     </section>
   )
 }

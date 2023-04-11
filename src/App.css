@@ -6,7 +6,14 @@
 }
 .App{
     height: 100vh;
-    font-family: 'Inknut Antiqua', serif;
+    font-family: 'Times', serif;
+}
+
+@font-face {
+  font-family: 'Times2';
+  src: url('./assets/fonts/Times.ttc') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 html {

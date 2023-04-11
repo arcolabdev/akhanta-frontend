@@ -2,15 +2,38 @@
   color: white;
 }
 
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-box {
+  display: flex;
+  width: fit-content;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3.5rem;
+}
+
+.footer-title {
+  text-align: center;
+  padding-bottom: 3rem;
+  font-size: 3rem;
+}
 .footer-form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1rem;
+  width: 25rem;
 }
 
 .footer-form input,
 textarea,
 button {
+  font-family: "Times";
+  font-weight: 700;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 5px;
   border: none;
@@ -21,42 +44,41 @@ button {
   resize: none;
 }
 
+.footer-form button {
+  background: #96a7a1;
+  padding: 1.2rem 4rem;
+  color: white;
+  font-size: large;
+  font-weight: 600;
+}
+
 .footer-section {
   height: auto;
   background-image: url(../../assets//banner-footer.png);
-  background-position: center;
-  background-size: cover;
-  width: 100%;
-}
-
-.footer-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-.footer-title {
-  text-align: center;
-  padding-bottom: 3rem;
-}
-
-.footer-box {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  background-size: 140% auto;
+  background-position-y: 56%;
+  background-position-x: 90%;
+  height: fit-content;
+  padding: 3rem 0 5rem 0;
 }
 
 .footer-nav-media {
   display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  list-style: none;
-  align-items: center;
+  gap: 1rem;
+}
+
+.footer-nav-media p {
+  font-size: 38px;
 }
 
 .contact-button {
-  width: fit-content;
+  width: 60%;
   align-self: center;
   padding: 5px;
   font-size: inherit;
+}
+
+.footer-nav-icon {
+  width: auto;
+  height: 50px;
 }
