@@ -32,4 +32,13 @@
   text-align: center;
   width: 80%;
   margin: 0;
+  font-size: larger;
+}
+
+@media (min-width: 1450px) {
+  .about-content div p {
+    text-align: center;
+    width: 50%;
+    margin: 0;
+  }
 }

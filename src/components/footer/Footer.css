@@ -30,8 +30,8 @@
 }
 
 .footer-form input,
-textarea,
-button {
+.footer-form textarea,
+.footer-form button {
   font-family: "Times";
   font-weight: 700;
   background: rgba(255, 255, 255, 0.8);
@@ -76,6 +76,7 @@ button {
   align-self: center;
   padding: 5px;
   font-size: inherit;
+  cursor: pointer;
 }
 
 .footer-nav-icon {

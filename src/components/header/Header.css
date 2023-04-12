@@ -7,7 +7,6 @@
 }
 
 .header-nav {
-  /* background: blue; */
   width: 100%;
 }
 
@@ -23,15 +22,43 @@
   padding-inline-start: 0;
 }
 
-.header-nav li {
+.nav__link {
   font-weight: 300;
-  font-size: 0.9rem;
-  color: #e2e2e2;
+  font-size: 1.2rem;
+}
+
+.nav__link:after {
+  transition: all ease-in-out 0.2s;
+  background: none repeat scroll 0 0 #ffffff;
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+}
+
+.nav__link:hover:after {
+  width: 100%;
 }
 
 a {
   text-decoration: none;
-  color: #e2e2e2;
+  color: white;
+}
+
+.login-button {
+  font-family: "Times";
+  background: none;
+  padding: 3px 16px;
+  border-radius: 5px;
+  border: 2px solid #c8abfb;
+  color: white;
+  transition: background-color 0.2s ease-in-out;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.login-button:hover {
+  background-color: #c8abfb;
 }
 
 @media (min-width: 1450px) {

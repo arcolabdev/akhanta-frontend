@@ -27,7 +27,7 @@ const Header = () => {
               className={
                 activeNav === "#associate"
                   ? "nav__link active-link"
-                  : "nav__link"
+                  : "nav__link "
               }
             >
               Asociados
@@ -49,7 +49,9 @@ const Header = () => {
               Contacto
             </a>
           </li>
-          <li>Login</li>
+          <li>
+            <button className="login-button">Login</button>
+          </li>
         </ul>
       </nav>
     </header>
