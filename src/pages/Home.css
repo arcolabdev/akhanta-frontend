@@ -8,5 +8,15 @@
 
 .background-about-reel {
   height: auto;
-  background-color: #FFFCF0;
+  background-color: #fffcf0;
+}
+
+@media (min-width: 1450px) {
+  .background-header-banner {
+    height: 930px;
+    background-image: url(../assets/banner.png);
+    background-size: 130% auto;
+    background-position-y: 56%;
+    background-position-x: 0%;
+  }
 }
