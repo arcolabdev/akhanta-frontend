@@ -48,3 +48,14 @@
     font-size: 1.6rem;
   }
 }
+
+@media (max-width: 768px) {
+
+  .banner-title-text {
+    font-size: 3.7rem;
+  }
+
+  .banner-title-quotes {
+    font-size: 4rem;
+  }
+}
