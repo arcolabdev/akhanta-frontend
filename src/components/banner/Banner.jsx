@@ -8,15 +8,15 @@ const Banner = () => {
         <div className="banner-title">
           <div className="banner-title-quotes">"</div>
           <div className="banner-title-text">
-            <span>Para la mente que está quieta,</span>
+            <span>Para la mente<br />que está<br />quieta,</span>
             <br />
-            <span className="banner-title-phrase-2">
+            <span className="banner-title-text-2">
               todo el universo se rinde
             </span>
             <span className="banner-title-quotes">"</span>
           </div>
         </div>
-        <p className="banner-author">-Lao Tse</p>
+        <p className="banner-title-author">-Lao Tse</p>
       </div>
     </section>
   );
