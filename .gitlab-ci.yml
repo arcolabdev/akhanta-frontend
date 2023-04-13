@@ -26,3 +26,6 @@ netlify:
     script:
         - npm install -g netlify-cli
         - netlify deploy --dir=build --prod
+    only:
+        - main
+
