@@ -17,10 +17,11 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .background-header-banner {
     height: 850px;
-    background-size: 180% auto;
+    background-size: 170% auto;
     background-position-x: 25%;
+    background-position-y: 50%;
   }
 }
