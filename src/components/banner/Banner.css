@@ -79,8 +79,9 @@
   }
 }
 
-@media (max-width: 834px) {
-  /* .banner-title-text {
+@media (max-width: 768px) {
+  /* va hasta 563px */
+  .banner-title-text {
     font-size: 3.5rem;
   }
 
@@ -94,5 +95,14 @@
 
   .banner-title-author {
     font-size: 1.3rem;
-  } */
+  }
+  .banner-flex {
+    width: 65%;
+  }
+
+  .banner-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
