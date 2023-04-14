@@ -14,7 +14,7 @@
   width: 100%;
   height: 100%;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   /* background: red; */
   list-style: none;
@@ -24,7 +24,7 @@
 
 .nav__link {
   font-weight: 300;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 
 .nav__link:after {
@@ -61,8 +61,12 @@ a {
   background-color: #c8abfb;
 }
 
-@media (min-width: 1450px) {
+@media (max-width: 1024px) {
   .header-nav ul {
-    align-items: center;
+    gap: 2.2rem;
+  }
+
+  .nav__link {
+    font-weight: 300;
   }
 }
