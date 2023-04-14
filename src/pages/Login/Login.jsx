@@ -2,8 +2,7 @@ import React from 'react'
 import logo from '../../assets/logo.png'
 import './Login.css'
 
-
-export const Login = () => {
+const Login = () => {
   return (
     <>
     <section className='login-context container'>
@@ -27,7 +26,8 @@ export const Login = () => {
             
         </section>
     </section>
-    
     </>
   )
 }
+
+export default Login;

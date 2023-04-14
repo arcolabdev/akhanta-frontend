@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Header.css";
 import logo from "../../assets/logo.png";
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [activeNav, setActiveNav] = useState("#home");
@@ -50,7 +51,9 @@ const Header = () => {
             </a>
           </li>
           <li>
-            <button className="login-button">Login</button>
+          <Link to='/login'>
+          <button className="login-button">Login</button>
+          </Link>
           </li>
         </ul>
       </nav>

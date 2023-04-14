@@ -3,6 +3,7 @@ import "./About.css";
 import clip from "../../assets/clip.png";
 import mandala_left from "../../assets/mandalas-left.png";
 import mandala_right from "../../assets/mandalas-right.png";
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -45,7 +46,9 @@ const About = () => {
         </div>
       </div>
       <div>
+        <Link to=''>
         <img src={mandala_right} alt="decoration" className="about-mandala" />
+        </Link>
       </div>
     </section>
   );
