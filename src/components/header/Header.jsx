@@ -36,7 +36,7 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      <img className="header-logo" src={logo} width={150} height={70} alt="" />
+      <img className="header-logo" src={logo} width={150} height={85} alt="" />
       <nav className="header-nav">
         <ul>
           <li>
