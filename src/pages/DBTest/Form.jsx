@@ -4,50 +4,62 @@ import axios from "axios";
 function Formulario() {
   const [banner, setBanner] = useState(null);
   const [profile, setProfile] = useState(null);
-  const [tag, setTag] = useState("");
-
+  const [image, setImage] = useState(null);
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const formData = new FormData();
-    formData.append("banner", banner);
-    formData.append("tag", tag);
+
+    const baseUrl = "http://localhost:8080/api/v1/associates/";
+
+    const dataBanner = new FormData();
+    dataBanner.append("banner", banner);
+
+    const dataProfile = new FormData();
+    dataProfile.append("profile", profile);
 
     const payload = {
-      name: "Strong Nation",
-      description: "descripcion de strong nation",
-      links: ["instagram.com/akhanta.arg"],
+      name: "Wing Lam Kung Fu",
+      description: "descripcion de wing lam",
+      links: [
+        { url: "instagram.com/winglamkungfu", type: "INSTAGRAM" },
+        {
+          url: "https://www.facebook.com/profile.php?id=100009079908064",
+          type: "FACEBOOK",
+        },
+      ],
       user_id: 1,
     };
 
-    try {
-      const response = await axios.post(
-        "http://localhost:8080/api/v1/associates/images",
-        { formData, payload },
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
-      console.log(response.data);
-    } catch (error) {
-      console.error(error);
-    }
+    const response = await axios.post(baseUrl, payload, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const uploadBanner = await axios.post(
+      baseUrl + response.data.results.id + "/banner",
+      dataBanner,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
+
+    const uploadProfile = await axios.post(
+      baseUrl + response.data.results.id + "/profile",
+      dataProfile,
+      {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
+    );
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        Tag:
-        <input
-          type="text"
-          value={tag}
-          onChange={(event) => setTag(event.target.value)}
-        />
-      </label>
-      <br />
-      <label>
-        banner:
+        Imagen Banner:
         <input
           type="file"
           accept="image/*"
@@ -56,7 +68,7 @@ function Formulario() {
       </label>
       <br />
       <label>
-        profile:
+        Imagen Perfil:
         <input
           type="file"
           accept="image/*"
@@ -65,6 +77,8 @@ function Formulario() {
       </label>
       <br />
       <button type="submit">Enviar</button>
+      <br />
+      <img src="localhost:8080/api/v1/associates/2/banner" alt="asd" />
     </form>
   );
 }
