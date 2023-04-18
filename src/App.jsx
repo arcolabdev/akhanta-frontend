@@ -1,10 +1,10 @@
 import "./App.css";
 import Login from "./pages/Login/Login";
 import AssociatedDetail from "./pages/associatedDetail/AssociatedDetail";
-import Home from "./pages/Home/Home";
+import Home from "./pages/home/Home";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Formulario from "./pages/DBTest/Form";
+// import Formulario from "./pages/DBTest/Form";
 
 function App() {
   return (

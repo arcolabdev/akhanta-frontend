@@ -12,14 +12,18 @@
 
 .login{
     margin-top: 8rem;
+    width: 450px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
 }
 
 .login-container{
     display: flex;
     align-items: center;
     text-align: center;
-    height: 500px;
-    width: 450px;
+    height: 100%;
+    width: 100%;
     background-color: rgb(128,128,128,0.3);
     border-radius: 10px;
     justify-content: center;
@@ -31,7 +35,7 @@
 
 .login-title {
     padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
     font-family: 'Times2';
     color: #D6D4C6;
     letter-spacing: 0.1em;
@@ -81,4 +85,75 @@
 }
 
 
+@media screen and (max-width:720px) {
 
+
+    .login-container{
+        width: 350px;
+        gap: 0;
+        height: 90%;
+    }
+
+    .login-form input{
+        width: 250px;
+    }
+
+    .login-title {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        letter-spacing: 0.1em;
+    }
+
+    .login-title h1{
+        padding-bottom: 0;
+        font-size: 50px;
+    }
+
+
+    .login-form input{
+        padding-left: 15px;
+        font-size: 14px;
+
+        height:45px;
+        width: 250px;
+        background-color: rgb(217,217,217, 0.7);
+    }
+
+}
+
+@media  screen and (max-width:456px) {
+
+    .login{
+        margin-top: 8rem;
+        width: fit-content;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+    }
+    
+}
+
+@media  screen and (max-width:456px) {
+
+    .login-container{
+        width: 290px;
+        gap: 0;
+        height: 85%;
+    }
+
+    .login-title h1{
+        padding-bottom: 0.5rem;
+        font-size: 40px;
+    }
+    
+    .login-title h2{
+        font-size: 18px;
+    }
+
+    .login-form button{
+        font-size: 17px;
+        font-weight: bold;
+        width: 150px;
+        height: 40px;
+    } 
+}
