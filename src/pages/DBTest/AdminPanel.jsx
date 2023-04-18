@@ -1,10 +1,49 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./AdminPanel.css";
+import { Link } from "react-router-dom";
 
 function Formulario() {
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
   const [banner, setBanner] = useState(null);
   const [profile, setProfile] = useState(null);
+
+  const [inputs, setInputs] = useState([
+    { id: 0, texto: "", opcion: "opcion1" },
+  ]);
+
+  const agregarInput = () => {
+    setInputs([...inputs, { id: inputs.length, texto: "", opcion: "opcion1" }]);
+  };
+
+  const eliminarInput = (id) => {
+    setInputs(inputs.filter((input) => input.id !== id));
+  };
+
+  const actualizarTexto = (id, texto) => {
+    setInputs(
+      inputs.map((input) => {
+        if (input.id === id) {
+          return { ...input, texto };
+        } else {
+          return input;
+        }
+      })
+    );
+  };
+
+  const actualizarOpcion = (id, opcion) => {
+    setInputs(
+      inputs.map((input) => {
+        if (input.id === id) {
+          return { ...input, opcion };
+        } else {
+          return input;
+        }
+      })
+    );
+  };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -17,27 +56,28 @@ function Formulario() {
     const dataProfile = new FormData();
     dataProfile.append("profile", profile);
 
+    const links = inputs.map((input) => {
+      return {
+        url: input.texto,
+        tag: input.opcion,
+      };
+    });
+
     const payload = {
-      name: "Wing Lam Kung Fu",
-      description: "descripcion de wing lam",
-      links: [
-        { url: "instagram.com/winglamkungfu", type: "INSTAGRAM" },
-        {
-          url: "https://www.facebook.com/profile.php?id=100009079908064",
-          type: "FACEBOOK",
-        },
-      ],
+      name: name,
+      description: description,
+      links: links,
       user_id: 1,
     };
 
-    const response = await axios.post(baseUrl, payload, {
+    const newAssocaiteResponse = await axios.post(baseUrl, payload, {
       headers: {
         "Content-Type": "application/json",
       },
     });
 
-    const uploadBanner = await axios.post(
-      baseUrl + response.data.results.id + "/banner",
+    await axios.post(
+      baseUrl + newAssocaiteResponse.data.results.id + "/banner",
       dataBanner,
       {
         headers: {
@@ -46,8 +86,8 @@ function Formulario() {
       }
     );
 
-    const uploadProfile = await axios.post(
-      baseUrl + response.data.results.id + "/profile",
+    await axios.post(
+      baseUrl + newAssocaiteResponse.data.results.id + "/profile",
       dataProfile,
       {
         headers: {
@@ -55,49 +95,42 @@ function Formulario() {
         },
       }
     );
+    document.location.reload();
   };
 
   return (
-    // <div className="form-container">
-    //   <form onSubmit={handleSubmit} className="form">
-    //     <label className="form-label">
-    //       Nombre:
-    //       <input
-    //         type="text"
-    //         accept="image/*"
-    //         onChange={(event) => setBanner(event.target.files[0])}
-    //       />
-    //     </label>
-    //     <label className="form-label">
-    //       Imagen Banner:
-    //       <input
-    //         type="file"
-    //         accept="image/*"
-    //         onChange={(event) => setBanner(event.target.files[0])}
-    //       />
-    //     </label>
-    //     <br />
-    //     <label className="form-label">
-    //       Imagen Perfil:
-    //       <input
-    //         type="file"
-    //         accept="image/*"
-    //         onChange={(event) => setProfile(event.target.files[0])}
-    //       />
-    //     </label>
-    //     <br />
-    //     <button type="submit">Enviar</button>
-    //   </form>
-    // </div>
-
-    <div className="container justify-content-center">
-      <form>
+    <div className="container justify-content-center form-container">
+      <Link to="/">
+        <button className="btn btn-secondary">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            className="bi bi-arrow-left"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fillRule="evenodd"
+              d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+            />
+          </svg>{" "}
+          Volver a Inicio
+        </button>
+      </Link>
+      <form onSubmit={handleSubmit}>
         <div className="row mb-3 align-items-center">
           <label htmlFor="name" className="col-sm-2 col-form-label">
             Nombre:
           </label>
           <div className="col-sm-10">
-            <input type="text" className="form-control" id="name" name="name" />
+            <input
+              type="text"
+              className="form-control"
+              id="name"
+              name="name"
+              onChange={(e) => setName(e.target.value)}
+            />
           </div>
         </div>
         <div className="row mb-3 align-items-center">
@@ -105,22 +138,70 @@ function Formulario() {
             Descripción:
           </label>
           <div className="col-sm-10">
-            <input
+            <textarea
               type="text"
               className="form-control"
+              style={{ resize: "none" }}
               id="description"
               name="description"
+              rows="3"
+              onChange={(e) => setDescription(e.target.value)}
             />
           </div>
         </div>
-        <div className="row mb-3 align-items-center">
-          <label htmlFor="url" className="col-sm-2 col-form-label">
-            URL:
-          </label>
-          <div className="col-sm-10">
-            <input type="text" className="form-control" id="url" name="url" />
+        {inputs.map((input) => (
+          <div key={input.id} className="row mb-3 align-items-center">
+            <div className="col-sm-2">
+              <label htmlFor="url" className="col-form-label">
+                Link {input.id + 1}:
+              </label>
+            </div>
+            <div className="col-sm-10 d-flex">
+              <input
+                className="form-control"
+                value={input.texto}
+                onChange={(event) =>
+                  actualizarTexto(input.id, event.target.value)
+                }
+              />
+              <div className="col-sm-2">
+                <select
+                  className="form-select"
+                  value={input.opcion}
+                  onChange={(event) =>
+                    actualizarOpcion(input.id, event.target.value)
+                  }
+                >
+                  <option value="INSTAGRAM">Instagram</option>
+                  <option value="WHATSAPP">WhatsApp</option>
+                  <option value="FACEBOOK">Facebook</option>
+                </select>
+              </div>
+              {input.id === 0 && (
+                <div className="col-sm-1 d-flex align-items-center justify-content-center">
+                  <button
+                    className="btn btn-primary mx-1"
+                    onClick={() => agregarInput()}
+                  >
+                    +
+                  </button>
+                </div>
+              )}
+
+              {input.id !== 0 && (
+                <div className="col-sm-1 d-flex align-items-center justify-content-center">
+                  <button
+                    className="btn btn-danger mx-1"
+                    onClick={() => eliminarInput(input.id)}
+                  >
+                    -
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
-        </div>
+        ))}
+
         <div className="row mb-3 align-items-center">
           <label htmlFor="banner-image" className="col-sm-2 col-form-label">
             Imagen de banner:
@@ -132,6 +213,7 @@ function Formulario() {
               id="banner-image"
               name="banner-image"
               accept="image/*"
+              onChange={(event) => setBanner(event.target.files[0])}
             />
           </div>
         </div>
@@ -146,9 +228,11 @@ function Formulario() {
               id="profile-image"
               name="profile-image"
               accept="image/*"
+              onChange={(event) => setProfile(event.target.files[0])}
             />
           </div>
         </div>
+        <input type="submit" className="btn btn-success" value="Enviar"></input>
       </form>
     </div>
   );
