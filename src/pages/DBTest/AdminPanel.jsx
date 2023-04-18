@@ -8,13 +8,15 @@ function Formulario() {
   const [description, setDescription] = useState("");
   const [banner, setBanner] = useState(null);
   const [profile, setProfile] = useState(null);
-
   const [inputs, setInputs] = useState([
-    { id: 0, texto: "", opcion: "opcion1" },
+    { id: 0, texto: "", opcion: "INSTAGRAM" },
   ]);
 
   const agregarInput = () => {
-    setInputs([...inputs, { id: inputs.length, texto: "", opcion: "opcion1" }]);
+    setInputs([
+      ...inputs,
+      { id: inputs.length, texto: "", opcion: "INSTAGRAM" },
+    ]);
   };
 
   const eliminarInput = (id) => {
