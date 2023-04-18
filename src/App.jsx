@@ -1,10 +1,10 @@
 import "./App.css";
 import Login from "./pages/Login/Login";
 import AssociatedDetail from "./pages/associatedDetail/AssociatedDetail";
-import Home from "./pages/home/Home";
+import Home from "./pages/Home/Home";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-// import Formulario from "./pages/DBTest/Form";
+import AdminPanel from "./pages/DBTest/AdminPanel";
 
 function App() {
   return (
@@ -12,11 +12,11 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login/>} />
+          <Route path="/login" element={<Login />} />
           <Route path="/associated/:id" element={<AssociatedDetail />} />
+          <Route path="/admin" element={<AdminPanel />} />
         </Routes>
       </div>
-      {/* <Formulario /> */}
     </BrowserRouter>
   );
 }
