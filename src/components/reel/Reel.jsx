@@ -7,18 +7,70 @@ import "react-alice-carousel/lib/alice-carousel.css";
 const handleDragStart = (e) => e.preventDefault();
 
 const items = [
-  <img src={reel} onDragStart={handleDragStart} role="presentation" alt=''/>,
-  <img src={reel} onDragStart={handleDragStart} role="presentation" alt=''/>,
-  <img src={reel} onDragStart={handleDragStart} role="presentation" alt=''/>,
+  <img
+    src={reel}
+    width={"100%"}
+    height={400}
+    overflow="hidden"
+    onDragStart={handleDragStart}
+    role="presentation"
+    alt=""
+  />,
+  <img
+    src={reel}
+    width={"100%"}
+    height={400}
+    onDragStart={handleDragStart}
+    role="presentation"
+    alt=""
+  />,
+  <img
+    src={reel}
+    width={"100%"}
+    height={400}
+    overflow="hidden"
+    onDragStart={handleDragStart}
+    role="presentation"
+    alt=""
+  />,
+  <img
+    src={reel}
+    width={"100%"}
+    height={400}
+    overflow="hidden"
+    onDragStart={handleDragStart}
+    role="presentation"
+    alt=""
+  />,
+  <img
+    src={reel}
+    width={"100%"}
+    height={400}
+    overflow="hidden"
+    onDragStart={handleDragStart}
+    role="presentation"
+    alt=""
+  />,
 ];
+const responsive = {
+  0: {
+    items: 1,
+  },
+  550: {
+    items: 2,
+    itemsFit: "contain",
+  },
+  1024: {
+    items: 3,
+    itemsFit: "contain",
+  },
+};
 
 const Reel = () => {
   return (
     <section className="reel-content container" id="associate">
       <h2 className="reel-title">Nuestros Asociados</h2>
-      {/* <img src={reel} width={300} height={300} alt=''>
-        </img> */}
-      <AliceCarousel mouseTracking items={items} autoHeight="true" autoWidth="true" disableButtonsControls="true"/>
+      <AliceCarousel mouseTracking items={items} responsive={responsive} />
     </section>
   );
 };
