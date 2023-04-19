@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./AdminPanel.css";
 import { Link } from "react-router-dom";
+import { ScaleLoader } from "react-spinners";
 
 function Formulario() {
   const [name, setName] = useState("");
@@ -11,12 +12,71 @@ function Formulario() {
   const [inputs, setInputs] = useState([
     { id: 0, texto: "", opcion: "INSTAGRAM" },
   ]);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [completed, setCompleted] = useState(false);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+
+    const baseUrl = "http://localhost:8080/api/v1/associates/";
+
+    const dataBanner = new FormData();
+    dataBanner.append("banner", banner);
+
+    const dataProfile = new FormData();
+    dataProfile.append("profile", profile);
+
+    const links = inputs.map((input) => {
+      return {
+        url: input.texto,
+        tag: input.opcion,
+      };
+    });
+
+    const payload = {
+      name: name,
+      description: description,
+      links: links,
+      user_id: 1,
+    };
+
+    try {
+      const newAssociateResponse = await axios.post(baseUrl, payload, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      await axios.post(
+        baseUrl + newAssociateResponse.data.results.id + "/banner",
+        dataBanner,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
+      await axios.post(
+        baseUrl + newAssociateResponse.data.results.id + "/profile",
+        dataProfile,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
+      setCompleted(true);
+    } catch (error) {
+      setIsSubmitting(false);
+    }
+  };
 
   const agregarInput = () => {
-    setInputs([
-      ...inputs,
-      { id: inputs.length, texto: "", opcion: "INSTAGRAM" },
-    ]);
+    const newInput = { id: inputs.length, texto: "", opcion: "INSTAGRAM" };
+    setInputs((prevInputs) => [...prevInputs, newInput]);
   };
 
   const eliminarInput = (id) => {
@@ -47,58 +107,9 @@ function Formulario() {
     );
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    const baseUrl = "http://localhost:8080/api/v1/associates/";
-
-    const dataBanner = new FormData();
-    dataBanner.append("banner", banner);
-
-    const dataProfile = new FormData();
-    dataProfile.append("profile", profile);
-
-    const links = inputs.map((input) => {
-      return {
-        url: input.texto,
-        tag: input.opcion,
-      };
-    });
-
-    const payload = {
-      name: name,
-      description: description,
-      links: links,
-      user_id: 1,
-    };
-
-    const newAssocaiteResponse = await axios.post(baseUrl, payload, {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-
-    await axios.post(
-      baseUrl + newAssocaiteResponse.data.results.id + "/banner",
-      dataBanner,
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      }
-    );
-
-    await axios.post(
-      baseUrl + newAssocaiteResponse.data.results.id + "/profile",
-      dataProfile,
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      }
-    );
-    document.location.reload();
-  };
+  if (completed) {
+    window.location.reload();
+  }
 
   return (
     <div className="container justify-content-center form-container">
@@ -182,6 +193,7 @@ function Formulario() {
               {input.id === 0 && (
                 <div className="col-sm-1 d-flex align-items-center justify-content-center">
                   <button
+                    type="button"
                     className="btn btn-primary mx-1"
                     onClick={() => agregarInput()}
                   >
@@ -236,6 +248,7 @@ function Formulario() {
         </div>
         <input type="submit" className="btn btn-success" value="Enviar"></input>
       </form>
+      {isSubmitting && <ScaleLoader color="#36d7b7" />}
     </div>
   );
 }
