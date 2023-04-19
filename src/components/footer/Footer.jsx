@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./Footer.css";
 import instagramIcon from "../../assets/icons/instagram.png";
+import WhatsappIcon from "../../assets/icons/whatsapp.png";
 
 const Footer = () => {
   const [name, setName] = useState("");
@@ -19,7 +20,7 @@ const Footer = () => {
   return (
     <footer className="footer-section" id="contact">
       <div className="footer-content container">
-        <span className="footer-title">Contáctanos</span>
+        <span className="footer-title">Escríbinos</span>
         <div className="footer-box">
           <form className="footer-form" onSubmit={handleSubmit}>
             <div className="footer-form-div">
@@ -42,13 +43,25 @@ const Footer = () => {
               ></textarea>
             </div>
             <button type="submit" className="contact-button">
-              Enviar
+              <img
+                alt="whatsapp logo"
+                src={WhatsappIcon}
+                className="whatsapp-logo"
+              />
             </button>
           </form>
           <div className="footer-nav-media">
             <p>Siguenos... </p>
-            <a href="https://www.instagram.com/akhanta.arg/" target="_blank" rel="noreferrer">
-              <img src={instagramIcon} className="footer-nav-icon" alt="insta_icon"/>
+            <a
+              href="https://www.instagram.com/akhanta.arg/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={instagramIcon}
+                className="footer-nav-icon"
+                alt="insta_icon"
+              />
             </a>
           </div>
         </div>

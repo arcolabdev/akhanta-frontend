@@ -50,10 +50,14 @@
   color: white;
   font-size: large;
   font-weight: 600;
+  transition: background-color 0.2s ease-in-out;
+}
+.footer-form button:hover {
+  background-color: #646f6b;
 }
 
 .footer-section {
-  background-image: url(../../assets//banner-footer.png);
+  background-image: url(../../assets/banner-footer1.jpg);
   background-size: 140% auto;
   background-position-y: 56%;
   background-position-x: 90%;
@@ -68,7 +72,7 @@
 }
 
 .footer-nav-media p {
-  font-size: 38px;
+  font-size: 32px;
 }
 
 .contact-button {
@@ -84,9 +88,14 @@
   height: 50px;
 }
 
+.whatsapp-logo {
+  width: 25px;
+}
+
+
 @media (max-width: 768px) {
   .footer-section {
-    background-image: url(../../assets//banner-footer.png);
+    background-image: url(../../assets/banner-footer1.jpg);
     background-size: 200% auto;
     background-position-y: 56%;
     background-position-x: 50%;

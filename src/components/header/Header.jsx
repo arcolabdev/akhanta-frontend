@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Header.css";
 import logo from "../../assets/logo.png";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [activeNav, setActiveNav] = useState("#home");
@@ -37,7 +37,7 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      <img className="header-logo" src={logo} width={150} height={70} alt="" />
+      <img className="header-logo" src={logo} width={150} height={85} alt="" />
       <nav className="header-nav">
         <ul>
           <li>
@@ -52,9 +52,9 @@ const Header = () => {
             </a>
           </li>
           <li>
-          <Link to='/login'>
-          <button className="login-button">Login</button>
-          </Link>
+            <Link to="/login">
+              <button className="login-button">Login</button>
+            </Link>
           </li>
         </ul>
       </nav>
