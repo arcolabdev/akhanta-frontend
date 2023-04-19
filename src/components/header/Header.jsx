@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [activeNav, setActiveNav] = useState("#home");
+  
 
   return (
     <header className="header-content container">

@@ -1,13 +1,16 @@
 import React from 'react'
 import logo from '../../assets/logo.png'
 import './Login.css'
+import { MdArrowBackIosNew} from 'react-icons/md'
+import { Link } from 'react-router-dom';
 
 const Login = () => {
   return (
     <>
-    <section className='login-context container'>
-        <section className='header'>
+    <section className='login-context'>
+        <section className='header container'>
             <img src={logo} alt="logo" />
+            
         </section>
         <section className='login'>
             <div  className='login-container'>
@@ -23,8 +26,10 @@ const Login = () => {
                     </form>
                 </div> 
             </div>
-            
         </section>
+        <Link to='/'>
+            <div className='arrow'><MdArrowBackIosNew size={35} color='#C8ABFB'/>
+            </div></Link>
     </section>
     </>
   )

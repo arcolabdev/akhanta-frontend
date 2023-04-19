@@ -79,8 +79,11 @@
   }
 }
 
-@media (max-width: 768px) {
-  /* va hasta 563px */
+@media (max-width: 779px) {
+  
+  .banner-title{
+    line-height: 90px;
+  }
   .banner-title-text {
     font-size: 3.5rem;
   }
@@ -98,11 +101,57 @@
   }
   .banner-flex {
     width: 65%;
+    line-height: 2.5rem;
   }
 
   .banner-flex {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+  }
+
+}
+
+@media (max-width: 577px){
+  .banner-title{
+    line-height: 80px;
+  }
+  .banner-title-text {
+    font-size: 3rem;
+  }
+
+  .banner-title-text-2 {
+    font-size: 1.4rem;
+  }
+
+  .banner-title-quotes {
+    font-size: 1.5rem;
+  }
+
+  .banner-title-author {
+    font-size: 1.1rem;
+  }
+  .banner-flex {
+    width: 65%;
+    line-height: 2rem;
+  }
+
+  .banner-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 496px){
+  .banner-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+  }
+
+  .banner-title-text{
+    text-align: right;
   }
 }
