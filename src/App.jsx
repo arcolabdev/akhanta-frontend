@@ -4,7 +4,7 @@ import AssociatedDetail from "./pages/associatedDetail/AssociatedDetail";
 import Home from "./pages/Home/Home";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AdminPanel from "./pages/DBTest/AdminPanel";
+import AdminPanel from "./pages/Admin/AdminPanel";
 
 function App() {
   return (
