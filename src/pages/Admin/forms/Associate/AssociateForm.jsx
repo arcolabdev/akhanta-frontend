@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { ScaleLoader } from "react-spinners";
 import { Table } from "react-bootstrap";
+import AssociateModal from "./AssociateModal";
 
 const AssociateForm = () => {
+  const [data, setData] = useState([]);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [banner, setBanner] = useState(null);
@@ -14,11 +16,17 @@ const AssociateForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [completed, setCompleted] = useState(false);
 
+  useEffect(() => {
+    axios
+      .get("http://akhanta.herokuapp.com/api/v1/associates/")
+      .then((response) => setData(response.data.results));
+  }, []);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     setIsSubmitting(true);
 
-    const baseUrl = "http://localhost:8080/api/v1/associates/";
+    const baseUrl = "http://akhanta.herokuapp.com/api/v1/associates/";
 
     const dataBanner = new FormData();
     dataBanner.append("banner", banner);
@@ -250,27 +258,29 @@ const AssociateForm = () => {
               <th>#</th>
               <th>Nombre</th>
               <th>Descripción</th>
-              <th>Username</th>
+              <th>Links</th>
+              <th>Opciones</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Yoga Class</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td colSpan={2}>Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
+            {data &&
+              data.map((associate) => {
+                return (
+                  <tr>
+                    <td>{associate.id}</td>
+                    <td>{associate.name}</td>
+                    <td>{associate.description}</td>
+                    <td>
+                      {associate.links.map((link) => {
+                        return link.url + "\r\n";
+                      })}
+                    </td>
+                    <td>
+                      <AssociateModal />
+                    </td>
+                  </tr>
+                );
+              })}
           </tbody>
         </Table>
       </article>

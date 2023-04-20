@@ -69,12 +69,23 @@
 .footer-nav-media {
   display: flex;
   gap: 1rem;
+  font-size: 2rem;
+}
+.footer-nav-media-ig {
+  transition: color 0.1s ease-in-out;
 }
 
-.footer-nav-media p {
-  font-size: 32px;
+.footer-nav-media-telegram {
+  transition: color 0.1s ease-in-out;
 }
 
+.footer-nav-media-ig:hover {
+  color: #e128bf;
+}
+
+.footer-nav-media-telegram:hover {
+  color: #0088cc;
+}
 .contact-button {
   width: 60%;
   align-self: center;
@@ -92,7 +103,6 @@
   width: 25px;
 }
 
-
 @media (max-width: 768px) {
   .footer-section {
     background-image: url(../../assets/banner-footer1.jpg);
@@ -102,5 +112,4 @@
     height: fit-content;
     padding: 3rem 0 5rem 0;
   }
-  
 }

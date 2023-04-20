@@ -2,10 +2,9 @@ import React from "react";
 import "./AdminPanel.css";
 import { Link } from "react-router-dom";
 import { TiArrowLeft } from "react-icons/ti";
-import AssociateForm from "./forms/AssociateForm";
+import AssociateForm from "./forms/Associate/AssociateForm";
 
 function AdminPanel() {
- 
   return (
     <div className="container justify-content-center form-container">
       <Link to="/">

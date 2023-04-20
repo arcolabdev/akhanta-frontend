@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./Footer.css";
-import instagramIcon from "../../assets/icons/instagram.png";
-import WhatsappIcon from "../../assets/icons/whatsapp.png";
+import { BsWhatsapp } from "react-icons/bs";
+import { FiInstagram } from "react-icons/fi";
+import { BsTelegram } from "react-icons/bs";
 
 const Footer = () => {
   const [name, setName] = useState("");
@@ -9,8 +10,8 @@ const Footer = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const phoneNumber = "573142716508"; // Número de teléfono al que se enviará el mensaje
-    const whatsappMessage = `Hola, soy ${name} y quiero enviar el siguiente mensaje: ${message}`;
+    const phoneNumber = "543492690245"; // Número de teléfono al que se enviará el mensaje
+    const whatsappMessage = `Mensaje desde la web: Hola! Soy ${name} y quiero enviar el siguiente mensaje: ${message}`;
     const fullUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       whatsappMessage
     )}`;
@@ -43,25 +44,24 @@ const Footer = () => {
               ></textarea>
             </div>
             <button type="submit" className="contact-button">
-              <img
-                alt="whatsapp logo"
-                src={WhatsappIcon}
-                className="whatsapp-logo"
-              />
+              <BsWhatsapp style={{ fontSize: "1.5rem" }} />
             </button>
           </form>
           <div className="footer-nav-media">
-            <p>Siguenos... </p>
+            <p>También estamos en </p>
             <a
               href="https://www.instagram.com/akhanta.arg/"
               target="_blank"
               rel="noreferrer"
             >
-              <img
-                src={instagramIcon}
-                className="footer-nav-icon"
-                alt="insta_icon"
-              />
+              <FiInstagram className="footer-nav-media-ig" />
+            </a>
+            <a
+              href="https://t.me/tomasACaceres"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <BsTelegram className="footer-nav-media-telegram" />
             </a>
           </div>
         </div>
