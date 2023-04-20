@@ -45,11 +45,13 @@ const About = () => {
           </p>
         </div>
       </div>
-      <div>
+      
         <Link to=''>
-        <img src={mandala_right} alt="decoration" className="about-mandala" />
+          <div>
+            <img src={mandala_right} alt="decoration" className="about-mandala" />
+          </div>
         </Link>
-      </div>
+      
     </section>
   );
 };

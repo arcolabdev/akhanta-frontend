@@ -58,9 +58,10 @@
 
 .footer-section {
   background-image: url(../../assets/banner-footer1.jpg);
-  background-size: 140% auto;
+  background-size: cover;
   background-position-y: 56%;
   background-position-x: 90%;
+  background-repeat: no-repeat;
   height: fit-content;
   padding: 3rem 0 5rem 0;
 }
@@ -95,7 +96,7 @@
 @media (max-width: 768px) {
   .footer-section {
     background-image: url(../../assets/banner-footer1.jpg);
-    background-size: 200% auto;
+    background-size: cover;
     background-position-y: 56%;
     background-position-x: 50%;
     height: fit-content;
