@@ -3,6 +3,7 @@ import axios from "axios";
 import "./AdminPanel.css";
 import { Link } from "react-router-dom";
 import { ScaleLoader } from "react-spinners";
+import { TiArrowLeft } from "react-icons/ti";
 
 function Formulario() {
   const [name, setName] = useState("");
@@ -114,25 +115,14 @@ function Formulario() {
   return (
     <div className="container justify-content-center form-container">
       <Link to="/">
-        <button className="btn btn-secondary">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            className="bi bi-arrow-left"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fillRule="evenodd"
-              d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
-            />
-          </svg>{" "}
-          Volver a Inicio
-        </button>
+        <span><TiArrowLeft className="icon"
+          size="65px"
+          color="#C5D6E6"/>
+        </span>
       </Link>
+      <div className="form-container-div">
       <form onSubmit={handleSubmit}>
-        <div className="row mb-3 align-items-center">
+        <div className="row mb-3">
           <label htmlFor="name" className="col-sm-2 col-form-label">
             Nombre:
           </label>
@@ -146,7 +136,7 @@ function Formulario() {
             />
           </div>
         </div>
-        <div className="row mb-3 align-items-center">
+        <div className="row mb-3 ">
           <label htmlFor="description" className="col-sm-2 col-form-label">
             Descripción:
           </label>
@@ -163,7 +153,7 @@ function Formulario() {
           </div>
         </div>
         {inputs.map((input) => (
-          <div key={input.id} className="row mb-3 align-items-center">
+          <div key={input.id} className="row mb-3">
             <div className="col-sm-2">
               <label htmlFor="url" className="col-form-label">
                 Link {input.id + 1}:
@@ -188,6 +178,7 @@ function Formulario() {
                   <option value="INSTAGRAM">Instagram</option>
                   <option value="WHATSAPP">WhatsApp</option>
                   <option value="FACEBOOK">Facebook</option>
+                  <option value="TELEGRAM">Telegram</option>
                 </select>
               </div>
               {input.id === 0 && (
@@ -203,7 +194,7 @@ function Formulario() {
               )}
 
               {input.id !== 0 && (
-                <div className="col-sm-1 d-flex align-items-center justify-content-center">
+                <div className="col-sm-1 d-flex  justify-content-center">
                   <button
                     className="btn btn-danger mx-1"
                     onClick={() => eliminarInput(input.id)}
@@ -216,7 +207,7 @@ function Formulario() {
           </div>
         ))}
 
-        <div className="row mb-3 align-items-center">
+        <div className="row mb-3">
           <label htmlFor="banner-image" className="col-sm-2 col-form-label">
             Imagen de banner:
           </label>
@@ -231,7 +222,7 @@ function Formulario() {
             />
           </div>
         </div>
-        <div className="row mb-3 align-items-center">
+        <div className="row mb-3">
           <label htmlFor="profile-image" className="col-sm-2 col-form-label">
             Imagen de perfil:
           </label>
@@ -246,9 +237,10 @@ function Formulario() {
             />
           </div>
         </div>
-        <input type="submit" className="btn btn-success" value="Enviar"></input>
+        <input id="submit" type="submit" className="btn btn-outline-success" value="Enviar"></input>
       </form>
       {isSubmitting && <ScaleLoader color="#36d7b7" />}
+      </div>
     </div>
   );
 }

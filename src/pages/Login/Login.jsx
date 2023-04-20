@@ -1,11 +1,26 @@
 import React from "react";
 import logo from "../../assets/logo.png";
 import "./Login.css";
+import { TiArrowLeft } from "react-icons/ti";
+import { Link } from "react-router-dom";
+
+
 
 const Login = () => {
   return (
     <>
       <section className="login-context container">
+        <Link to="/">
+          <span><TiArrowLeft className="icon"
+            style={{
+            position: 'absolute',
+            top: '40px',
+            left: '40px',
+          }}
+            size="65px"
+            color="#C5D6E6"/>
+          </span>
+        </Link>
         <section className="header">
           <img src={logo} alt="logo" />
         </section>
