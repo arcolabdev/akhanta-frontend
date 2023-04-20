@@ -264,15 +264,28 @@ const AssociateForm = () => {
           </thead>
           <tbody>
             {data &&
-              data.map((associate) => {
+              data.map((associate, index) => {
                 return (
-                  <tr>
-                    <td>{associate.id}</td>
+                  <tr key={index}>
+                    <td>{index + 1}</td>
                     <td>{associate.name}</td>
-                    <td>{associate.description}</td>
+                    <td>{associate.description.substring(0, 111) + "..."}</td>
                     <td>
                       {associate.links.map((link) => {
-                        return link.url + "\r\n";
+                        return (
+                          <a
+                            key={link.id}
+                            href={"https://" + link.url}
+                            target="_blank"
+                            style={{
+                              color: "blue",
+                              textDecoration: "underline",
+                            }}
+                          >
+                            {link.url}
+                            <br />
+                          </a>
+                        );
                       })}
                     </td>
                     <td>

@@ -5,22 +5,26 @@ import Modal from "react-bootstrap/Modal";
 import { FaEdit, FaTrash } from "react-icons/fa/";
 
 function AssociateModal() {
-  const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const [showEdit, setShowEdit] = useState(false);
+  const handleCloseEdit = () => setShowEdit(false);
+  const handleshowEdit = () => setShowEdit(true);
+
+  const [showDelete, setShowDelete] = useState(false);
+  const handleCloseDelete = () => setShowDelete(false);
+  const handleshowDelete = () => setShowDelete(true);
 
   return (
     <>
-      <Button variant="info" onClick={handleShow}>
+      <Button variant="info" onClick={handleshowEdit}>
         <FaEdit />
       </Button>
 
-      <Button variant="danger" onClick={handleShow}>
+      <Button variant="danger" onClick={handleshowDelete}>
         <FaTrash />
       </Button>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={showEdit} onHide={handleCloseEdit}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Editar Asociado</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form>
@@ -42,24 +46,24 @@ function AssociateModal() {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" onClick={handleCloseEdit}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" onClick={handleCloseEdit}>
             Save Changes
           </Button>
         </Modal.Footer>
       </Modal>
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={showDelete} onHide={handleCloseDelete}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Eliminar Asociado</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Body>Seguro que deseas eliminar el Asociado?</Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="secondary" onClick={handleCloseDelete}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleClose}>
+          <Button variant="primary" onClick={handleCloseDelete}>
             Save Changes
           </Button>
         </Modal.Footer>
