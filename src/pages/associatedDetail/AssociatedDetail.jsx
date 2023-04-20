@@ -14,7 +14,7 @@ const AssociatedDetail = () => {
 
     useEffect(() => {
         axios
-            .get(`http://localhost:8080/api/v1/associates/${id}`)
+            .get(`http://akhanta.herokuapp.com/api/v1/associates/${id}`)
             .then((res) => {
                 setAssociated(res.data);
             })
