@@ -5,7 +5,7 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { FaEdit, FaTrash } from "react-icons/fa/";
 
-function AssociateModal({ associateId }) {
+function AssociateModal({ associateId, associateName }) {
   const [showEdit, setShowEdit] = useState(false);
   const handleCloseEdit = () => setShowEdit(false);
   const handleshowEdit = () => setShowEdit(true);
@@ -66,10 +66,10 @@ function AssociateModal({ associateId }) {
         <Modal.Header closeButton>
           <Modal.Title>Eliminar Asociado</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Seguro que deseas eliminar el Asociado?</Modal.Body>
+        <Modal.Body>Seguro que deseas eliminar {associateName}?</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleCloseDelete}>
-            Cerrar
+            Cancelar
           </Button>
           <Button variant="danger" onClick={() => handleDelete(associateId)}>
             Eliminar

@@ -281,7 +281,7 @@ const AssociateForm = () => {
                       })}
                     </td>
                     <td>
-                      <AssociateModal associateId={associate.id} />
+                      <AssociateModal associateId={associate.id} associateName={associate.name} />
                     </td>
                   </tr>
                 );
