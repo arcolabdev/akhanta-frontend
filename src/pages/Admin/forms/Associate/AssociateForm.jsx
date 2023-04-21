@@ -3,6 +3,8 @@ import axios from "axios";
 import { ScaleLoader } from "react-spinners";
 import { Table } from "react-bootstrap";
 import AssociateModal from "./AssociateModal";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
 const AssociateForm = () => {
   const [data, setData] = useState([]);
@@ -11,22 +13,27 @@ const AssociateForm = () => {
   const [banner, setBanner] = useState(null);
   const [profile, setProfile] = useState(null);
   const [inputs, setInputs] = useState([
-    { id: 0, texto: "", opcion: "INSTAGRAM" },
+    { id: 0, url: "", option: "INSTAGRAM" },
   ]);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [completed, setCompleted] = useState(false);
+  const [validated, setValidated] = useState(false);
+
+  const baseUrl = "http://localhost:8080/api/v1/associates/";
 
   useEffect(() => {
-    axios
-      .get("http://akhanta.herokuapp.com/api/v1/associates/")
-      .then((response) => setData(response.data.results));
+    axios.get(baseUrl).then((response) => setData(response.data.results));
   }, []);
 
   const handleSubmit = async (event) => {
+    console.log("Handle submit running");
     event.preventDefault();
-    setIsSubmitting(true);
+    if (event.currentTarget.checkValidity() === false) {
+      event.stopPropagation();
+    }
 
-    const baseUrl = "http://akhanta.herokuapp.com/api/v1/associates/";
+    setValidated(true);
+    setIsSubmitting(true);
 
     const dataBanner = new FormData();
     dataBanner.append("banner", banner);
@@ -36,8 +43,8 @@ const AssociateForm = () => {
 
     const links = inputs.map((input) => {
       return {
-        url: input.texto,
-        tag: input.opcion,
+        url: input.url,
+        tag: input.option,
       };
     });
 
@@ -48,33 +55,32 @@ const AssociateForm = () => {
       user_id: 1,
     };
 
+    let idResponse = 0;
+
     try {
       console.log("Associate POST");
-      const newAssociateResponse = await axios.post(baseUrl, payload, {
+      const newAssociateResponse = await axios
+        .post(baseUrl, payload, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+        .then((data) => {
+          idResponse = data.data.results.id;
+          console.log(idResponse);
+        });
+
+      await axios.post(baseUrl + idResponse + "/profile", dataProfile, {
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "multipart/form-data",
         },
       });
 
-      await axios.post(
-        baseUrl + newAssociateResponse.data.results.id + "/banner",
-        dataBanner,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
-
-      await axios.post(
-        baseUrl + newAssociateResponse.data.results.id + "/profile",
-        dataProfile,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      await axios.post(baseUrl + idResponse + "/banner", dataBanner, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
 
       setCompleted(true);
     } catch (error) {
@@ -82,20 +88,20 @@ const AssociateForm = () => {
     }
   };
 
-  const agregarInput = () => {
-    const newInput = { id: inputs.length, texto: "", opcion: "INSTAGRAM" };
+  const addInput = () => {
+    const newInput = { id: inputs.length, url: "", option: "INSTAGRAM" };
     setInputs((prevInputs) => [...prevInputs, newInput]);
   };
 
-  const eliminarInput = (id) => {
+  const deleteInput = (id) => {
     setInputs(inputs.filter((input) => input.id !== id));
   };
 
-  const actualizarTexto = (id, texto) => {
+  const updateUrl = (id, url) => {
     setInputs(
       inputs.map((input) => {
         if (input.id === id) {
-          return { ...input, texto };
+          return { ...input, url };
         } else {
           return input;
         }
@@ -103,11 +109,11 @@ const AssociateForm = () => {
     );
   };
 
-  const actualizarOpcion = (id, opcion) => {
+  const updateOption = (id, option) => {
     setInputs(
       inputs.map((input) => {
         if (input.id === id) {
-          return { ...input, opcion };
+          return { ...input, option };
         } else {
           return input;
         }
@@ -123,129 +129,112 @@ const AssociateForm = () => {
     <section>
       <h1>Asociados</h1>
       <article className="form-container-div">
-        <form onSubmit={handleSubmit}>
-          <div className="row mb-3">
-            <label htmlFor="name" className="col-sm-2 col-form-label">
-              Nombre:
-            </label>
-            <div className="col-sm-10">
-              <input
-                type="text"
-                className="form-control"
-                id="name"
-                name="name"
-                onChange={(e) => setName(e.target.value)}
-              />
-            </div>
-          </div>
-          <div className="row mb-3 ">
-            <label htmlFor="description" className="col-sm-2 col-form-label">
-              Descripción:
-            </label>
-            <div className="col-sm-10">
-              <textarea
-                type="text"
-                className="form-control"
-                style={{ resize: "none" }}
-                id="description"
-                name="description"
-                rows="3"
-                onChange={(e) => setDescription(e.target.value)}
-              />
-            </div>
-          </div>
-          {inputs.map((input) => (
-            <div key={input.id} className="row mb-3">
-              <div className="col-sm-2">
-                <label htmlFor="url" className="col-form-label">
-                  Link {input.id + 1}:
-                </label>
-              </div>
-              <div className="col-sm-10 d-flex">
-                <input
-                  className="form-control"
-                  value={input.texto}
-                  onChange={(event) =>
-                    actualizarTexto(input.id, event.target.value)
-                  }
-                />
+        <Form validated={validated} onSubmit={handleSubmit}>
+          <Form.Group className="mb-3" controlId="formBasicName">
+            <Form.Label>Id</Form.Label>
+            <Form.Control
+              disabled
+              type="text"
+              onChange={(e) => setName(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicName">
+            <Form.Label>Nombre</Form.Label>
+            <Form.Control
+              required
+              type="text"
+              onChange={(e) => setName(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicDescription">
+            <Form.Label>Descripción</Form.Label>
+            <Form.Control
+              required
+              as="textarea"
+              rows={4}
+              style={{ resize: "none" }}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group>
+            {inputs.map((input) => (
+              <div key={input.id} className="row mb-3">
                 <div className="col-sm-2">
-                  <select
-                    className="form-select"
-                    value={input.opcion}
-                    onChange={(event) =>
-                      actualizarOpcion(input.id, event.target.value)
-                    }
-                  >
-                    <option value="INSTAGRAM">Instagram</option>
-                    <option value="WHATSAPP">WhatsApp</option>
-                    <option value="FACEBOOK">Facebook</option>
-                    <option value="TELEGRAM">Telegram</option>
-                  </select>
+                  <Form.Label>Link {input.id + 1}:</Form.Label>
                 </div>
-                {input.id === 0 && (
-                  <div className="col-sm-1 d-flex align-items-center justify-content-center">
-                    <button
-                      type="button"
-                      className="btn btn-primary mx-1"
-                      onClick={() => agregarInput()}
-                    >
-                      +
-                    </button>
-                  </div>
-                )}
+                <div className="col-sm-10 d-flex">
+                  <Form.Control
+                    required
+                    type="text"
+                    className="form-control"
+                    value={input.url}
+                    onChange={(event) =>
+                      updateUrl(input.id, event.target.value)
+                    }
+                  />
 
-                {input.id !== 0 && (
-                  <div className="col-sm-1 d-flex  justify-content-center">
-                    <button
-                      className="btn btn-danger mx-1"
-                      onClick={() => eliminarInput(input.id)}
+                  <div className="col-sm-2">
+                    <Form.Select
+                      value={input.option}
+                      onChange={(event) =>
+                        updateOption(input.id, event.target.value)
+                      }
                     >
-                      -
-                    </button>
+                      <option value="INSTAGRAM">Instagram</option>
+                      <option value="WHATSAPP">WhatsApp</option>
+                      <option value="FACEBOOK">Facebook</option>
+                      <option value="TELEGRAM">Telegram</option>
+                    </Form.Select>
                   </div>
-                )}
+                  {input.id === 0 && (
+                    <div className="col-sm-1 d-flex align-items-center justify-content-center">
+                      <Button
+                        variant="primary"
+                        type="button"
+                        className="btn mx-1"
+                        onClick={() => addInput()}
+                      >
+                        +
+                      </Button>
+                    </div>
+                  )}
+
+                  {input.id !== 0 && (
+                    <div className="col-sm-1 d-flex  justify-content-center">
+                      <Button
+                        variant="danger"
+                        className="btn mx-1"
+                        onClick={() => deleteInput(input.id)}
+                      >
+                        -
+                      </Button>
+                    </div>
+                  )}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </Form.Group>
+          <Form.Group controlId="formBanner" className="mb-3">
+            <Form.Label>Imagen de banner</Form.Label>
+            <Form.Control
+              required
+              type="file"
+              onChange={(e) => setBanner(e.target.value)}
+            />
+          </Form.Group>
+          <Form.Group controlId="formProfile" className="mb-3">
+            <Form.Label>Imagen de perfil</Form.Label>
+            <Form.Control
+              required
+              type="file"
+              onChange={(e) => setProfile(e.target.value)}
+            />
+          </Form.Group>
 
-          <div className="row mb-3">
-            <label htmlFor="banner-image" className="col-sm-2 col-form-label">
-              Imagen de banner:
-            </label>
-            <div className="col-sm-10">
-              <input
-                type="file"
-                className="form-control"
-                id="banner-image"
-                name="banner-image"
-                accept="image/*"
-                onChange={(event) => setBanner(event.target.files[0])}
-              />
-            </div>
-          </div>
-          <div className="row mb-3">
-            <label htmlFor="profile-image" className="col-sm-2 col-form-label">
-              Imagen de perfil:
-            </label>
-            <div className="col-sm-10">
-              <input
-                type="file"
-                className="form-control"
-                id="profile-image"
-                name="profile-image"
-                accept="image/*"
-                onChange={(event) => setProfile(event.target.files[0])}
-              />
-            </div>
-          </div>
-          <input
-            id="submit"
-            type="submit"
-            className="btn btn-outline-success"
-            value="Enviar"
-          ></input>
-        </form>
+          <Button variant="primary" type="submit">
+            Enviar
+          </Button>
+        </Form>
         {isSubmitting && <ScaleLoader color="#36d7b7" />}
       </article>
       <br />
@@ -277,6 +266,7 @@ const AssociateForm = () => {
                             key={link.id}
                             href={"https://" + link.url}
                             target="_blank"
+                            rel="noreferrer"
                             style={{
                               color: "blue",
                               textDecoration: "underline",
@@ -289,7 +279,7 @@ const AssociateForm = () => {
                       })}
                     </td>
                     <td>
-                      <AssociateModal />
+                      <AssociateModal associateId={associate.id} />
                     </td>
                   </tr>
                 );

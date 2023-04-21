@@ -1,10 +1,11 @@
+import axios from "axios";
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { FaEdit, FaTrash } from "react-icons/fa/";
 
-function AssociateModal() {
+function AssociateModal({ associateId }) {
   const [showEdit, setShowEdit] = useState(false);
   const handleCloseEdit = () => setShowEdit(false);
   const handleshowEdit = () => setShowEdit(true);
@@ -12,6 +13,13 @@ function AssociateModal() {
   const [showDelete, setShowDelete] = useState(false);
   const handleCloseDelete = () => setShowDelete(false);
   const handleshowDelete = () => setShowDelete(true);
+
+  const handleDelete = (id) => {
+    axios
+      .delete("http://akhanta.herokuapp.com/api/v1/associates/" + id)
+      .then((data) => console.log(data));
+    setShowDelete(false);
+  };
 
   return (
     <>
@@ -22,7 +30,7 @@ function AssociateModal() {
       <Button variant="danger" onClick={handleshowDelete}>
         <FaTrash />
       </Button>
-      <Modal show={showEdit} onHide={handleCloseEdit}>
+      <Modal show={showEdit} onHide={handleshowDelete}>
         <Modal.Header closeButton>
           <Modal.Title>Editar Asociado</Modal.Title>
         </Modal.Header>
@@ -49,7 +57,7 @@ function AssociateModal() {
           <Button variant="secondary" onClick={handleCloseEdit}>
             Close
           </Button>
-          <Button variant="primary" onClick={handleCloseEdit}>
+          <Button variant="primary" onClick={handleDelete}>
             Save Changes
           </Button>
         </Modal.Footer>
@@ -61,10 +69,10 @@ function AssociateModal() {
         <Modal.Body>Seguro que deseas eliminar el Asociado?</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleCloseDelete}>
-            Close
+            Cerrar
           </Button>
-          <Button variant="primary" onClick={handleCloseDelete}>
-            Save Changes
+          <Button variant="danger" onClick={() => handleDelete(associateId)}>
+            Eliminar
           </Button>
         </Modal.Footer>
       </Modal>
