@@ -19,7 +19,7 @@ const AssociateForm = () => {
   const [completed, setCompleted] = useState(false);
   const [validated, setValidated] = useState(false);
 
-  const baseUrl = "http://localhost:8080/api/v1/associates/";
+  const baseUrl = "http://ahkanta.herokuapp.com/api/v1/associates/";
 
   useEffect(() => {
     axios.get(baseUrl).then((response) => setData(response.data.results));
@@ -59,7 +59,7 @@ const AssociateForm = () => {
 
     try {
       console.log("Associate POST");
-      const newAssociateResponse = await axios
+      await axios
         .post(baseUrl, payload, {
           headers: {
             "Content-Type": "application/json",
@@ -219,7 +219,8 @@ const AssociateForm = () => {
             <Form.Control
               required
               type="file"
-              onChange={(e) => setBanner(e.target.value)}
+              accept="image/*"
+              onChange={(e) => setBanner(e.target.files[0])}
             />
           </Form.Group>
           <Form.Group controlId="formProfile" className="mb-3">
@@ -227,7 +228,8 @@ const AssociateForm = () => {
             <Form.Control
               required
               type="file"
-              onChange={(e) => setProfile(e.target.value)}
+              accept="image/*"
+              onChange={(e) => setProfile(e.target.files[0])}
             />
           </Form.Group>
 
