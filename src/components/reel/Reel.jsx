@@ -3,46 +3,10 @@ import "./Reel.css";
 import reel from "../../assets/reel.png";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
+import axios from "axios";
 
 const handleDragStart = (e) => e.preventDefault();
 
-const images = [
-  <img
-    src={reel}
-    width={"100%"}
-    onDragStart={handleDragStart}
-    role="presentation"
-    alt=""
-  />,
-  <img
-    src={reel}
-    width={"100%"}
-    onDragStart={handleDragStart}
-    role="presentation"
-    alt=""
-  />,
-  <img
-    src={reel}
-    width={"100%"}
-    onDragStart={handleDragStart}
-    role="presentation"
-    alt=""
-  />,
-  <img
-    src={reel}
-    width={"100%"}
-    onDragStart={handleDragStart}
-    role="presentation"
-    alt=""
-  />,
-  <img
-    src={reel}
-    width={"100%"}
-    onDragStart={handleDragStart}
-    role="presentation"
-    alt=""
-  />,
-];
 const responsive = {
   0: {
     items: 1,
@@ -61,17 +25,28 @@ const Reel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isNext, setIsNext] = useState(true);
   const [isPrev, setIsPrev] = useState(false);
+  const [associates, setAssociates] = useState([]);
 
-  // const [items] = useState(createItems(5, [setActiveIndex]));
-  const length = images.length;
   const slidePrev = () => setActiveIndex(activeIndex - 1);
   const slideNext = () => setActiveIndex(activeIndex + 1);
   const syncActiveIndex = ({ item }) => setActiveIndex(item);
 
   useEffect(() => {
-    if (activeIndex === length) {
+    axios
+      .get("http://localhost:8080/api/v1/associates/")
+      .then((response) => {
+        setAssociates(response.data.results);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+  
+
+  useEffect(() => {
+    if (activeIndex === associates.length - 1) {
       setIsNext(false);
-    } else if (activeIndex < 5) {
+    } else if (activeIndex < associates.length - 1) {
       setIsNext(true);
     }
     if (activeIndex === 0) {
@@ -79,7 +54,18 @@ const Reel = () => {
     } else if (activeIndex > 0) {
       setIsPrev(true);
     }
-  }, [activeIndex]);
+  }, [activeIndex, associates]);
+
+  const images = associates.map((associate) => (
+    <img
+      src={associate.profile}
+      width={"100%"}
+      onDragStart={handleDragStart}
+      role="presentation"
+      alt=""
+    />
+  ));
+
 
   return (
     <>
