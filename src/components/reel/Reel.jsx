@@ -27,7 +27,7 @@ const Reel = () => {
   const [isNext, setIsNext] = useState(true);
   const [isPrev, setIsPrev] = useState(false);
   const [associates, setAssociates] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  
 
   const slidePrev = () => setActiveIndex(activeIndex - 1);
   const slideNext = () => setActiveIndex(activeIndex + 1);
@@ -38,11 +38,11 @@ const Reel = () => {
       .get(API_ROOT)
       .then((response) => {
         setAssociates(response.data.results);
-        setIsLoading(false);
+        
       })
       .catch((error) => {
         console.log(error);
-        setIsLoading(false);
+        
       });
   }, []);
 

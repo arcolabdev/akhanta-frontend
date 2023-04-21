@@ -59,8 +59,8 @@ const AssociateForm = () => {
 
     try {
       console.log("Associate POST");
-      const newAssociateResponse = await axios
-        .post(baseUrl, payload, {
+      // const newAssociateResponse = await axios
+       axios.post(baseUrl, payload, {
           headers: {
             "Content-Type": "application/json",
           },
