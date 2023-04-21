@@ -5,7 +5,7 @@ import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import axios from "axios";
 
-const API_ROOT = "http://localhost:8080/api/v1/associates/";
+const API_ROOT = "https://akhanta.herokuapp.com/api/v1/associates/";
 const handleDragStart = (e) => e.preventDefault();
 
 const responsive = {
@@ -27,7 +27,6 @@ const Reel = () => {
   const [isNext, setIsNext] = useState(true);
   const [isPrev, setIsPrev] = useState(false);
   const [associates, setAssociates] = useState([]);
-  
 
   const slidePrev = () => setActiveIndex(activeIndex - 1);
   const slideNext = () => setActiveIndex(activeIndex + 1);
@@ -38,14 +37,11 @@ const Reel = () => {
       .get(API_ROOT)
       .then((response) => {
         setAssociates(response.data.results);
-        
       })
       .catch((error) => {
         console.log(error);
-        
       });
   }, []);
-
 
   useEffect(() => {
     if (activeIndex === associates.length - 1) {
@@ -69,7 +65,6 @@ const Reel = () => {
       alt=""
     />
   ));
-
 
   return (
     <>

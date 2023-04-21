@@ -19,7 +19,7 @@ const AssociateForm = () => {
   const [completed, setCompleted] = useState(false);
   const [validated, setValidated] = useState(false);
 
-  const baseUrl = "http://ahkanta.herokuapp.com/api/v1/associates/";
+  const baseUrl = "https://akhanta.herokuapp.com/api/v1/associates/";
 
   useEffect(() => {
     axios.get(baseUrl).then((response) => setData(response.data.results));
