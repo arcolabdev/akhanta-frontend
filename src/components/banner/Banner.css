@@ -2,7 +2,7 @@
   display: flex;
   position: relative;
   top: 80px;
-  width: fit-content;
+  width: 100%;
 }
 
 .banner-flex {
@@ -16,21 +16,142 @@
 }
 
 .banner-title {
-  font-size: 4.5rem;
   line-height: 100px;
+  display: flex;
+}
+
+.banner-title-text {
+  font-size: 6rem;
+}
+
+.banner-title-text-2 {
+  font-size: 2.6rem;
 }
 
 .banner-title-quotes {
   font-size: 5rem;
 }
 
-.banner-title-phrase-2 {
-  font-size: 2.3rem;
-}
-
-.banner-author {
+.banner-title-author {
   width: 100%;
-  font-size: larger;
+  font-size: 1.5rem;
   text-align: end;
   justify-self: flex-end;
+}
+
+@media (max-width: 1440px) {
+  .banner-title-text {
+    font-size: 5rem;
+  }
+
+  .banner-title-text-2 {
+    font-size: 2.15rem;
+  }
+
+  .banner-title-quotes {
+    font-size: 4rem;
+  }
+
+  .banner-title-author {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .banner-title-text {
+    font-size: 4.2rem;
+  }
+
+  .banner-title-text-2 {
+    font-size: 1.8rem;
+  }
+
+  .banner-title-quotes {
+    font-size: 3rem;
+  }
+
+  .banner-title-author {
+    font-size: 1.3rem;
+  }
+
+  .banner-flex {
+    width: 55%;
+  }
+}
+
+@media (max-width: 779px) {
+  
+  .banner-title{
+    line-height: 90px;
+  }
+  .banner-title-text {
+    font-size: 3.5rem;
+  }
+
+  .banner-title-text-2 {
+    font-size: 1.8rem;
+  }
+
+  .banner-title-quotes {
+    font-size: 3rem;
+  }
+
+  .banner-title-author {
+    font-size: 1.3rem;
+  }
+  .banner-flex {
+    width: 65%;
+    line-height: 2.5rem;
+  }
+
+  .banner-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+}
+
+@media (max-width: 577px){
+  .banner-title{
+    line-height: 80px;
+  }
+  .banner-title-text {
+    font-size: 3rem;
+  }
+
+  .banner-title-text-2 {
+    font-size: 1.4rem;
+  }
+
+  .banner-title-quotes {
+    font-size: 1.5rem;
+  }
+
+  .banner-title-author {
+    font-size: 1.1rem;
+  }
+  .banner-flex {
+    width: 65%;
+    line-height: 2rem;
+  }
+
+  .banner-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 496px){
+  .banner-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+  }
+
+  .banner-title-text{
+    text-align: right;
+  }
 }

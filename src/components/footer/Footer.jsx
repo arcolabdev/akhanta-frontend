@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./Footer.css";
-import instagramIcon from "../../assets/icons/instagram.png";
+import { BsWhatsapp } from "react-icons/bs";
+import { FiInstagram } from "react-icons/fi";
+import { BsTelegram } from "react-icons/bs";
 
 const Footer = () => {
   const [name, setName] = useState("");
@@ -8,8 +10,8 @@ const Footer = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const phoneNumber = "573142716508"; // Número de teléfono al que se enviará el mensaje
-    const whatsappMessage = `Hola, soy ${name} y quiero enviar el siguiente mensaje: ${message}`;
+    const phoneNumber = "543492690245"; // Número de teléfono al que se enviará el mensaje
+    const whatsappMessage = `Mensaje desde la web: Hola! Soy ${name} y quiero enviar el siguiente mensaje: ${message}`;
     const fullUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       whatsappMessage
     )}`;
@@ -19,7 +21,7 @@ const Footer = () => {
   return (
     <footer className="footer-section" id="contact">
       <div className="footer-content container">
-        <span className="footer-title">Contáctanos</span>
+        <span className="footer-title">Escríbinos</span>
         <div className="footer-box">
           <form className="footer-form" onSubmit={handleSubmit}>
             <div className="footer-form-div">
@@ -42,13 +44,24 @@ const Footer = () => {
               ></textarea>
             </div>
             <button type="submit" className="contact-button">
-              Enviar
+              <BsWhatsapp style={{ fontSize: "1.5rem" }} />
             </button>
           </form>
           <div className="footer-nav-media">
-            <p>Siguenos... </p>
-            <a href="https://www.instagram.com/akhanta.arg/" target="_blank" rel="noreferrer">
-              <img src={instagramIcon} className="footer-nav-icon" alt="insta_icon"/>
+            <p>También estamos en </p>
+            <a
+              href="https://www.instagram.com/akhanta.arg/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FiInstagram className="footer-nav-media-ig" />
+            </a>
+            <a
+              href="https://t.me/tomasACaceres"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <BsTelegram className="footer-nav-media-telegram" />
             </a>
           </div>
         </div>

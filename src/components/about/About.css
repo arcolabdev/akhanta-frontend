@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-around;
   line-height: 2rem;
+  align-items: center;
 }
 
 .about-content {
@@ -32,4 +33,32 @@
   text-align: center;
   width: 80%;
   margin: 0;
+  font-size: larger;
+}
+
+@media (min-width: 1450px) {
+  .about-content div p {
+    width: 50%;
+  }
+}
+
+@media (max-width: 1012px) {
+  .about-content div p {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-mandala {
+    width: 100px;
+  }
+
+  .about-container {
+    align-items: center;
+  }
+
+  .about-content div p {
+    text-align: justify;
+    width: 75%;
+  }
 }

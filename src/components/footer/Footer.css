@@ -30,8 +30,8 @@
 }
 
 .footer-form input,
-textarea,
-button {
+.footer-form textarea,
+.footer-form button {
   font-family: "Times";
   font-weight: 700;
   background: rgba(255, 255, 255, 0.8);
@@ -50,35 +50,64 @@ button {
   color: white;
   font-size: large;
   font-weight: 600;
+  transition: background-color 0.2s ease-in-out;
+}
+.footer-form button:hover {
+  background-color: #646f6b;
 }
 
 .footer-section {
-  height: auto;
-  background-image: url(../../assets//banner-footer.png);
-  background-size: 140% auto;
+  background-image: url(../../assets/banner-footer.jpg);
+  background-size: cover;
   background-position-y: 56%;
   background-position-x: 90%;
-  height: fit-content;
   padding: 3rem 0 5rem 0;
 }
 
 .footer-nav-media {
   display: flex;
   gap: 1rem;
+  font-size: 2rem;
+}
+.footer-nav-media-ig {
+  transition: color 0.1s ease-in-out;
 }
 
-.footer-nav-media p {
-  font-size: 38px;
+.footer-nav-media-telegram {
+  transition: color 0.1s ease-in-out;
 }
 
+.footer-nav-media-ig:hover {
+  color: #e128bf;
+}
+
+.footer-nav-media-telegram:hover {
+  color: #0088cc;
+}
 .contact-button {
   width: 60%;
   align-self: center;
   padding: 5px;
   font-size: inherit;
+  cursor: pointer;
 }
 
 .footer-nav-icon {
   width: auto;
   height: 50px;
+}
+
+.whatsapp-logo {
+  width: 25px;
+}
+
+@media (max-width: 768px) {
+  .footer-section {
+    background-image: url(../../assets/banner-footer.jpg);
+    background-size: cover;
+    background-position-y: 56%;
+    background-position-x: 50%;
+    height: fit-content;
+    padding: 3rem 0 5rem 0;
+  }
 }

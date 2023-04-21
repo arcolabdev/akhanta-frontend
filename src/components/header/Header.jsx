@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "./Header.css";
 import logo from "../../assets/logo.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [activeNav, setActiveNav] = useState("#home");
+  
 
   return (
     <header className="header-content container">
@@ -27,7 +29,7 @@ const Header = () => {
               className={
                 activeNav === "#associate"
                   ? "nav__link active-link"
-                  : "nav__link"
+                  : "nav__link "
               }
             >
               Asociados
@@ -35,7 +37,7 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      <img className="header-logo" src={logo} width={150} height={70} alt="" />
+      <img className="header-logo" src={logo} width={150} height={85} alt="" />
       <nav className="header-nav">
         <ul>
           <li>
@@ -49,7 +51,11 @@ const Header = () => {
               Contacto
             </a>
           </li>
-          <li>Login</li>
+          <li>
+            <Link to="/login">
+              <button className="login-button">Login</button>
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>

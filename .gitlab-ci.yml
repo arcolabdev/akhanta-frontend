@@ -28,4 +28,3 @@ netlify:
         - netlify deploy --dir=build --prod
     only:
         - main
-
