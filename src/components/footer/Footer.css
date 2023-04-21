@@ -57,12 +57,10 @@
 }
 
 .footer-section {
-  background-image: url(../../assets/banner-footer1-optimizado.jpeg);
+  background-image: url(../../assets/banner-footer.jpg);
   background-size: cover;
   background-position-y: 56%;
   background-position-x: 90%;
-  background-repeat: no-repeat;
-  height: fit-content;
   padding: 3rem 0 5rem 0;
 }
 
