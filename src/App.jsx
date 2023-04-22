@@ -3,7 +3,7 @@ import Login from "./pages/Login/Login";
 import AssociatedDetail from "./pages/associatedDetail/AssociatedDetail";
 import Home from "./pages/home/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AssociatePanel from "./pages/Admin/AssociatePanel";
+import AssociatePanel from "./pages/admin/AssociatePanel";
 import { MyContextProvider } from "./Context";
 
 function App() {
