@@ -1,33 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext} from 'react'
 import Header from '../../components/header/Header'
 import './AssociatedDetail.css'
 import { FaInstagram, FaFacebookF, } from 'react-icons/fa'
 import { MdArrowBackIosNew, MdWhatsapp } from 'react-icons/md'
-import { Link, useParams } from 'react-router-dom';
-import axios from "axios"
+import { Link} from 'react-router-dom';
+import { Context } from '../../Context'
 
 
 const AssociatedDetail = () => {
 
-    const [associated, setAssociated] = useState(null)
-    const { id } = useParams();
+    const {dataById} = useContext(Context)
 
-    useEffect(() => {
-        axios
-            .get(`http://akhanta.herokuapp.com/api/v1/associates/${id}`)
-            .then((res) => {
-                setAssociated(res.data);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    }, [id]);
-
-    if (!associated) {
+    if (!dataById) {
         return null; 
       }
 
-    const { banner, description, name, links } = associated.results || {};
+    const { banner, description, name, links } = dataById.results || {};
 
     return (
         <>

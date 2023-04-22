@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { TiArrowLeft } from "react-icons/ti";
-import AssociateForm from "./forms/associate/AssociateForm";
 import { Table } from "react-bootstrap";
 import "./AssociatePanel.css";
+import AssociateForm from "./forms/Associate/AssociateForm";
 
 function AssociatePanel() {
   const [data, setData] = useState([]);
