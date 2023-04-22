@@ -56,11 +56,7 @@ const Footer = () => {
             >
               <FiInstagram className="footer-nav-media-ig" />
             </a>
-            <a
-              href="https://t.me/tomasACaceres"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="https://t.me/aknta" target="_blank" rel="noreferrer">
               <BsTelegram className="footer-nav-media-telegram" />
             </a>
           </div>
