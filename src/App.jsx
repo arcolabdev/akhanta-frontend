@@ -4,7 +4,7 @@ import AssociatedDetail from "./pages/associatedDetail/AssociatedDetail";
 import Home from "./pages/home/Home";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AdminPanel from "./pages/Admin/AdminPanel";
+import AssociatePanel from "./pages/admin/AssociatePanel";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/associated/:id" element={<AssociatedDetail />} />
-          <Route path="/admin" element={<AdminPanel />} />
+          <Route path="/admin" element={<AssociatePanel />} />
         </Routes>
       </div>
     </BrowserRouter>

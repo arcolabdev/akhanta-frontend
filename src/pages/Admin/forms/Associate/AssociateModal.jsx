@@ -30,7 +30,7 @@ function AssociateModal({ associateId, associateName }) {
       <Button variant="danger" onClick={handleshowDelete}>
         <FaTrash />
       </Button>
-      <Modal show={showEdit} onHide={handleshowDelete}>
+      <Modal show={showEdit} onHide={handleCloseEdit}>
         <Modal.Header closeButton>
           <Modal.Title>Editar Asociado</Modal.Title>
         </Modal.Header>
