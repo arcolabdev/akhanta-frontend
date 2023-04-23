@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import logo from "../../assets/logo.png";
 import "./Login.css";
 import { TiArrowLeft } from "react-icons/ti";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 
 

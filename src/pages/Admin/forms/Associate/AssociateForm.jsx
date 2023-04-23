@@ -64,6 +64,7 @@ const AssociateForm = ({ edit, associate }) => {
             },
           })
           .then((data) => {
+            console.log("updated");
             idResponse = data.data.results.id;
           });
       }
@@ -97,7 +98,7 @@ const AssociateForm = ({ edit, associate }) => {
       setIsSubmitting(false);
     }
 
-    window.location.reload();
+    // window.location.reload();
   };
 
   const addInput = () => {
