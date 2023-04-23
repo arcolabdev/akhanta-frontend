@@ -6,9 +6,10 @@ import { Table } from "react-bootstrap";
 import "./AssociatePanel.css";
 import AssociateForm from "./forms/associate/AssociateForm";
 
+import AssociateModal from "./forms/associate/AssociateModal";
+
 function AssociatePanel() {
   const [data, setData] = useState([]);
-
   const baseUrl = "https://akhanta.herokuapp.com/api/v1/associates/";
 
   const peticionGet = () => {
@@ -44,7 +45,7 @@ function AssociatePanel() {
               data.map((associate, index) => {
                 return (
                   <tr key={index}>
-                    <td>{index + 1}</td>
+                    <td>{associate.id}</td>
                     <td>{associate.name}</td>
                     <td>
                       {associate.description > 100
@@ -70,7 +71,13 @@ function AssociatePanel() {
                         );
                       })}
                     </td>
-                    <td><AssociateForm edit={true} associate={data ? associate : ""}/></td>
+                    <td style={{ display: "flex", gap: "0.5rem" }}>
+                      <AssociateForm edit={true} associate={associate} />
+                      <AssociateModal
+                        associateId={associate.id}
+                        associateName={associate.name}
+                      />
+                    </td>
                   </tr>
                 );
               })}
