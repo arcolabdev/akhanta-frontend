@@ -34,7 +34,6 @@ const AssociatedDetail = () => {
         className="background-banner"
         style={{ backgroundImage: "url(" + banner + ")" }}
       >
-        <Header />
         <h1>{name}</h1>
       </section>
       <section className="about-section">
