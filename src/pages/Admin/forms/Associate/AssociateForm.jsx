@@ -7,10 +7,10 @@ import Modal from "react-bootstrap/Modal";
 import { BiEdit } from "react-icons/bi";
 
 const AssociateForm = ({ edit, associate }) => {
-  const [inputs, setInputs] = useState([{ id: 0, url: "", tag: "INSTAGRAM" }]);
   const [id, setId] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  const [inputs, setInputs] = useState([{ id: 0, url: "", tag: "INSTAGRAM" }]);
   const [banner, setBanner] = useState(null);
   const [profile, setProfile] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -146,7 +146,7 @@ const AssociateForm = ({ edit, associate }) => {
           </Button>
         )}
       </aside>
-      <Modal show={showEdit} onHide={handleCloseEdit}>
+      <Modal show={showEdit} onHide={handleCloseEdit} size="lg">
         <Modal.Header closeButton>
           <Modal.Title>Nuevo Asociado</Modal.Title>
         </Modal.Header>

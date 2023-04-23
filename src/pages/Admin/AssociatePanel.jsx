@@ -33,7 +33,7 @@ function AssociatePanel() {
         <Table>
           <thead>
             <tr>
-              <th>#</th>
+              <th>Id</th>
               <th>Nombre</th>
               <th>Descripción</th>
               <th>Links</th>
