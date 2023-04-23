@@ -4,6 +4,7 @@ import "./Reel.css";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const API_ROOT = "https://akhanta.herokuapp.com/api/v1/associates/";
 const handleDragStart = (e) => e.preventDefault();
@@ -57,13 +58,15 @@ const Reel = () => {
   }, [activeIndex, associates]);
 
   const images = associates.map((a) => (
-    <img
-      src={a.profile}
-      width={"100%"}
-      onDragStart={handleDragStart}
-      role="presentation"
-      alt=""
-    />
+    <Link to={"/associated/" + a.id}>
+      <img
+        src={a.profile}
+        width={"100%"}
+        onDragStart={handleDragStart}
+        role="presentation"
+        alt=""
+      />
+    </Link>
   ));
 
   return (
