@@ -45,7 +45,7 @@ const Reel = () => {
   }, []);
 
   useEffect(() => {
-    if (activeIndex === associates.length - 1) {
+    if (activeIndex === associates.length - 2) {
       setIsNext(false);
     } else if (activeIndex < associates.length - 1) {
       setIsNext(true);
