@@ -63,3 +63,13 @@
     width: 75%;
   }
 }
+
+@media (max-width: 450px) {
+  .about-mandala {
+    display: none;
+  }
+
+  .about-content article p {
+    text-align: justify;
+  }
+}

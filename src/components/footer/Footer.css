@@ -111,3 +111,13 @@
     padding: 3rem 0 5rem 0;
   }
 }
+
+@media (max-width: 450px) {
+  .footer-form {
+    width: 100%;
+  }
+
+  div.footer-content.container {
+    padding: 0;
+  }
+}
