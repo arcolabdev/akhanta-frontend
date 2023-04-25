@@ -7,7 +7,7 @@ const Header = () => {
   const [activeNav, setActiveNav] = useState("#home");
 
   return (
-    <header className="header-content container">
+    <header className="header-content">
       <nav className="header-nav">
         <ul>
           <li>
