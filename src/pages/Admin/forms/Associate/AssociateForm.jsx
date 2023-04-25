@@ -16,7 +16,7 @@ const AssociateForm = () => {
     { id: 0, url: "", option: "INSTAGRAM" },
   ]);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [completed, setCompleted] = useState(false);
+  const [completed, setCompleted] = useState(false); 
   const [validated, setValidated] = useState(false);
 
   const baseUrl = "https://akhanta.herokuapp.com/api/v1/associates/";
