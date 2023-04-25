@@ -21,7 +21,7 @@ const Footer = () => {
   return (
     <footer className="footer-section" id="contact">
       <div className="footer-content container">
-        <span className="footer-title">Escríbinos</span>
+        <span className="footer-title">Solicitar una cita</span>
         <div className="footer-box">
           <form className="footer-form" onSubmit={handleSubmit}>
             <div className="footer-form-div">
@@ -56,11 +56,7 @@ const Footer = () => {
             >
               <FiInstagram className="footer-nav-media-ig" />
             </a>
-            <a
-              href="https://t.me/tomasACaceres"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="https://t.me/aknta" target="_blank" rel="noreferrer">
               <BsTelegram className="footer-nav-media-telegram" />
             </a>
           </div>
