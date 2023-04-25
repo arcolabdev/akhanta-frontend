@@ -35,15 +35,16 @@ const About = () => {
             podrás comenzar tu viaje de cambio y transformación como mas lo
             sientas.
             <br />
-            Una de ellas son las Charlas informativas. Estas tienen como
+            Una de ellas son las <b>Charlas informativas</b>. Estas tienen como
             objetivo exponer conocimiento de forma rápida y sintética. Otro de
-            nuestros eventos son los Retiros en determinados momentos del año
-            que sirven para vivenciar experiencias directas de profundo
-            aprendizaje. Posiblemente lo mas significativo sean los Encuentros
-            regulares ya que están destinados a quienes decidan un camino firme
-            de crecimiento y avance. Por ultimo existe la posibilidad de
-            concebir un Plan Individual de Transformación que permite agilizar
-            los cambios en la forma de percibes y experimentas tu vida.
+            nuestros eventos son los <b></b>Retiros<b></b> en determinados
+            momentos del año que sirven para vivenciar experiencias directas de
+            profundo aprendizaje. Posiblemente lo mas significativos sean los{" "}
+            <b>Encuentros</b> regulares, ya que están destinados a quienes
+            decidan un camino firme de crecimiento y avance. Por ultimo existe
+            la posibilidad de concebir un <b>Plan Individual</b> de
+            Transformación que permite agilizar los cambios en la forma de
+            percibes y experimentas tu vida.
           </p>
         </article>
         <article>
