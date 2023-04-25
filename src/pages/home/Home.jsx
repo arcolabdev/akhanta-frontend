@@ -19,7 +19,7 @@ const Home = () => {
                 <Reel />
             </div>
             <Footer/>
-            <ScrollToTopButton />
+            <ScrollToTopButton /> 
         </>
     )
 }

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Header from "../../components/header/Header";
 import "./AssociatedDetail.css";
 import { FaInstagram, FaFacebookF } from "react-icons/fa";
 import { MdArrowBackIosNew, MdWhatsapp } from "react-icons/md";
