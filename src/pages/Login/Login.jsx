@@ -2,16 +2,14 @@ import React, { useState } from "react";
 import logo from "../../assets/logo.png";
 import "./Login.css";
 import { TiArrowLeft } from "react-icons/ti";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-
-
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  //useHistory es un hook que permite manipular el historial del navegador, se puede cambiar la URL de la página actual sin necesidad de recargarla
-  const history = useHistory();
+  //useNavigate es un hook que permite manipular el historial del navegador, se puede cambiar la URL de la página actual sin necesidad de recargarla
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -20,7 +18,7 @@ const Login = () => {
       .then((response) => {
         if (response.data.isAdmin) {
           // si el usuario es un administrador, redirecciona a la página de administración
-          history.push("/admin");
+          navigate("/admin");
         } else {
           // si el usuario no es un administrador, muestra un mensaje de error
           alert("No tienes permiso para acceder a la página de administración");
@@ -31,19 +29,21 @@ const Login = () => {
       });
   };
 
-
   return (
     <>
       <section className="login-context container">
         <Link to="/">
-          <span><TiArrowLeft className="icon"
-            style={{
-              position: 'absolute',
-              top: '40px',
-              left: '40px',
-            }}
-            size="65px"
-            color="#C5D6E6" />
+          <span>
+            <TiArrowLeft
+              className="icon"
+              style={{
+                position: "absolute",
+                top: "40px",
+                left: "40px",
+              }}
+              size="65px"
+              color="#C5D6E6"
+            />
           </span>
         </Link>
         <section className="header">
@@ -65,7 +65,8 @@ const Login = () => {
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
                 />
-                <input type="password"
+                <input
+                  type="password"
                   placeholder="Password"
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
