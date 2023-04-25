@@ -2,7 +2,7 @@ import React from "react";
 import "./AdminPanel.css";
 import { Link } from "react-router-dom";
 import { TiArrowLeft } from "react-icons/ti";
-import AssociateForm from "./forms/associate/AssociateForm";
+import AssociateForm from "./forms/Associate/AssociateForm";
 
 function AdminPanel() {
   return (
