@@ -37,9 +37,9 @@ const About = () => {
             <br />
             Una de ellas son las <b>Charlas informativas</b>. Estas tienen como
             objetivo exponer conocimiento de forma rápida y sintética. Otro de
-            nuestros eventos son los <b></b>Retiros<b></b> en determinados
-            momentos del año que sirven para vivenciar experiencias directas de
-            profundo aprendizaje. Posiblemente lo mas significativos sean los{" "}
+            nuestros eventos son los <b>Retiros</b> en determinados momentos del
+            año que sirven para vivenciar experiencias directas de profundo
+            aprendizaje. Posiblemente lo mas significativos sean los{" "}
             <b>Encuentros</b> regulares, ya que están destinados a quienes
             decidan un camino firme de crecimiento y avance. Por ultimo existe
             la posibilidad de concebir un <b>Plan Individual</b> de
