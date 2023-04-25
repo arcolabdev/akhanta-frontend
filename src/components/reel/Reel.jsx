@@ -69,7 +69,7 @@ const Reel = () => {
   ));
 
   return (
-    <>
+    <div className="reel-container">
       <h2 className="reel-title">Nuestros Asociados</h2>
       <section className="reel-content container" id="associate">
         {isPrev ? (
@@ -96,7 +96,7 @@ const Reel = () => {
           <button className="reel-button disabled">{">"}</button>
         )}
       </section>
-    </>
+    </div>
   );
 };
 

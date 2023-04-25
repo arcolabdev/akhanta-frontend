@@ -1,3 +1,7 @@
+.reel-container {
+  margin-bottom: 10rem;
+}
+
 .reel-content {
   display: flex;
   flex-direction: row;

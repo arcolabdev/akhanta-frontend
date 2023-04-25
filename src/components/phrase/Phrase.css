@@ -1,0 +1,8 @@
+.phrase-container {
+  display: flex;
+  justify-content: center;
+  color: white;
+  background-color: #421400a9;
+  padding: 4rem 0;
+  margin-bottom: 10rem;
+}

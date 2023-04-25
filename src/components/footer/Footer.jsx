@@ -21,7 +21,7 @@ const Footer = () => {
   return (
     <footer className="footer-section" id="contact">
       <div className="footer-content container">
-        <span className="footer-title">Escríbinos</span>
+        <span className="footer-title">Solicitar una cita</span>
         <div className="footer-box">
           <form className="footer-form" onSubmit={handleSubmit}>
             <div className="footer-form-div">

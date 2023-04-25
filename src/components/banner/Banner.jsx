@@ -22,7 +22,7 @@ const Banner = () => {
             <span className="banner-title-quotes">"</span>
           </div>
         </div>
-        <p className="banner-title-author">-Lao Tse</p>
+        <p className="banner-title-author">-Sifu</p>
       </div>
     </section>
   );

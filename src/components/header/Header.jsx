@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import "./Header.css";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/full-logo.png";
 import { Link } from "react-router-dom";
 
 const Header = () => {
   const [activeNav, setActiveNav] = useState("#home");
-  
 
   return (
     <header className="header-content container">
