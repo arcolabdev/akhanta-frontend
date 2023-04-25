@@ -1,41 +1,12 @@
 .background-header-banner {
-  height: 850px;
+  height: 100%;
   background-image: url(../../assets/banner2.jpg);
-  background-size: 110% auto;
+  background-size: cover;
   background-position-y: 20%;
-  background-position-x: 62%;
+  background-position-x: center;
   background-repeat: no-repeat;
 }
 
 .background-about-reel {
   height: auto;
-}
-
-@media (min-width: 1660px) {
-  .background-header-banner {
-    height: 930px;
-  }
-}
-
-@media (max-width: 1024px) {
-  /*.background-header-banner {
-     height: 850px;
-    background-size: 170% auto;
-    background-position-x: 25%;
-    background-position-y: 50%; 
-  }*/
-}
-
-@media (max-width: 768px) {
-  /* .background-header-banner {
-    /* background-size: 230% auto;
-    background-position-x: 30%;
-    background-position-y: 60%; 
-  } */
-}
-
-@media (max-width: 496px) {
-  .background-header-banner {
-    background-position-x: 60%;
-  }
 }

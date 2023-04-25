@@ -20,7 +20,7 @@ const Header = () => {
   }, [activeNav]);
 
   return (
-    <header className="header-content container">
+    <header className="header-content">
       <nav className={openNav ? "noshow" : "header-nav"}>
         <ul>
           <li>
@@ -49,7 +49,7 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      <img className="header-logo" src={logo} width={150} height={85} alt="" />
+      <img className="header-logo" src={logo} alt="" />
       <nav className={openNav ? "noshow" : "header-nav"}>
         <ul>
           <li>
