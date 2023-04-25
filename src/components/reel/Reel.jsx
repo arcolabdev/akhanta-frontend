@@ -1,12 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useContext } from "react";
 import "./Reel.css";
 // import reel from "../../assets/reel.png";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
-import axios from "axios";
-import { Link } from "react-router-dom";
+import { Context } from "../../Context";
 
-const API_ROOT = "https://akhanta.herokuapp.com/api/v1/associates/";
+
 const handleDragStart = (e) => e.preventDefault();
 
 const responsive = {
@@ -27,27 +26,29 @@ const Reel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isNext, setIsNext] = useState(true);
   const [isPrev, setIsPrev] = useState(false);
-  const [associates, setAssociates] = useState([]);
+
 
   const slidePrev = () => setActiveIndex(activeIndex - 1);
   const slideNext = () => setActiveIndex(activeIndex + 1);
   const syncActiveIndex = ({ item }) => setActiveIndex(item);
 
-  useEffect(() => {
-    axios
-      .get(API_ROOT)
-      .then((response) => {
-        setAssociates(response.data.results);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+
+  const { data } = useContext(Context);
+  // useEffect(() => {
+  //   axios
+  //     .get(API_ROOT)
+  //     .then((response) => {
+  //       setAssociates(response.data.results);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, []);
 
   useEffect(() => {
-    if (activeIndex === associates.length - 1) {
+    if (activeIndex === data.length - 1) {
       setIsNext(false);
-    } else if (activeIndex < associates.length - 1) {
+    } else if (activeIndex < data.length - 1) {
       setIsNext(true);
     }
     if (activeIndex === 0) {
@@ -55,18 +56,16 @@ const Reel = () => {
     } else if (activeIndex > 0) {
       setIsPrev(true);
     }
-  }, [activeIndex, associates]);
+  }, [activeIndex, data]);
 
-  const images = associates.map((a) => (
-    <Link to={"/associated/" + a.id}>
-      <img
-        src={a.profile}
-        width={"100%"}
-        onDragStart={handleDragStart}
-        role="presentation"
-        alt=""
-      />
-    </Link>
+  const images = data.map((a) => (
+    <img
+      src={a.profile}
+      width={"100%"}
+      onDragStart={handleDragStart}
+      role="presentation"
+      alt=""
+    />
   ));
 
   return (
