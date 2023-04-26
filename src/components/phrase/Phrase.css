@@ -24,3 +24,13 @@
     text-align: center;
   }
 }
+
+@media (max-width: 450px) {
+  .phrase-container {
+    padding: 4rem 0rem;
+  }
+
+  .phrase-container h2 {
+    font-size: 1.5rem;
+  }
+}
