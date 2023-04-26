@@ -6,6 +6,7 @@ import { MdArrowBackIosNew, MdWhatsapp } from "react-icons/md";
 import { BsTelegram } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { Context } from "../../Context";
+import { TiArrowLeft } from "react-icons/ti";
 
 const AssociatedDetail = () => {
   const { dataById } = useContext(Context);
@@ -19,7 +20,6 @@ const AssociatedDetail = () => {
   return (
     <>
       <section className="background-banner">
-        <Header />
         <h1>{name}</h1>
       </section>
       <section className="about-section">

@@ -58,3 +58,13 @@
   opacity: 0.5;
   cursor: default;
 }
+
+@media (max-width: 425px) {
+  section#associate.reel-content.container {
+    padding: 1rem 0;
+  }
+
+  .reel-button {
+    font-size: 2.3em;
+  }
+}

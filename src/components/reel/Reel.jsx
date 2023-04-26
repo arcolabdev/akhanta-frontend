@@ -16,6 +16,10 @@ const responsive = {
     items: 1,
     itemsFit: "contain",
   },
+  768: {
+    items: 2,
+    itemsFit: "contain",
+  },
   1024: {
     items: 3,
     itemsFit: "contain",

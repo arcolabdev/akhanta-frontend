@@ -147,7 +147,7 @@ const AssociateForm = ({ edit, associate }) => {
           </Button>
         )}
       </aside>
-      <Modal show={showEdit} onHide={handleCloseEdit} size="lg">
+      <Modal show={showEdit} onHide={handleCloseEdit} size="xl">
         <Modal.Header closeButton>
           <Modal.Title>Nuevo Asociado</Modal.Title>
         </Modal.Header>
