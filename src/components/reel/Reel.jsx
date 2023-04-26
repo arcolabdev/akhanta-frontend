@@ -34,16 +34,7 @@ const Reel = () => {
 
 
   const { data } = useContext(Context);
-  // useEffect(() => {
-  //   axios
-  //     .get(API_ROOT)
-  //     .then((response) => {
-  //       setAssociates(response.data.results);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }, []);
+ 
 
   useEffect(() => {
     if (activeIndex === data.length - 1) {
