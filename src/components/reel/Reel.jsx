@@ -1,10 +1,10 @@
-import React, { useEffect, useState,useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "./Reel.css";
 // import reel from "../../assets/reel.png";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { Context } from "../../Context";
-
+import { Link } from "react-router-dom";
 
 const handleDragStart = (e) => e.preventDefault();
 
@@ -27,11 +27,9 @@ const Reel = () => {
   const [isNext, setIsNext] = useState(true);
   const [isPrev, setIsPrev] = useState(false);
 
-
   const slidePrev = () => setActiveIndex(activeIndex - 1);
   const slideNext = () => setActiveIndex(activeIndex + 1);
   const syncActiveIndex = ({ item }) => setActiveIndex(item);
-
 
   const { data } = useContext(Context);
   // useEffect(() => {
@@ -59,13 +57,15 @@ const Reel = () => {
   }, [activeIndex, data]);
 
   const images = data.map((a) => (
-    <img
-      src={a.profile}
-      width={"100%"}
-      onDragStart={handleDragStart}
-      role="presentation"
-      alt=""
-    />
+    <Link to={"/associated/" + a.id}>
+      <img
+        src={a.profile}
+        width={"100%"}
+        onDragStart={handleDragStart}
+        role="presentation"
+        alt=""
+      />
+    </Link>
   ));
 
   return (
