@@ -6,9 +6,11 @@ const Banner = () => {
     <section className="banner-content">
       <div className="banner">
         <h1>
-          “La espiritualidad no es religión. Solo se trata del entendimiento de
-          lo que somos, el mundo donde nos encontramos y como actuamos en
-          consecuencia”
+          <span className="banner-span">
+            “La espiritualidad no es religión.
+          </span>
+          <br /> Solo se trata del entendimiento de lo que somos, el mundo donde
+          nos encontramos y como actuamos en consecuencia”
         </h1>
         <p className="banner-title-author">-Sifu</p>
       </div>

@@ -2,11 +2,17 @@
   height: 100%;
   background-image: url(../../assets/banner2.jpg);
   background-size: cover;
-  background-position-y: 20%;
+  background-position-y: 60%;
   background-position-x: center;
   background-repeat: no-repeat;
 }
 
 .background-about-reel {
   height: auto;
+}
+
+@media (max-width: 425px) {
+  .background-header-banner {
+    height: 100%;
+  }
 }

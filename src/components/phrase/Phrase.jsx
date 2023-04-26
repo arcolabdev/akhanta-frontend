@@ -1,14 +1,14 @@
 import React from "react";
-import './Phrase.css'
+import "./Phrase.css";
 
 const Phrase = () => {
   return (
-    <div className="phrase-container">
+    <article className="phrase-container">
       <h2>
         “La autoexploración y las acciones transformadoras abren la oportunidad
         de una vida de satisfaccion y alegría”
       </h2>
-    </div>
+    </article>
   );
 };
 

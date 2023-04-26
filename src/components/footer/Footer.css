@@ -118,6 +118,10 @@
   }
 
   div.footer-content.container {
-    padding: 0;
+    padding: 1rem;
+  }
+
+  .footer-content {
+    font-size: 1rem;
   }
 }

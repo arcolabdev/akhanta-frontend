@@ -1,8 +1,26 @@
 .phrase-container {
-  display: flex;
-  justify-content: center;
   color: white;
   background-color: #421400a9;
-  padding: 4rem 0;
+  display: flex;
+  justify-content: center;
   margin-bottom: 10rem;
+  padding: 4rem 0;
+  text-align: center;
+}
+
+@media (max-width: 1440px) {
+  .phrase-container {
+    padding: 4rem 0.5rem;
+  }
+
+  .phrase-container h2 {
+    font-size: 2.2vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .phrase-container h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
 }

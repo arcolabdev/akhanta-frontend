@@ -6,16 +6,19 @@
   color: #e2e2e2;
   line-height: 3rem;
   position: relative;
-  top: 10rem;
-  padding: 3rem 10rem 1.5rem;
-  background: rgba(0, 0, 0, 0.702);
-  backdrop-filter: blur(5px);
+  top: 15rem;
+  width: 60%;
+  margin-left: 3rem;
 }
 .banner h1 {
-  margin: 0;
   font-size: 2rem;
-  text-align: center;
+  text-align: left;
 }
+
+.banner-span {
+  font-size: 4.8rem;
+}
+
 .banner-title-author {
   width: 100%;
   font-size: 1.5rem;
@@ -25,23 +28,36 @@
 }
 
 @media (max-width: 768px) {
+  .banner {
+    top: 11rem;
+  }
+
   .banner h1 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+  }
+
+  .banner-span {
+    font-size: 3.5rem;
+  }
+  .banner-title-author {
+    font-size: 1.1rem;
   }
 }
 
 @media (max-width: 450px) {
   .banner {
-    color: #e2e2e2;
-    line-height: 3rem;
-    position: relative;
-    top: 10rem;
-    padding: 3rem 1rem 1.5rem;
-    background: rgba(0, 0, 0, 0.702);
-    backdrop-filter: blur(5px);
+    width: 100%;
+    margin: 0;
+    padding: 2rem;
+    top: 1rem;
   }
-
+  .banner-span {
+    font-size: 11vw;
+  }
   .banner h1 {
-    font-size: 1.5rem;
+    font-size: 5.1vw;
+  }
+  .banner-title-author {
+    font-size: 4vw;
   }
 }
