@@ -1,12 +1,10 @@
 import React, { useContext } from "react";
-import Header from "../../components/header/Header";
 import "./AssociatedDetail.css";
 import { FaInstagram, FaFacebookF } from "react-icons/fa";
 import { MdArrowBackIosNew, MdWhatsapp } from "react-icons/md";
 import { BsTelegram } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { Context } from "../../Context";
-import { TiArrowLeft } from "react-icons/ti";
 
 const AssociatedDetail = () => {
   const { dataById } = useContext(Context);
