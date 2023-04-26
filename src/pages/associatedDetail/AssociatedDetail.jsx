@@ -3,6 +3,7 @@ import Header from '../../components/header/Header'
 import './AssociatedDetail.css'
 import { FaInstagram, FaFacebookF, } from 'react-icons/fa'
 import { MdArrowBackIosNew, MdWhatsapp } from 'react-icons/md'
+import { BsTelegram } from "react-icons/bs";
 import { Link} from 'react-router-dom';
 import { Context } from '../../Context'
 
@@ -44,7 +45,9 @@ const AssociatedDetail = () => {
                         case "FACEBOOK":
                             return <a key={link.id} href={link.url} target="_blank" rel="noreferrer"><FaFacebookF size={35} color='#C3BEAA' /></a>
                         case "WHATSAPP":
-                            return <a key={link.id} href={link.url} target="_blank" rel="noreferrer"><MdWhatsapp size={35} color='#C3BEAA' /></a>
+                            return <a key={link.id} href={"https://wa.me/" + link.url} target="_blank" rel="noreferrer"><MdWhatsapp size={35} color='#C3BEAA' /></a>
+                        case "TELEGRAM":
+                            return <a key={link.id} href={"https://t.me/" + link.url} target="_blank" rel="noreferrer"><BsTelegram size={35} color='#C3BEAA' /></a>
                         default:
                             return null; // no renderizar nada si el tag no coincide
                     }

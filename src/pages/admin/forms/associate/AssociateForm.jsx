@@ -7,40 +7,30 @@ import Modal from "react-bootstrap/Modal";
 import { BiEdit } from "react-icons/bi";
 
 const AssociateForm = ({ edit, associate }) => {
-  const [data, setData] = useState({
-    id: "",
-    name: "",
-    description: "",
-    links: [{ id: 0, url: "", tag: "INSTAGRAM" }],
-    banner: "",
-    profile: "",
-  });
-  const [inputs, setInputs] = useState([]);
+  const [id, setId] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  const [inputs, setInputs] = useState([{ id: 0, url: "", tag: "INSTAGRAM" }]);
   const [banner, setBanner] = useState(null);
   const [profile, setProfile] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [completed, setCompleted] = useState(false);
-  const [validated, setValidated] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
+
   const baseUrl = "https://akhanta.herokuapp.com/api/v1/associates/";
 
   const handleCloseEdit = () => setShowEdit(false);
   const handleShowEdit = () => {
-    setData(associate);
-    setInputs(associate.links);
+    if (associate) {
+      setId(associate.id);
+      setName(associate.name);
+      setDescription(associate.description);
+      setInputs(associate.links);
+    }
     setShowEdit(true);
   };
 
   const handleSubmit = async (e) => {
-    console.log("Handle submit running");
-    e.preDefault();
-    if (e.currentTarget.checkValidity() === false) {
-      e.stopPropagation();
-    }
-
-    setValidated(true);
+    e.preventDefault();
     setIsSubmitting(true);
 
     const dataBanner = new FormData();
@@ -66,7 +56,19 @@ const AssociateForm = ({ edit, associate }) => {
     let idResponse = 0;
 
     try {
-      console.log("Associate POST");
+      if (edit) {
+        await axios
+          .put(baseUrl + id, payload, {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          })
+          .then((data) => {
+            console.log("updated");
+            idResponse = data.data.results.id;
+          });
+      }
+
       await axios
         .post(baseUrl, payload, {
           headers: {
@@ -75,25 +77,28 @@ const AssociateForm = ({ edit, associate }) => {
         })
         .then((data) => {
           idResponse = data.data.results.id;
-          console.log(idResponse);
         });
 
-      await axios.post(baseUrl + idResponse + "/profile", dataProfile, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      if (profile) {
+        await axios.post(baseUrl + idResponse + "/profile", dataProfile, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        });
+      }
 
-      await axios.post(baseUrl + idResponse + "/banner", dataBanner, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-
-      setCompleted(true);
+      if (banner) {
+        await axios.post(baseUrl + idResponse + "/banner", dataBanner, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        });
+      }
     } catch (error) {
       setIsSubmitting(false);
     }
+
+    // window.location.reload();
   };
 
   const addInput = () => {
@@ -129,10 +134,6 @@ const AssociateForm = ({ edit, associate }) => {
     );
   };
 
-  if (completed) {
-    window.location.reload();
-  }
-
   return (
     <section>
       <aside style={{ display: "flex", gap: "1rem" }}>
@@ -146,27 +147,22 @@ const AssociateForm = ({ edit, associate }) => {
           </Button>
         )}
       </aside>
-      <Modal show={showEdit} onHide={handleCloseEdit}>
+      <Modal show={showEdit} onHide={handleCloseEdit} size="lg">
         <Modal.Header closeButton>
           <Modal.Title>Nuevo Asociado</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form validated={validated} onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicName">
               <Form.Label>Id</Form.Label>
-              <Form.Control
-                disabled
-                type="text"
-                value={data.id}
-                onChange={(e) => setName(e.target.value)}
-              />
+              <Form.Control disabled type="text" value={id} />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicName">
               <Form.Label>Nombre</Form.Label>
               <Form.Control
                 required
                 type="text"
-                value={data.name}
+                value={name}
                 onChange={(e) => setName(e.target.value)}
               />
             </Form.Group>
@@ -176,8 +172,8 @@ const AssociateForm = ({ edit, associate }) => {
                 required
                 as="textarea"
                 rows={4}
-                value={data.description}
                 style={{ resize: "none" }}
+                value={description}
                 onChange={(e) => setDescription(e.target.value)}
               />
             </Form.Group>
@@ -198,7 +194,6 @@ const AssociateForm = ({ edit, associate }) => {
 
                     <div className="col-sm-2">
                       <Form.Select
-                        value={input.tag}
                         onChange={(e) => updateTag(input.id, e.target.value)}
                       >
                         <option value="INSTAGRAM">Instagram</option>
@@ -238,7 +233,7 @@ const AssociateForm = ({ edit, associate }) => {
             <Form.Group controlId="formBanner" className="mb-3">
               <Form.Label>Imagen de banner</Form.Label>
               <Form.Control
-                required
+                // required
                 type="file"
                 accept="image/*"
                 onChange={(e) => setBanner(e.target.files[0])}
@@ -247,7 +242,7 @@ const AssociateForm = ({ edit, associate }) => {
             <Form.Group controlId="formProfile" className="mb-3">
               <Form.Label>Imagen de perfil</Form.Label>
               <Form.Control
-                required
+                // required
                 type="file"
                 accept="image/*"
                 onChange={(e) => setProfile(e.target.files[0])}
@@ -258,7 +253,9 @@ const AssociateForm = ({ edit, associate }) => {
               Enviar
             </Button>
           </Form>
-          {isSubmitting && <ScaleLoader color="#36d7b7" />}
+          <div style={{ display: "flex", justifyContent: "center" }}>
+            {isSubmitting && <ScaleLoader color="#36d7b7" />}
+          </div>
         </Modal.Body>
       </Modal>
     </section>
