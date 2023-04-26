@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 
 
 export const Context = createContext();
@@ -8,8 +8,9 @@ export const Context = createContext();
 
 export const MyContextProvider = ({ children }) => {
   const [data, setData] = useState([]);
-  const [dataById, setDataById] = useState([]);
-  const { id } = useParams();
+  // const [dataById, setDataById] = useState([]);
+  // const { id } = useParams();
+
 
   useEffect(() => {
     axios
@@ -22,19 +23,19 @@ export const MyContextProvider = ({ children }) => {
       });
   }, []);
 
-  useEffect(() => {
-    axios
-      .get(`https://akhanta.herokuapp.com/api/v1/associates/${id}`)
-      .then((response) => {
-        setDataById(response.data.results);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, [id]);
+  // useEffect(() => {
+  //   axios
+  //     .get(`https://akhanta.herokuapp.com/api/v1/associates/${id}`)
+  //     .then((response) => {
+  //       setDataById(response.data.results);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, [id]);
 
   return (
-    <Context.Provider value={{ data, dataById }}>
+    <Context.Provider value={{ data }}>
       {children}
     </Context.Provider>
   );

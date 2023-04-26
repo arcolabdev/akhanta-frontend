@@ -1,10 +1,9 @@
 import React, { useEffect, useState,useContext } from "react";
 import "./Reel.css";
-// import reel from "../../assets/reel.png";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { Context } from "../../Context";
-
+import { Link } from "react-router-dom";
 
 const handleDragStart = (e) => e.preventDefault();
 
@@ -50,6 +49,7 @@ const Reel = () => {
   }, [activeIndex, data]);
 
   const images = data.map((a) => (
+    <Link to={`/associates/${a.id}`}>
     <img
       src={a.profile}
       width={"100%"}
@@ -57,6 +57,7 @@ const Reel = () => {
       role="presentation"
       alt=""
     />
+  </Link>
   ));
 
   return (

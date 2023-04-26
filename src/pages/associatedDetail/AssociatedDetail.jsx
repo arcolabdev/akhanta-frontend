@@ -6,17 +6,22 @@ import { MdArrowBackIosNew, MdWhatsapp } from 'react-icons/md'
 import { BsTelegram } from "react-icons/bs";
 import { Link} from 'react-router-dom';
 import { Context } from '../../Context'
+import { useParams } from "react-router-dom";
+
 
 
 const AssociatedDetail = () => {
 
-    const {dataById} = useContext(Context)
+    const {data} = useContext(Context)
+    const { id } = useParams();
 
-    if (!dataById) {
-        return null; 
+    const associated = data.find((item) => item.id === parseInt(id));
+
+    if (!associated) {
+        return null;
       }
-
-    const { banner, description, name, links } = dataById.results || {};
+      
+      const { banner, description, name, links } = associated;
 
     return (
         <>

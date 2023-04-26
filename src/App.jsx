@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/associated/:id" element={<AssociatedDetail />} />
+          <Route path="/associates/:id" element={<AssociatedDetail />} />
           <Route path="/admin" element={<AssociatePanel />} />
         </Routes>
       </div>
