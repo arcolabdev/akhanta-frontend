@@ -1,17 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inknut+Antiqua:wght@300;400;500;600&display=swap");
 
-*{
-    margin: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  box-sizing: border-box;
 }
-.App{
-    height: 100vh;
-    font-family: 'Times', serif;
+
+body {
+  background-color: #fffcf0;
+}
+
+.App {
+  height: 100vh;
+  font-family: "Times", serif;
 }
 
 @font-face {
-  font-family: 'Times2';
-  src: url('./assets/fonts/Times.ttc') format('truetype');
+  font-family: "Times2";
+  src: url("./assets/fonts/Times.ttc") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -27,7 +32,6 @@ html {
 
 .container {
   margin: 0 auto;
-  max-width: 160vh; 
+  max-width: 160vh;
   padding: 1rem 2rem;
 }
-

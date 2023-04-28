@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useContext } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "./Reel.css";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
@@ -15,6 +15,10 @@ const responsive = {
     items: 1,
     itemsFit: "contain",
   },
+  768: {
+    items: 2,
+    itemsFit: "contain",
+  },
   1024: {
     items: 3,
     itemsFit: "contain",
@@ -26,11 +30,9 @@ const Reel = () => {
   const [isNext, setIsNext] = useState(true);
   const [isPrev, setIsPrev] = useState(false);
 
-
   const slidePrev = () => setActiveIndex(activeIndex - 1);
   const slideNext = () => setActiveIndex(activeIndex + 1);
   const syncActiveIndex = ({ item }) => setActiveIndex(item);
-
 
   const { data } = useContext(Context);
  
@@ -61,7 +63,7 @@ const Reel = () => {
   ));
 
   return (
-    <>
+    <div className="reel-container">
       <h2 className="reel-title">Nuestros Asociados</h2>
       <section className="reel-content container" id="associate">
         {isPrev ? (
@@ -88,7 +90,7 @@ const Reel = () => {
           <button className="reel-button disabled">{">"}</button>
         )}
       </section>
-    </>
+    </div>
   );
 };
 

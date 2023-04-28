@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import Header from "../../components/header/Header";
 import "./AssociatedDetail.css";
 import { FaInstagram, FaFacebookF } from "react-icons/fa";
 import { MdArrowBackIosNew, MdWhatsapp } from "react-icons/md";
@@ -23,7 +22,6 @@ const AssociatedDetail = () => {
   return (
     <>
       <section className="background-banner">
-        <Header />
         <h1>{name}</h1>
       </section>
       <section className="about-section">

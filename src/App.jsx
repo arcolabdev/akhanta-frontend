@@ -1,10 +1,10 @@
-import "./App.css";
-import Login from "./pages/login/Login";
-import AssociatedDetail from "./pages/associatedDetail/AssociatedDetail";
-import Home from "./pages/home/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import AssociatePanel from "./pages/admin/AssociatePanel";
 import { MyContextProvider } from "./Context";
+import "./App.css";
+import Home from "./pages/home/Home";
+import Login from "./pages/login/Login";
+import AssociatePanel from "./pages/admin/AssociatePanel";
+import AssociatedDetail from "./pages/associatedDetail/AssociatedDetail";
 
 function App() {
   return (

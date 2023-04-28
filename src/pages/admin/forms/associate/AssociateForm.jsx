@@ -98,7 +98,7 @@ const AssociateForm = ({ edit, associate }) => {
       setIsSubmitting(false);
     }
 
-    // window.location.reload();
+    window.location.reload();
   };
 
   const addInput = () => {
@@ -147,7 +147,7 @@ const AssociateForm = ({ edit, associate }) => {
           </Button>
         )}
       </aside>
-      <Modal show={showEdit} onHide={handleCloseEdit} size="lg">
+      <Modal show={showEdit} onHide={handleCloseEdit} size="xl">
         <Modal.Header closeButton>
           <Modal.Title>Nuevo Asociado</Modal.Title>
         </Modal.Header>
@@ -185,7 +185,6 @@ const AssociateForm = ({ edit, associate }) => {
                   </div>
                   <div className="col-sm-10 d-flex">
                     <Form.Control
-                      required
                       type="text"
                       className="form-control"
                       value={input.url}

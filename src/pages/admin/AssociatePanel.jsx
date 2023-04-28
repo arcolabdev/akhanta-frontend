@@ -21,7 +21,7 @@ function AssociatePanel() {
   }, []);
 
   return (
-    <section className="container justify-content-center form-container">
+    <section className="container justify-content-center form-container" style={{  backgroundColor: "#fffcf0"}} >
       <Link to="/">
         <span>
           <TiArrowLeft className="icon" size="65px" color="#C5D6E6" />
@@ -48,8 +48,8 @@ function AssociatePanel() {
                     <td>{associate.id}</td>
                     <td>{associate.name}</td>
                     <td>
-                      {associate.description > 100
-                        ? associate.description.substring(0, 111) + "..."
+                      {associate.description.length > 100
+                        ? associate.description.substring(0, 120) + "..."
                         : associate.description}
                     </td>
                     <td>
