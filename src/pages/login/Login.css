@@ -1,178 +1,167 @@
-.login-context{
-    background-image: url(../../assets/banner2.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    min-height: 1000px;
-    position: relative;
-   
-} 
-
-.header{
-    padding-top: 3rem;
-   
+.login-context {
+  background-image: url(../../assets/banner2.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 1000px;
+  position: relative;
 }
 
-.iconStyles{
-    color: white;
+.header {
+  padding-top: 3rem;
 }
 
-.login{
-    margin-top: 8rem;
-    width: 450px;
-    height: 500px;
-    display: flex;
-    justify-content: center;
+.iconStyles {
+  color: white;
 }
 
+.login {
+  margin-top: 8rem;
+  width: 450px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+}
 
-.login-container{
-    display: flex;
-    align-items: center;
-    text-align: center;
-    height: 100%;
-    width: 100%;
-    background-color: rgb(128,128,128,0.3);
-    border-radius: 10px;
-    justify-content: center;
-    flex-direction: column;
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
-    gap: 1rem;
+.login-container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(128, 128, 128, 0.3);
+  border-radius: 10px;
+  justify-content: center;
+  flex-direction: column;
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  gap: 1rem;
 }
 
 .login-title {
-    padding-top: 2rem;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  font-family: "Times2";
+  color: #d6d4c6;
+  letter-spacing: 0.1em;
+}
+
+.login-title h1 {
+  padding-bottom: 0.5rem;
+  font-size: 50px;
+}
+
+.login-title h2 {
+  font-size: 20px;
+}
+
+.login-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 220px;
+  justify-content: space-around;
+}
+
+.login-form input {
+  padding-left: 15px;
+  font-size: 16px;
+
+  font-family: "Times2";
+  border: none;
+  border-radius: 10px;
+  height: 50px;
+  width: 300px;
+  background-color: rgb(217, 217, 217, 0.7);
+}
+
+.login-form button {
+  font-family: "Times2";
+  font-size: 18.5px;
+  font-weight: bold;
+  color: #d6d4c6;
+  margin-top: 1rem;
+  width: 160px;
+  height: 47px;
+  background-color: rgb(168, 137, 222, 0.8);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.arrow {
+  position: absolute;
+  top: 10rem;
+  left: 10rem;
+}
+
+@media screen and (max-width: 720px) {
+  .login-container {
+    width: 350px;
+    gap: 0;
+    height: 90%;
+  }
+
+  .login-form input {
+    width: 250px;
+  }
+
+  .login-title {
+    padding-top: 1rem;
     padding-bottom: 1rem;
-    font-family: 'Times2';
-    color: #D6D4C6;
     letter-spacing: 0.1em;
-}
+  }
 
-.login-title h1{
-    padding-bottom: 0.5rem;
+  .login-title h1 {
+    padding-bottom: 0;
     font-size: 50px;
-}
+  }
 
-.login-title h2{
-    font-size: 20px;
-}
-
-.login-form form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 220px;
-    justify-content: space-around;
-}
-
-.login-form input{
+  .login-form input {
     padding-left: 15px;
-    font-size: 16px;
-  
-    font-family: 'Times2';
-    border: none;
-    border-radius: 10px;
-    height:50px;
-    width: 300px;
-    background-color: rgb(217,217,217, 0.7);
+    font-size: 14px;
+
+    height: 45px;
+    width: 250px;
+    background-color: rgb(217, 217, 217, 0.7);
+  }
 }
 
-.login-form button{
-    font-family: 'Times2';
-    font-size: 18.5px;
+@media screen and (max-width: 456px) {
+  .login {
+    margin-top: 8rem;
+    width: fit-content;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 456px) {
+  .login-container {
+    width: 290px;
+    gap: 0;
+    height: 85%;
+  }
+
+  .login-title h1 {
+    padding-bottom: 0.5rem;
+    font-size: 40px;
+  }
+
+  .login-title h2 {
+    font-size: 18px;
+  }
+
+  .login-form button {
+    font-size: 17px;
     font-weight: bold;
-    color: #D6D4C6;
-    margin-top: 1rem;
-    width: 160px;
-    height: 47px;
-    background-color: rgb(168, 137, 222, 0.8);
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-.arrow{
-    position:absolute;
-    top:10rem;
-    left: 10rem;
-}
-
-
-@media screen and (max-width:720px) {
-
-
-    .login-container{
-        width: 350px;
-        gap: 0;
-        height: 90%;
-    }
-
-    .login-form input{
-        width: 250px;
-    }
-
-    .login-title {
-        padding-top: 1rem;
-        padding-bottom: 1rem;
-        letter-spacing: 0.1em;
-    }
-
-    .login-title h1{
-        padding-bottom: 0;
-        font-size: 50px;
-    }
-
-
-    .login-form input{
-        padding-left: 15px;
-        font-size: 14px;
-
-        height:45px;
-        width: 250px;
-        background-color: rgb(217,217,217, 0.7);
-    }
-
-}
-
-@media  screen and (max-width:456px) {
-
-    .login{
-        margin-top: 8rem;
-        width: fit-content;
-        height: 500px;
-        display: flex;
-        justify-content: center;
-    }
-    
-}
-
-@media  screen and (max-width:456px) {
-
-    .login-container{
-        width: 290px;
-        gap: 0;
-        height: 85%;
-    }
-
-    .login-title h1{
-        padding-bottom: 0.5rem;
-        font-size: 40px;
-    }
-    
-    .login-title h2{
-        font-size: 18px;
-    }
-
-    .login-form button{
-        font-size: 17px;
-        font-weight: bold;
-        width: 150px;
-        height: 40px;
-    } 
+    width: 150px;
+    height: 40px;
+  }
 }

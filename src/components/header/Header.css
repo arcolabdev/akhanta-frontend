@@ -89,17 +89,6 @@ a {
   }
 }
 
-@media (max-width: 760px) {
-  .header {
-    position: fixed;
-    z-index: 1000;
-    background-color: #fff;
-    width: 100%;
-    padding: 0.3rem 0;
-    box-shadow: 0 1px 4px rgba(5, 5, 5, 0.2);
-  }
-}
-
 @media screen and (max-width: 650px) {
   .header-content {
     width: 100vw;
