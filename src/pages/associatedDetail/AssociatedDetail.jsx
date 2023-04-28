@@ -21,7 +21,7 @@ const AssociatedDetail = () => {
 
   return (
     <>
-      <section className="background-banner">
+      <section className="background-banner" style={{backgroundImage: `url(${banner})`}}>
         <h1>{name}</h1>
       </section>
       <section className="about-section">
