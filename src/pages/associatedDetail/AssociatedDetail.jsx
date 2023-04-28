@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./AssociatedDetail.css";
 import { FaInstagram, FaFacebookF } from "react-icons/fa";
 import { MdArrowBackIosNew, MdWhatsapp } from "react-icons/md";
@@ -8,9 +8,10 @@ import { Context } from "../../Context";
 import { useParams } from "react-router-dom";
 
 const AssociatedDetail = () => {
+  useEffect(() => {}, []);
+
   const { data } = useContext(Context);
   const { id } = useParams();
-
   const associated = data.find((item) => item.id === parseInt(id));
 
   if (!associated) {
@@ -21,16 +22,14 @@ const AssociatedDetail = () => {
 
   return (
     <>
-      <section className="background-banner" style={{backgroundImage: `url(${banner})`}}>
-        <h1>{name}</h1>
-      </section>
+      <section
+        className="background-banner"
+        style={{ backgroundImage: `url(${banner})` }}
+      ></section>
       <section className="about-section">
         <div className="about-contain">
           <div className="info-contain">
-            <h3>
-              Hola,
-              <br /> <span>Soy {name}</span>
-            </h3>
+            <h3>{name}</h3>
             <p>{description}</p>
           </div>
           <div className="image-contain">
@@ -39,7 +38,8 @@ const AssociatedDetail = () => {
         </div>
         <Link to="/">
           <div className="arrow">
-            <MdArrowBackIosNew size={35} color="#C8ABFB" />
+            <MdArrowBackIosNew size={35} color="#9e75e5" />
+            <span className="back-to-main">Volver a Inicio</span>
           </div>
         </Link>
       </section>
