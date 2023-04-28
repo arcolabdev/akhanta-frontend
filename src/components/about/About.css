@@ -3,7 +3,7 @@
   justify-content: space-around;
   line-height: 2rem;
   align-items: center;
-  margin-bottom: 10rem;
+  margin-bottom: 6rem;
 }
 
 .about-content {
@@ -31,7 +31,6 @@
 
 .about-content article p {
   text-align: center;
-  line-height: 2.3rem;
   width: 80%;
   margin: 0;
   font-size: larger;
@@ -61,5 +60,12 @@
 @media (max-width: 450px) {
   .about-mandala {
     display: none;
+  }
+
+  .about-content article p {
+    text-align: left;
+    width: 100%;
+    margin: 0;
+    font-size: larger;
   }
 }
