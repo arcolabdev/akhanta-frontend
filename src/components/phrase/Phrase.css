@@ -8,7 +8,7 @@
   text-align: center;
 }
 
-.phrase-container h2 {
+.phrase-container h3 {
   font-size: 1.5rem;
 }
 
@@ -17,13 +17,13 @@
     padding: 4rem 0.5rem;
   }
 
-  .phrase-container h2 {
+  .phrase-container h3 {
     font-size: 1.2rem;
   }
 }
 
 @media (max-width: 768px) {
-  .phrase-container h2 {
+  .phrase-container h3 {
     font-size: 2rem;
     text-align: center;
   }
@@ -34,7 +34,7 @@
     padding: 4rem 0rem;
   }
 
-  .phrase-container h2 {
+  .phrase-container h3 {
     font-size: 1.5rem;
   }
 }

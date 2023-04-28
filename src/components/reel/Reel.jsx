@@ -35,7 +35,6 @@ const Reel = () => {
   const syncActiveIndex = ({ item }) => setActiveIndex(item);
 
   const { data } = useContext(Context);
- 
 
   useEffect(() => {
     if (activeIndex === data.length - 1) {
@@ -52,14 +51,14 @@ const Reel = () => {
 
   const images = data.map((a) => (
     <Link to={`/associates/${a.id}`}>
-    <img
-      src={a.profile}
-      width={"100%"}
-      onDragStart={handleDragStart}
-      role="presentation"
-      alt=""
-    />
-  </Link>
+      <img
+        src={a.profile}
+        width={"100%"}
+        onDragStart={handleDragStart}
+        role="presentation"
+        alt="profile-pic"
+      />
+    </Link>
   ));
 
   return (

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Header.css";
-import logo from "../../assets/full-logo.png";
+import logo from "../../assets/full-logo-opt.png";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
@@ -49,7 +49,7 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      <img className="header-logo" src={logo} alt="" />
+      <img className="header-logo" src={logo} alt="logo" />
       <nav className={openNav ? "noshow" : "header-nav"}>
         <ul>
           <li>

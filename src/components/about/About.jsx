@@ -8,7 +8,11 @@ const About = () => {
   return (
     <section className="about-container" id="about">
       <div>
-        <img src={mandala_left} alt="decoration" className="about-mandala" />
+        <img
+          src={mandala_left}
+          alt="decoration"
+          className="about-mandala"
+        />
       </div>
       <div className="about-content">
         <article>
@@ -23,7 +27,7 @@ const About = () => {
             Bienvenidos a este espacio destinado al crecimiento individual.
           </p>
         </article>
-        <img src={clip} width={240} height={50} alt="clip" />
+        <img src={clip} width={240} height={50} alt="clip"/>
         <article>
           <h2>¿Qué hacemos?</h2>
           <p>
@@ -64,7 +68,11 @@ const About = () => {
         </article>
       </div>
       <div>
-        <img src={mandala_right} alt="decoration" className="about-mandala" />
+        <img
+          src={mandala_right}
+          alt="decoration"
+          className="about-mandala"
+        />
       </div>
     </section>
   );
