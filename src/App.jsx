@@ -8,18 +8,18 @@ import AssociatedDetail from "./pages/associatedDetail/AssociatedDetail";
 
 function App() {
   return (
-    <MyContextProvider>
-      <BrowserRouter>
-        <div className="App">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/associated/:id" element={<AssociatedDetail />} />
-            <Route path="/admin" element={<AssociatePanel />} />
-          </Routes>
-        </div>
-      </BrowserRouter>
-    </MyContextProvider>
+   <MyContextProvider>
+     <BrowserRouter>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/associates/:id" element={<AssociatedDetail />} />
+          <Route path="/admin" element={<AssociatePanel />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+   </MyContextProvider>
   );
 }
 

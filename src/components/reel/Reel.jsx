@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
 import "./Reel.css";
-// import reel from "../../assets/reel.png";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import { Context } from "../../Context";
@@ -36,16 +35,7 @@ const Reel = () => {
   const syncActiveIndex = ({ item }) => setActiveIndex(item);
 
   const { data } = useContext(Context);
-  // useEffect(() => {
-  //   axios
-  //     .get(API_ROOT)
-  //     .then((response) => {
-  //       setAssociates(response.data.results);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }, []);
+ 
 
   useEffect(() => {
     if (activeIndex === data.length - 1) {
@@ -61,15 +51,15 @@ const Reel = () => {
   }, [activeIndex, data]);
 
   const images = data.map((a) => (
-    <Link to={"/associated/" + a.id}>
-      <img
-        src={a.profile}
-        width={"100%"}
-        onDragStart={handleDragStart}
-        role="presentation"
-        alt=""
-      />
-    </Link>
+    <Link to={`/associates/${a.id}`}>
+    <img
+      src={a.profile}
+      width={"100%"}
+      onDragStart={handleDragStart}
+      role="presentation"
+      alt=""
+    />
+  </Link>
   ));
 
   return (
