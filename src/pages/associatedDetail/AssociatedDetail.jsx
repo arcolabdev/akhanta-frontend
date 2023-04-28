@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import "./AssociatedDetail.css";
 import { FaInstagram, FaFacebookF } from "react-icons/fa";
 import { MdArrowBackIosNew, MdWhatsapp } from "react-icons/md";
@@ -32,8 +32,8 @@ const AssociatedDetail = () => {
           <span style={{ color: "#9e75e5" }}>Volver a Inicio</span>
         </Link>
       </button>
-      <section className="about-section">
-        <article className="info-contain">
+      <section className="associates-about-section">
+        <article className="associates-info-contain">
           <h1>{name}</h1>
           <p>{description}</p>
         </article>
@@ -41,7 +41,7 @@ const AssociatedDetail = () => {
           <img src={profile} alt="imagen-asociado" className="associate-img" />
         </aside>
       </section>
-      <footer className="section-footer">
+      <footer className="associates-section-footer">
         {links &&
           links.map((link) => {
             switch (link.tag) {
