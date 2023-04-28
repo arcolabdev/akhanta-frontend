@@ -21,27 +21,23 @@ const AssociatedDetail = () => {
   const { profile, banner, description, name, links } = associated;
 
   return (
-    <>
-      <section
+    <div>
+      <div
         className="background-banner"
         style={{ backgroundImage: `url(${banner})` }}
-      ></section>
+      ></div>
+      <Link to="/" className="back-to-main-associates">
+        <MdArrowBackIosNew size={35} color="#9e75e5" />
+        <span>Volver a Inicio</span>
+      </Link>
       <section className="about-section">
-        <div className="about-contain">
-          <div className="info-contain">
-            <h3>{name}</h3>
-            <p>{description}</p>
-          </div>
-          <div className="image-contain">
-            <img src={profile} alt="imagen-asociado" height={500} />
-          </div>
-        </div>
-        <Link to="/">
-          <div className="arrow">
-            <MdArrowBackIosNew size={35} color="#9e75e5" />
-            <span className="back-to-main">Volver a Inicio</span>
-          </div>
-        </Link>
+        <article className="info-contain">
+          <h1>{name}</h1>
+          <p>{description}</p>
+        </article>
+        <aside className="image-contain">
+          <img src={profile} alt="imagen-asociado" className="associate-img" />
+        </aside>
       </section>
       <footer className="section-footer">
         {links &&
@@ -96,7 +92,7 @@ const AssociatedDetail = () => {
             }
           })}
       </footer>
-    </>
+    </div>
   );
 };
 
