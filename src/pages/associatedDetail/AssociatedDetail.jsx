@@ -26,10 +26,12 @@ const AssociatedDetail = () => {
         className="background-banner"
         style={{ backgroundImage: `url(${banner})` }}
       ></div>
-      <Link to="/" className="back-to-main-associates">
-        <MdArrowBackIosNew size={35} color="#9e75e5" />
-        <span>Volver a Inicio</span>
-      </Link>
+      <button className="back-to-main-associates">
+        <Link to="/">
+          <MdArrowBackIosNew size={35} color="#9e75e5" />
+          <span style={{ color: "#9e75e5" }}>Volver a Inicio</span>
+        </Link>
+      </button>
       <section className="about-section">
         <article className="info-contain">
           <h1>{name}</h1>

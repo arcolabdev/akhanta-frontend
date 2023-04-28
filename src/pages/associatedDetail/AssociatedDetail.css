@@ -5,11 +5,13 @@
 }
 
 .back-to-main-associates {
+  border: none;
+  background: none;
+  text-decoration: none;
   position: relative;
   top: 3rem;
   left: 3rem;
-  color: #9e75e5;
-  text-decoration: underline;
+  margin: 1.5rem 0;
 }
 
 .about-section {
@@ -21,7 +23,12 @@
   padding: 4rem;
   color: #421400;
   margin: 0 auto;
-  width: 80%;
+  width: 70%;
+}
+
+.associate-img {
+  height: 40rem;
+  width: auto;
 }
 
 .info-contain p {
