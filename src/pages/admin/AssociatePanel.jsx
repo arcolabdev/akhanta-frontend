@@ -65,7 +65,7 @@ function AssociatePanel() {
                               textDecoration: "underline",
                             }}
                           >
-                            {link.url}
+                            {link.tag}
                             <br />
                           </a>
                         );

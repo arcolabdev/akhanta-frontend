@@ -42,7 +42,7 @@ const AssociateForm = ({ edit, associate }) => {
     const links = inputs.map((input) => {
       return {
         url: input.url,
-        tag: input.option,
+        tag: input.tag,
       };
     });
 
@@ -55,20 +55,11 @@ const AssociateForm = ({ edit, associate }) => {
 
     let idResponse = 0;
 
-    try {
-      if (edit) {
-        await axios
-          .put(baseUrl + id, payload, {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          })
-          .then((data) => {
-            console.log("updated");
-            idResponse = data.data.results.id;
-          });
-      }
+    if (edit) {
+      payload.id = id;
+    }
 
+    try {
       await axios
         .post(baseUrl, payload, {
           headers: {
@@ -102,12 +93,14 @@ const AssociateForm = ({ edit, associate }) => {
   };
 
   const addInput = () => {
-    const newInput = { id: inputs.length, url: "", option: "INSTAGRAM" };
+    const newInput = { id: inputs.length, url: "", tag: "INSTAGRAM" };
     setInputs((prevInputs) => [...prevInputs, newInput]);
+    console.log(inputs);
   };
 
   const deleteInput = (id) => {
     setInputs(inputs.filter((input) => input.id !== id));
+    console.log(inputs);
   };
 
   const updateUrl = (id, url) => {
@@ -132,6 +125,7 @@ const AssociateForm = ({ edit, associate }) => {
         }
       })
     );
+    console.log(inputs);
   };
 
   return (
