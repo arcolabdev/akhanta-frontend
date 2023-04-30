@@ -44,21 +44,6 @@
 
 @media (max-width: 768px) {
   .about-mandala {
-    width: 100px;
-  }
-
-  .about-container {
-    align-items: center;
-  }
-
-  .about-content article p {
-    text-align: justify;
-    width: 75%;
-  }
-}
-
-@media (max-width: 450px) {
-  .about-mandala {
     display: none;
   }
 
