@@ -1,4 +1,7 @@
 .footer-section {
+  background-image: url(../../assets/banner-footer2.jpg);
+  background-size: cover;
+  background-position-y: 70%;
   color: white;
 }
 
@@ -19,7 +22,7 @@
 
 .footer-title {
   text-align: center;
-  padding-bottom: 3rem;
+  padding-bottom: 1rem;
   font-size: 3rem;
 }
 .footer-form {
@@ -54,14 +57,6 @@
 }
 .footer-form button:hover {
   background-color: #646f6b;
-}
-
-.footer-section {
-  background-image: url(../../assets/banner-footer2.jpg);
-  background-size: cover;
-  background-position-y: 56%;
-  background-position-x: 90%;
-  padding: 3rem 0 5rem 0;
 }
 
 .footer-nav-media {
@@ -101,14 +96,12 @@
   width: 25px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1300px) {
   .footer-section {
     background-image: url(../../assets/banner-footer.jpg);
     background-size: cover;
     background-position-y: 56%;
     background-position-x: 50%;
-    height: fit-content;
-    padding: 3rem 0 5rem 0;
   }
 }
 

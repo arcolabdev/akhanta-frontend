@@ -12,6 +12,7 @@ const Home = () => {
   return (
     <>
       <div className="background-header-banner">
+        <div className="banner-filter"></div>
         <Header />
         <Banner />
       </div>

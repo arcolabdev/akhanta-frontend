@@ -1,21 +1,45 @@
 .background-header-banner {
   height: 80%;
   background-image: url(../../assets/banner2.jpg);
-  background-size: 140% auto;
-  background-position-y: center;
+  background-size: 130% auto;
+  background-position-y: 40%;
+  background-position-x: 0%;
   background-repeat: no-repeat;
   margin-bottom: 5rem;
+}
+
+.banner-filter {
+  background: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 80%;
+  z-index: 0;
+  position: absolute;
 }
 
 .background-about-reel {
   height: auto;
 }
 
+@media (max-width: 1024px) {
+  .background-header-banner {
+    background-size: 200% auto;
+    background-position-y: 40%;
+    background-position-x: 25%;
+  }
+}
+
+@media (max-width: 768px) {
+  .background-header-banner {
+    background-size: 250% auto;
+    background-position-y: 40%;
+    background-position-x: 40%;
+  }
+}
+
 @media (max-width: 450px) {
   .background-header-banner {
     background-size: 300% auto;
     background-position-y: 20%;
-    background-position-x: 40%;
     height: 70%;
   }
 }
