@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { TiArrowLeft } from "react-icons/ti";
 import { Table } from "react-bootstrap";
 import "./AssociatePanel.css";
-import AssociateForm from "./forms/associate/AssociateForm"
+import AssociateForm from "./forms/associate/AssociateForm";
 
 import AssociateModal from "./forms/associate/AssociateModal";
 
@@ -21,7 +21,10 @@ function AssociatePanel() {
   }, []);
 
   return (
-    <section className="container justify-content-center form-container" style={{  backgroundColor: "#fffcf0"}} >
+    <section
+      className="container justify-content-center form-container"
+      style={{ backgroundColor: "#fffcf0" }}
+    >
       <Link to="/">
         <span>
           <TiArrowLeft className="icon" size="65px" color="#C5D6E6" />
@@ -65,7 +68,7 @@ function AssociatePanel() {
                               textDecoration: "underline",
                             }}
                           >
-                            {link.tag}
+                            {link.url + link.tag}
                             <br />
                           </a>
                         );
