@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "./AssociatedDetail.css";
 import { FaInstagram, FaFacebookF } from "react-icons/fa";
 import { MdArrowBackIosNew, MdWhatsapp } from "react-icons/md";
@@ -8,9 +8,10 @@ import { Context } from "../../Context";
 import { useParams } from "react-router-dom";
 
 const AssociatedDetail = () => {
+  useEffect(() => {}, []);
+
   const { data } = useContext(Context);
   const { id } = useParams();
-
   const associated = data.find((item) => item.id === parseInt(id));
 
   if (!associated) {
@@ -20,30 +21,27 @@ const AssociatedDetail = () => {
   const { profile, banner, description, name, links } = associated;
 
   return (
-    <>
-      <section className="background-banner">
-        <h1>{name}</h1>
-      </section>
-      <section className="about-section">
-        <div className="about-contain">
-          <div className="info-contain">
-            <h3>
-              Hola,
-              <br /> <span>Soy {name}</span>
-            </h3>
-            <p>{description}</p>
-          </div>
-          <div className="image-contain">
-            <img src={profile} alt="imagen-asociado" height={500} />
-          </div>
-        </div>
+    <div>
+      <div
+        className="background-banner"
+        style={{ backgroundImage: `url(${banner})` }}
+      ></div>
+      <button className="back-to-main-associates">
         <Link to="/">
-          <div className="arrow">
-            <MdArrowBackIosNew size={35} color="#C8ABFB" />
-          </div>
+          <MdArrowBackIosNew size={35} color="#9e75e5" />
+          <span style={{ color: "#9e75e5" }}>Volver a Inicio</span>
         </Link>
+      </button>
+      <section className="associates-about-section">
+        <article className="associates-info-contain">
+          <h1>{name}</h1>
+          <p>{description}</p>
+        </article>
+        <aside className="image-contain">
+          <img src={profile} alt="imagen-asociado" className="associate-img" />
+        </aside>
       </section>
-      <footer className="section-footer">
+      <footer className="associates-section-footer">
         {links &&
           links.map((link) => {
             switch (link.tag) {
@@ -96,7 +94,7 @@ const AssociatedDetail = () => {
             }
           })}
       </footer>
-    </>
+    </div>
   );
 };
 

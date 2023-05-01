@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Header.css";
-import logo from "../../assets/full-logo.png";
+import logo from "../../assets/logo-nuevo.png";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
@@ -11,7 +11,7 @@ const Header = () => {
 
   useEffect(() => {
     if (
-      activeNav === "#associate" ||
+      activeNav === "#associates" ||
       activeNav === "#about" ||
       activeNav === "#contact"
     ) {
@@ -36,10 +36,10 @@ const Header = () => {
           </li>
           <li>
             <a
-              href="#associate"
-              onClick={() => setActiveNav("#associate")}
+              href="#associates"
+              onClick={() => setActiveNav("#associates")}
               className={
-                activeNav === "#associate"
+                activeNav === "#associates"
                   ? "nav__link active-link"
                   : "nav__link "
               }
@@ -49,7 +49,7 @@ const Header = () => {
           </li>
         </ul>
       </nav>
-      <img className="header-logo" src={logo} alt="" />
+      <img className="header-logo" src={logo} alt="logo" />
       <nav className={openNav ? "noshow" : "header-nav"}>
         <ul>
           <li>
@@ -92,10 +92,10 @@ const Header = () => {
             </li>
             <li>
               <a
-                href="#associate"
-                onClick={() => setActiveNav("#associate")}
+                href="#associates"
+                onClick={() => setActiveNav("#associates")}
                 className={
-                  activeNav === "#associate"
+                  activeNav === "#associates"
                     ? "nav__link active-link"
                     : "nav__link "
                 }

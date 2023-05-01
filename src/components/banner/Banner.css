@@ -6,17 +6,17 @@
   color: #e2e2e2;
   line-height: 3rem;
   position: relative;
-  top: 15rem;
-  width: 60%;
-  margin-left: 3rem;
+  top: 14rem;
+  width: 33%;
+  left: 14%;
 }
 .banner h1 {
-  font-size: 2rem;
   text-align: left;
 }
 
-.banner-span {
-  font-size: 4.8rem;
+.banner span {
+  font-size: 1.4rem;
+  width: 0%;
 }
 
 .banner-title-author {
@@ -27,37 +27,61 @@
   justify-self: flex-end;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .banner {
-    top: 11rem;
-  }
-
-  .banner h1 {
-    font-size: 1.3rem;
-  }
-
-  .banner-span {
-    font-size: 3.5rem;
-  }
-  .banner-title-author {
-    font-size: 1.1rem;
+    position: relative;
+    top: 10rem;
+    width: 50%;
+    left: 8%;
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 768px) {
+  .banner {
+    line-height: 2rem;
+    width: 60%;
+    left: 8%;
+    top: 3rem;
+  }
+
+  .banner h1 {
+    font-size: 2rem;
+  }
+
+  .banner span {
+    font-size: 1.3rem;
+  }
+
+  .banner p {
+    font-size: 1rem;
+  }
+
+  .banner-title-author {
+    text-align: start;
+  }
+}
+
+@media (max-width: 550px) {
   .banner {
     width: 100%;
     margin: 0;
-    padding: 2rem;
+    padding: 1rem 0.5rem;
     top: 1rem;
+    left: 0;
   }
-  .banner-span {
-    font-size: 11vw;
-  }
+
   .banner h1 {
-    font-size: 5.1vw;
+    font-size: 1.9rem;
+    text-align: center;
+    line-height: 1.9rem;
   }
+
+  .banner h1 span {
+    font-size: 1.2rem;
+    text-align: start;
+  }
+
   .banner-title-author {
-    font-size: 4vw;
+    text-align: start;
   }
 }

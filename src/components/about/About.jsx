@@ -17,7 +17,7 @@ const About = () => {
       </div>
       <div className="about-content">
         <article>
-          <h2>¿Qué es Akhanta?</h2>
+          <h2 style={{ fontWeight: "700" }}>¿Qué es Akhanta?</h2>
           <p>
             La expresión Akhanta manifiesta la idea de “Unificación Interna”,
             integrarse desde adentro. Nuestra misión principal es transmitir y

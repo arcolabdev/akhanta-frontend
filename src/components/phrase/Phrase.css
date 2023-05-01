@@ -4,37 +4,39 @@
   display: flex;
   justify-content: center;
   margin-bottom: 10rem;
-  padding: 3rem 0;
+  padding: 4rem 0%;
   text-align: center;
 }
 
-.phrase-container h2 {
+.phrase-container h3 {
   font-size: 1.5rem;
 }
 
-@media (max-width: 1440px) {
-  .phrase-container {
-    padding: 4rem 0.5rem;
-  }
-
-  .phrase-container h2 {
+@media (max-width: 1200px) {
+  .phrase-container h3 {
     font-size: 1.2rem;
   }
 }
 
+@media (max-width: 855px) {
+  .phrase-container h3 {
+    font-size: 1.15rem;
+  }
+}
+
 @media (max-width: 768px) {
-  .phrase-container h2 {
-    font-size: 2rem;
+  .phrase-container h3 {
+    font-size: 1.2rem;
     text-align: center;
+  }
+
+  .phrase-container {
+    padding: 4rem 5%;
   }
 }
 
 @media (max-width: 450px) {
-  .phrase-container {
-    padding: 4rem 0rem;
-  }
-
-  .phrase-container h2 {
-    font-size: 1.5rem;
+  .phrase-container h3 {
+    text-align: center;
   }
 }

@@ -12,7 +12,7 @@ function ScrollToTopButton() {
   }, []);
 
   const handleScroll = () => {
-    if (window.pageYOffset > 500) {
+    if (window.pageYOffset > 500 && window.innerWidth > 560) {
       setIsVisible(true);
     } else {
       setIsVisible(false);

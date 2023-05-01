@@ -24,16 +24,15 @@
 
 .about-content article h2 {
   font-size: 35px;
-  font-weight: 400;
   margin: 0 0 2rem 0;
   text-align: center;
 }
 
 .about-content article p {
+  font-size: larger;
+  margin: 0;
   text-align: center;
   width: 80%;
-  margin: 0;
-  font-size: larger;
 }
 
 .mandala-mobile{
