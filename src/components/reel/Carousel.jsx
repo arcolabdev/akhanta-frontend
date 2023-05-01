@@ -44,7 +44,7 @@ export default function Carousel() {
     );
   }
   return (
-    <div className="reel-container">
+    <div className="reel-container" id="associates">
       <h2 className="reel-title">Nuestros Asociados</h2>
       <div className="main-wrapper">
         <div className="wrapper">

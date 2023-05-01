@@ -135,7 +135,7 @@ a {
     right: 0;
     top: 0;
     margin: 0;
-    width: 60vw;
+    width: 45vw;
     padding: 0;
     height: 100vh;
     align-items: flex-end;
@@ -175,7 +175,9 @@ a {
     flex-direction: column;
     width: 100%;
     padding: 0;
-    padding-top: 1rem;
+    margin-top: 3rem;
+    justify-content: flex-start;
+
   }
   .nav-mobile ul li a,
   .nav-mobile ul li a button {

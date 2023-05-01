@@ -11,7 +11,7 @@ const Header = () => {
 
   useEffect(() => {
     if (
-      activeNav === "#associate" ||
+      activeNav === "#associates" ||
       activeNav === "#about" ||
       activeNav === "#contact"
     ) {
@@ -36,10 +36,10 @@ const Header = () => {
           </li>
           <li>
             <a
-              href="#associate"
-              onClick={() => setActiveNav("#associate")}
+              href="#associates"
+              onClick={() => setActiveNav("#associates")}
               className={
-                activeNav === "#associate"
+                activeNav === "#associates"
                   ? "nav__link active-link"
                   : "nav__link "
               }
@@ -92,10 +92,10 @@ const Header = () => {
             </li>
             <li>
               <a
-                href="#associate"
-                onClick={() => setActiveNav("#associate")}
+                href="#associates"
+                onClick={() => setActiveNav("#associates")}
                 className={
-                  activeNav === "#associate"
+                  activeNav === "#associates"
                     ? "nav__link active-link"
                     : "nav__link "
                 }
