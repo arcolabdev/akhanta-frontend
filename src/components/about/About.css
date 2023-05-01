@@ -44,6 +44,7 @@
 @media (max-width: 1012px) {
   .about-content article p {
     width: 100%;
+    font-size: 17px;
   }
 }
 
@@ -57,12 +58,21 @@
     display: inline;
   }
 
+  .about-content article p {
+    text-align: justify;
+    width: 75%;
+    font-size: 17px;
+    line-height: 2rem;
+}
+
 }
 
 
 @media (max-width: 768px) {
 
- 
+ .about-mandala{
+  width: 100%;
+ }
 
   .about-container {
     align-items: center;
@@ -71,6 +81,8 @@
   .about-content article p {
     text-align: justify;
     width: 75%;
+    font-size: 15px;
+    line-height: 2rem;
   }
 }
 
@@ -79,10 +91,10 @@
     display: none;
   }
 
-  .about-content article p {
-    text-align: left;
-    width: 100%;
-    margin: 0;
-    font-size: larger;
-  }
+   .about-content article p {
+    text-align: justify;
+    width: 75%;
+    font-size: 14px;
+    line-height: 2rem;
+}
 }
