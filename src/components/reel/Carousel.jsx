@@ -98,12 +98,14 @@ export default function Carousel() {
           <motion.button
             whileTap={{ scale: 0.8 }}
             onClick={() => handleClick(-1)}
+            className="reel-button"
           >
             ◀︎
           </motion.button>
           <motion.button
             whileTap={{ scale: 0.8 }}
             onClick={() => handleClick(1)}
+            className="reel-button"
           >
             ▶︎
           </motion.button>
