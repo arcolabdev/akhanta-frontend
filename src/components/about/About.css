@@ -40,11 +40,16 @@
   display: none;
 }
 
+@media (max-width: 1200px) {
+.about-mandala{
+  width: 100%;
+}
+}
 
 @media (max-width: 1012px) {
   .about-content article p {
     width: 100%;
-    font-size: 17px;
+    font-size: 16px;
   }
 }
 
