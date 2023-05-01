@@ -25,3 +25,10 @@
   background-color: #555;
   color: #fff;
 }
+
+@media (max-width: 450px) {
+  .scroll-to-top-button {
+    margin: 0;
+    bottom: 60px;
+  }
+}

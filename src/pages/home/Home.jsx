@@ -4,7 +4,7 @@ import Header from "../../components/header/Header";
 import Banner from "../../components/banner/Banner";
 import About from "../../components/about/About";
 import Footer from "../../components/footer/Footer";
-import ScrollToTopButton from "../../components/whatsapp/ScrollToTopButton";
+import ScrollToTopButton from "../../components/autoscroll/ScrollToTopButton";
 import Phrase from "../../components/phrase/Phrase";
 import Carousel from "../../components/reel/Carousel";
 

@@ -80,6 +80,9 @@
   color: #0088cc;
 }
 .contact-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 60%;
   align-self: center;
   padding: 5px;
