@@ -33,6 +33,7 @@
   margin: 0;
   text-align: center;
   width: 80%;
+  line-height: 2.8rem;
 }
 
 .mandala-mobile{
@@ -43,12 +44,23 @@
 .about-mandala{
   width: 100%;
 }
+
+.about-content article p {
+  font-size: 17px;
+  line-height: 2.5rem;
+}
 }
 
 @media (max-width: 1012px) {
+
+  .about-content article h2 {
+    font-size: 30px;
+  }
+
   .about-content article p {
     width: 100%;
     font-size: 16px;
+    line-height: 2.5rem;
   }
 }
 
