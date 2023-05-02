@@ -103,6 +103,7 @@ a {
 }
 
 @media (max-width: 768px) {
+
   header.header-content {
     padding: 1rem;
   }
@@ -123,12 +124,12 @@ a {
   .header-logo {
     width: auto;
     height: 100%;
+    margin: 0 auto;
   }
 
   /* TO DO Cambiar color*/
   .nav-mobile {
     display: flex;
-    /* background-color: rgb(96, 60, 22); */
     background-color: #fffcf0;
     position: absolute;
     z-index: 999;
@@ -188,6 +189,8 @@ a {
   } */
 
   .hamburger {
+    position: absolute;
+    right: 50px;
     display: block;
     height: 30px;
     color: white;
