@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import "./AssociatedDetail.css";
 import { FaInstagram, FaFacebookF } from "react-icons/fa";
 import { MdArrowBackIosNew, MdWhatsapp } from "react-icons/md";
@@ -8,7 +8,6 @@ import { Context } from "../../Context";
 import { useParams } from "react-router-dom";
 
 const AssociatedDetail = () => {
-  useEffect(() => {}, []);
 
   const { data } = useContext(Context);
   const { id } = useParams();
