@@ -3,12 +3,17 @@ import "./About.css";
 import clip from "../../assets/clip.png";
 import mandala_left from "../../assets/mandalas-left.png";
 import mandala_right from "../../assets/mandalas-right.png";
+import mandala_mobile_left from "../../assets/mandalas-mobile-left.png"
+import mandala_mobile_right from "../../assets/mandalas-mobile-right.png"
 
 const About = () => {
   return (
     <section className="about-container" id="about">
-      <div>
-        <img src={mandala_left} alt="decoration" className="about-mandala" />
+      <div className="mandala-desktop">
+        <img src={mandala_left} alt="decoration" className="about-mandala mandala-desktop" />
+      </div>
+      <div className="mandala-mobile">
+        <img src={mandala_mobile_left} alt="decoration" className="about-mandala" />
       </div>
       <div className="about-content">
         <article>
@@ -63,8 +68,11 @@ const About = () => {
           </p>
         </article>
       </div>
-      <div>
+      <div className="mandala-desktop">
         <img src={mandala_right} alt="decoration" className="about-mandala" />
+      </div>
+      <div className="mandala-mobile">
+        <img src={mandala_mobile_right} alt="decoration" className="about-mandala" />
       </div>
     </section>
   );
