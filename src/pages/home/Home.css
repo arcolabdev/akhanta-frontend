@@ -2,7 +2,7 @@
   height: 80vh;
   background-image: url(../../assets/banner.jpg);
   background-size: cover;
-  background-position: 70%;
+  background-position: 70% 100%;
   margin-bottom: 5rem;
 }
 
