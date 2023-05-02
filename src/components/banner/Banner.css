@@ -72,7 +72,7 @@
   .banner {
     width: 100%;
     margin: 0;
-    padding: 1rem 0.5rem;
+    padding: 0.5rem 0.5rem;
     top: 9rem;
     left: 0;
   }
@@ -89,6 +89,17 @@
   }
 
   .banner-title-author {
-    text-align: start;
+    text-align: end;
+  }
+}
+
+@media (max-width: 425px) {
+  .banner h1 {
+    font-size: 1.44rem;
+  }
+
+  .banner h1 span {
+    font-size: 1.06rem;
+    line-height: 1.5rem;
   }
 }

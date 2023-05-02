@@ -7,10 +7,10 @@
 
 body {
   background-color: #fffcf0;
+  height: 100vh;
 }
 
 .App {
-  height: 100vh;
   font-family: "Times", serif;
 }
 
@@ -22,7 +22,7 @@ body {
 }
 
 html {
-  /* scroll-behavior: smooth; */
+  scroll-behavior: smooth;
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/

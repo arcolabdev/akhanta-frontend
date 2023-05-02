@@ -36,23 +36,22 @@
   line-height: 2.8rem;
 }
 
-.mandala-mobile{
+.mandala-mobile {
   display: none;
 }
 
 @media (max-width: 1200px) {
-.about-mandala{
-  width: 100%;
-}
+  .about-mandala {
+    width: 100%;
+  }
 
-.about-content article p {
-  font-size: 17px;
-  line-height: 2.5rem;
-}
+  .about-content article p {
+    font-size: 17px;
+    line-height: 2.5rem;
+  }
 }
 
 @media (max-width: 1012px) {
-
   .about-content article h2 {
     font-size: 30px;
   }
@@ -65,12 +64,11 @@
 }
 
 @media (max-width: 820px) {
-
- .mandala-desktop{
+  .mandala-desktop {
     display: none;
   }
 
-  .mandala-mobile{
+  .mandala-mobile {
     display: inline;
   }
 
@@ -79,16 +77,13 @@
     width: 75%;
     font-size: 17px;
     line-height: 2rem;
+  }
 }
-
-}
-
 
 @media (max-width: 768px) {
-
- .about-mandala{
-  width: 100%;
- }
+  .about-mandala {
+    width: 100%;
+  }
 
   .about-container {
     align-items: center;
@@ -107,10 +102,10 @@
     display: none;
   }
 
-   .about-content article p {
+  .about-content article p {
     text-align: justify;
     width: 75%;
     font-size: 14px;
     line-height: 2rem;
-}
+  }
 }
