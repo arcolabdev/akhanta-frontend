@@ -28,14 +28,20 @@
   margin: 0;
   justify-self: flex-end;
 }
- @media (max-width: 1024px) {
+
+@media (max-width: 1440px) {
   .banner {
-    position: relative;
+    width: 40%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .banner {
     top: 12rem;
     width: 50%;
     left: 8%;
   }
-} 
+}
 
 @media (max-width: 768px) {
   .banner {
