@@ -10,6 +10,7 @@ import AssociateModal from "./forms/associate/AssociateModal";
 
 function AssociatePanel() {
   const [data, setData] = useState([]);
+
   const baseUrl = "https://akhanta.herokuapp.com/api/v1/associates/";
 
   const peticionGet = () => {

@@ -55,21 +55,28 @@ const AssociateForm = ({ edit, associate }) => {
 
     let idResponse = 0;
 
-    if (edit) {
-      payload.id = id;
-    }
-
     try {
-      await axios
-        .post(baseUrl, payload, {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        })
-        .then((data) => {
-          idResponse = data.data.results.id;
-        });
-
+      if (edit) {
+        await axios
+          .put(`${baseUrl}/${id}`, payload, {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          })
+          .then((data) => {
+            idResponse = data.data.results.id;
+          });
+      } else {
+        await axios
+          .post(baseUrl, payload, {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          })
+          .then((data) => {
+            idResponse = data.data.results.id;
+          });
+      }
       if (profile) {
         await axios.post(baseUrl + idResponse + "/profile", dataProfile, {
           headers: {
@@ -87,13 +94,14 @@ const AssociateForm = ({ edit, associate }) => {
       }
     } catch (error) {
       setIsSubmitting(false);
+      console.log(error);
     }
 
     window.location.reload();
   };
 
   const addInput = () => {
-    const newInput = { id: inputs.length, url: "", tag: "INSTAGRAM" };
+    const newInput = { id: null, url: "", tag: "INSTAGRAM" };
     setInputs((prevInputs) => [...prevInputs, newInput]);
     console.log(inputs);
   };
@@ -103,10 +111,10 @@ const AssociateForm = ({ edit, associate }) => {
     console.log(inputs);
   };
 
-  const updateUrl = (id, url) => {
+  const updateUrl = (i, url) => {
     setInputs(
-      inputs.map((input) => {
-        if (input.id === id) {
+      inputs.map((input, index) => {
+        if (index === i) {
           return { ...input, url };
         } else {
           return input;
@@ -115,17 +123,17 @@ const AssociateForm = ({ edit, associate }) => {
     );
   };
 
-  const updateTag = (id, tag) => {
+  const updateTag = (i, tag) => {
+    console.log(inputs);
     setInputs(
-      inputs.map((input) => {
-        if (input.id === id) {
+      inputs.map((input, index) => {
+        if (index === i) {
           return { ...input, tag };
         } else {
           return input;
         }
       })
     );
-    console.log(inputs);
   };
 
   return (
@@ -173,7 +181,7 @@ const AssociateForm = ({ edit, associate }) => {
             </Form.Group>
             <Form.Group>
               {inputs.map((input, i) => (
-                <div key={input.id} className="row mb-3">
+                <div key={i} className="row mb-3">
                   <div className="col-sm-2">
                     <Form.Label>Link {i + 1}:</Form.Label>
                   </div>
@@ -182,17 +190,17 @@ const AssociateForm = ({ edit, associate }) => {
                       type="text"
                       className="form-control"
                       value={input.url}
-                      onChange={(e) => updateUrl(input.id, e.target.value)}
+                      onChange={(e) => updateUrl(i, e.target.value)}
                     />
 
                     <div className="col-sm-2">
                       <Form.Select
-                        onChange={(e) => updateTag(input.id, e.target.value)}
+                        onChange={(e) => updateTag(i, e.target.value)}
                       >
-                        <option value="INSTAGRAM">Instagram</option>
-                        <option value="WHATSAPP">WhatsApp</option>
-                        <option value="FACEBOOK">Facebook</option>
-                        <option value="TELEGRAM">Telegram</option>
+                        <option value="INSTAGRAM" selected={input.tag === "INSTAGRAM" ? "selected": ""}>Instagram</option>
+                        <option value="WHATSAPP" selected={input.tag === "WHATSAPP" ? "selected": ""}>WhatsApp</option>
+                        <option value="FACEBOOK" selected={input.tag === "FACEBOOK" ? "selected": ""}>Facebook</option>
+                        <option value="TELEGRAM" selected={input.tag === "TELEGRAM" ? "selected": ""}>Telegram</option>
                       </Form.Select>
                     </div>
                     {i === 0 && (
