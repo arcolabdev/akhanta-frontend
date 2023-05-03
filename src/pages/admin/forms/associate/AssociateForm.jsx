@@ -16,6 +16,7 @@ const AssociateForm = ({ edit, associate }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
 
+  // const baseUrl = "http://localhost:8080/api/v1/associates/";
   const baseUrl = "https://akhanta.herokuapp.com/api/v1/associates/";
 
   const handleCloseEdit = () => setShowEdit(false);
