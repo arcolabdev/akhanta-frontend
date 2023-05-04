@@ -198,10 +198,30 @@ const AssociateForm = ({ edit, associate }) => {
                       <Form.Select
                         onChange={(e) => updateTag(i, e.target.value)}
                       >
-                        <option value="INSTAGRAM" selected={input.tag === "INSTAGRAM" ? "selected": ""}>Instagram</option>
-                        <option value="WHATSAPP" selected={input.tag === "WHATSAPP" ? "selected": ""}>WhatsApp</option>
-                        <option value="FACEBOOK" selected={input.tag === "FACEBOOK" ? "selected": ""}>Facebook</option>
-                        <option value="TELEGRAM" selected={input.tag === "TELEGRAM" ? "selected": ""}>Telegram</option>
+                        <option
+                          value="INSTAGRAM"
+                          selected={input.tag === "INSTAGRAM" ? "selected" : ""}
+                        >
+                          Instagram
+                        </option>
+                        <option
+                          value="WHATSAPP"
+                          selected={input.tag === "WHATSAPP" ? "selected" : ""}
+                        >
+                          WhatsApp
+                        </option>
+                        <option
+                          value="FACEBOOK"
+                          selected={input.tag === "FACEBOOK" ? "selected" : ""}
+                        >
+                          Facebook
+                        </option>
+                        <option
+                          value="TELEGRAM"
+                          selected={input.tag === "TELEGRAM" ? "selected" : ""}
+                        >
+                          Telegram
+                        </option>
                       </Form.Select>
                     </div>
                     {i === 0 && (

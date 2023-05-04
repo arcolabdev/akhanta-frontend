@@ -13,9 +13,11 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log({email, password});
     axios
-      .post("https://example.com/login", { email, password })
+      .post("http://akhanta.herokuapp.com/api/v1/auth/login", { email, password })
       .then((response) => {
+        console.log(response);
         if (response.data.isAdmin) {
           // si el usuario es un administrador, redirecciona a la página de administración
           navigate("/admin");
