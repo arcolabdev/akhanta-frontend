@@ -8,8 +8,11 @@ function AssociateModal({ associateId, associateName }) {
   const [show, setShow] = useState(false);
 
   const handleDelete = async (id) => {
+    const token = localStorage.getItem("token");
     await axios
-      .delete("http://akhanta.herokuapp.com/api/v1/associates/" + id)
+      .delete(`https://akhanta.herokuapp.com/api/v1/associates/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
       .then((data) => console.log(data));
 
     window.location.reload();
