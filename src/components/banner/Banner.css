@@ -1,24 +1,30 @@
 .banner-content {
   width: 100%;
-  height: 85%;
+  height: 68vh;
+  position: relative;
 }
 
 .banner {
   color: #e2e2e2;
-  line-height: 3rem;
-  position: relative;
-  top: 14rem;
+  line-height: 8vw;
+  position: absolute;
+  top: 25%;
   width: 33%;
   left: 14%;
+  
 }
 
 .banner h1 {
   text-align: left;
+  height: 100%;
+  
 }
 
 .banner span {
   font-size: 1.4rem;
   width: 0%;
+  height: 100%;
+
 }
 
 .banner-title-author {
@@ -27,17 +33,14 @@
   text-align: end;
   margin: 0;
   justify-self: flex-end;
+  height: 100%;
 }
 
-@media (max-width: 1440px) {
-  .banner {
-    width: 40%;
-  }
-}
+
 
 @media (max-width: 1024px) {
   .banner {
-    top: 12rem;
+    top: 20%;
     width: 50%;
     left: 8%;
   }
@@ -45,10 +48,10 @@
 
 @media (max-width: 768px) {
   .banner {
-    line-height: 2rem;
+    line-height: 2vw;
     width: 60%;
     left: 8%;
-    top: 12rem;
+    top: 20%;
   }
 
   .banner h1 {
