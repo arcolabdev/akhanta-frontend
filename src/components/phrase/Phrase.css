@@ -3,7 +3,7 @@
   background-color: #421400a9;
   display: flex;
   justify-content: center;
-  margin-bottom: 10rem;
+  margin-bottom: 6rem;
   padding: 4rem 0%;
   text-align: center;
 }
@@ -31,7 +31,7 @@
   }
 
   .phrase-container {
-    padding: 4rem 5%;
+    padding: 2rem 5%;
   }
 }
 

@@ -11,20 +11,17 @@
   top: 25%;
   width: 33%;
   left: 14%;
-  
 }
 
 .banner h1 {
   text-align: left;
   height: 100%;
-  
 }
 
 .banner span {
   font-size: 1.4rem;
   width: 0%;
   height: 100%;
-
 }
 
 .banner-title-author {
@@ -35,8 +32,6 @@
   justify-self: flex-end;
   height: 100%;
 }
-
-
 
 @media (max-width: 1024px) {
   .banner {
@@ -97,12 +92,15 @@
 }
 
 @media (max-width: 425px) {
+  .banner {
+    padding: 0.5rem 2rem;
+  }
   .banner h1 {
-    font-size: 1.44rem;
+    font-size: 1.4rem;
   }
 
   .banner h1 span {
-    font-size: 1.06rem;
+    font-size: 1.05rem;
     line-height: 1.5rem;
   }
 }
