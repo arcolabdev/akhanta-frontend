@@ -11,21 +11,34 @@ const Login = () => {
   //useNavigate es un hook que permite manipular el historial del navegador, se puede cambiar la URL de la página actual sin necesidad de recargarla
   const navigate = useNavigate();
 
+  const baseUrl = "https://akhanta.herokuapp.com/api/v1/associates/";
+
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("https://example.com/login", { email, password })
+      .post(
+        baseUrl,
+        {
+          email,
+          password,
+        },
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      )
       .then((response) => {
-        if (response.data.isAdmin) {
-          // si el usuario es un administrador, redirecciona a la página de administración
+        if (response.data.role === "ADMIN") {
           navigate("/admin");
+          localStorage.setItem("token", response.data.token);
         } else {
-          // si el usuario no es un administrador, muestra un mensaje de error
           alert("No tienes permiso para acceder a la página de administración");
         }
       })
       .catch((error) => {
         console.log(error);
+        alert("Usuario o contraseña incorrectos");
       });
   };
 

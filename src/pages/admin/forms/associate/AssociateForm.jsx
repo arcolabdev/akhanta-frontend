@@ -16,7 +16,7 @@ const AssociateForm = ({ edit, associate }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
 
-  // const baseUrl = "http://localhost:8080/api/v1/associates/";
+  //const baseUrl = "http://localhost:8080/api/v1/associates";
   const baseUrl = "https://akhanta.herokuapp.com/api/v1/associates/";
 
   const handleCloseEdit = () => setShowEdit(false);
@@ -40,6 +40,8 @@ const AssociateForm = ({ edit, associate }) => {
     const dataProfile = new FormData();
     dataProfile.append("profile", profile);
 
+    const token = localStorage.getItem("token");
+
     const links = inputs.map((input) => {
       return {
         url: input.url,
@@ -54,51 +56,54 @@ const AssociateForm = ({ edit, associate }) => {
       user_id: 1,
     };
 
+    const associateHeader = {
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
+    const imageHeader = {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    };
+
     let idResponse = 0;
 
     try {
       if (edit) {
         await axios
-          .put(`${baseUrl}/${id}`, payload, {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          })
+          .put(`${baseUrl}/${id}`, payload, associateHeader)
           .then((data) => {
             idResponse = data.data.results.id;
           });
       } else {
-        await axios
-          .post(baseUrl, payload, {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          })
-          .then((data) => {
-            idResponse = data.data.results.id;
-          });
+        await axios.post(baseUrl, payload, associateHeader).then((data) => {
+          idResponse = data.data.results.id;
+        });
       }
       if (profile) {
-        await axios.post(baseUrl + idResponse + "/profile", dataProfile, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        });
+        await axios.post(
+          `${baseUrl}/${idResponse}/profile`,
+          dataProfile,
+          imageHeader
+        );
       }
 
       if (banner) {
-        await axios.post(baseUrl + idResponse + "/banner", dataBanner, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        });
+        await axios.post(
+          `${baseUrl}/${idResponse}/banner`,
+          dataBanner,
+          imageHeader
+        );
       }
     } catch (error) {
       setIsSubmitting(false);
       console.log(error);
     }
 
-    window.location.reload();
+    //window.location.reload();
   };
 
   const addInput = () => {
@@ -198,10 +203,30 @@ const AssociateForm = ({ edit, associate }) => {
                       <Form.Select
                         onChange={(e) => updateTag(i, e.target.value)}
                       >
-                        <option value="INSTAGRAM" selected={input.tag === "INSTAGRAM" ? "selected": ""}>Instagram</option>
-                        <option value="WHATSAPP" selected={input.tag === "WHATSAPP" ? "selected": ""}>WhatsApp</option>
-                        <option value="FACEBOOK" selected={input.tag === "FACEBOOK" ? "selected": ""}>Facebook</option>
-                        <option value="TELEGRAM" selected={input.tag === "TELEGRAM" ? "selected": ""}>Telegram</option>
+                        <option
+                          value="INSTAGRAM"
+                          selected={input.tag === "INSTAGRAM" ? "selected" : ""}
+                        >
+                          Instagram
+                        </option>
+                        <option
+                          value="WHATSAPP"
+                          selected={input.tag === "WHATSAPP" ? "selected" : ""}
+                        >
+                          WhatsApp
+                        </option>
+                        <option
+                          value="FACEBOOK"
+                          selected={input.tag === "FACEBOOK" ? "selected" : ""}
+                        >
+                          Facebook
+                        </option>
+                        <option
+                          value="TELEGRAM"
+                          selected={input.tag === "TELEGRAM" ? "selected" : ""}
+                        >
+                          Telegram
+                        </option>
                       </Form.Select>
                     </div>
                     {i === 0 && (
