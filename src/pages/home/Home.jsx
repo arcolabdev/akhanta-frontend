@@ -6,7 +6,7 @@ import About from "../../components/about/About";
 import Footer from "../../components/footer/Footer";
 import ScrollToTopButton from "../../components/autoscroll/ScrollToTopButton";
 import Phrase from "../../components/phrase/Phrase";
-import Carousel from "../../components/reel/Carousel";
+import Carousel from "../../components/reel/Carousel.jsx";
 
 const Home = () => {
   return (
@@ -19,8 +19,8 @@ const Home = () => {
       <div className="background-about-reel">
         <About />
         <Phrase />
-        <Carousel />
       </div>
+        <Carousel />
       <Footer />
       <ScrollToTopButton />
     </>
