@@ -2,19 +2,18 @@ import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
 // import { useParams } from 'react-router-dom';
 
-
 export const Context = createContext();
-
 
 export const MyContextProvider = ({ children }) => {
   const [data, setData] = useState([]);
   // const [dataById, setDataById] = useState([]);
   // const { id } = useParams();
 
+  const baseUrl = "http://localhost:8080/api/v1/associates";
 
   useEffect(() => {
     axios
-      .get("https://akhanta.herokuapp.com/api/v1/associates/")
+      .get(baseUrl)
       .then((response) => {
         setData(response.data.results);
       })
@@ -34,9 +33,5 @@ export const MyContextProvider = ({ children }) => {
   //     });
   // }, [id]);
 
-  return (
-    <Context.Provider value={{ data }}>
-      {children}
-    </Context.Provider>
-  );
+  return <Context.Provider value={{ data }}>{children}</Context.Provider>;
 };

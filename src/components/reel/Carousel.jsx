@@ -76,7 +76,7 @@ export default function Carousel() {
                     initial="enter"
                     animate="center"
                     exit="exit"
-                    transition={{ duration: 1 }}
+                    transition={{ duration: 0.2 }}
                   >
                     <img
                       className={
@@ -87,6 +87,13 @@ export default function Carousel() {
                       src={item}
                       alt="img-slider"
                     />
+                    <button
+                      className={
+                        item === visibleItems[1] ? "reel-btn" : " no-show-btn"
+                      }
+                    >
+                      Ver más...
+                    </button>
                   </motion.div>
                 );
               })}

@@ -11,8 +11,8 @@ import AssociateModal from "./forms/associate/AssociateModal";
 function AssociatePanel() {
   const [data, setData] = useState([]);
 
-  //const baseUrl = "http://localhost:8080/api/v1/associates/";
-  const baseUrl = "https://akhanta.herokuapp.com/api/v1/associates/";
+  const baseUrl = "http://localhost:8080/api/v1/associates/";
+  //const baseUrl = "https://akhanta.herokuapp.com/api/v1/associates/";
 
   const peticionGet = () => {
     axios.get(baseUrl).then((response) => setData(response.data.results));
