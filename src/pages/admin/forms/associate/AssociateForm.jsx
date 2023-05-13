@@ -80,6 +80,20 @@ const AssociateForm = ({ edit, associate }) => {
             console.log(data.data.id);
             idResponse = data.data.id;
           });
+        if (profile) {
+          await axios.put(
+            `${baseUrl}/${idResponse}/profile`,
+            dataProfile,
+            imageHeader
+          );
+        }
+        if (banner) {
+          await axios.put(
+            `${baseUrl}/${idResponse}/banner`,
+            dataBanner,
+            imageHeader
+          );
+        }
       } else {
         await axios.post(baseUrl, payload, associateHeader).then((data) => {
           console.log(data.data.results.id);

@@ -1,43 +1,38 @@
-.background-banner {
-  height: 350px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position-x: top;
-  background-position-y: center;
+.banner-associate {
+  width: 100%;
 }
 
 .back-to-main-associates {
   border: none;
-  background: none;
-  text-decoration: none;
-  position: relative;
-  top: 3rem;
-  left: 3rem;
-  margin: 1.5rem 0;
-  font-weight: 700;
+  background: white;
+  border-radius: 100%;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  padding: 1.3rem;
 }
 
 .associates-about-section {
-  background-color: #fffcf0;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 3rem;
-  /* padding: 2rem 4rem; */
+  align-items: flex-start;
+  gap: 2rem;
   color: #421400;
-  margin: 0 auto;
-  width: 70%;
+  margin: 2rem auto;
+  width: 80%;
 }
 
 .associate-img {
   height: auto;
-  width: 400px;
+  width: 25%;
+  border-radius: 100%;
+  border: 5px solid #9e75e5;
 }
 
 .associates-info-contain p {
   font-size: large;
   text-align: justify;
 }
+
 .associates-info-contain h1 {
   color: #f4b74e;
 }
@@ -48,51 +43,52 @@
   align-items: center;
   background-color: #fffcf0;
   gap: 3rem;
+  padding-bottom: 1rem;
 }
 
-@media (max-width: 1440px) {
-  .back-to-main-associates {
-    position: inherit;
-    margin: 1.5rem 0;
-  }
-
-  .background-banner {
-    background-size: cover;
-    height: 12rem;
-  }
-
+@media (max-width: 1024px) {
   .associates-about-section {
-    width: 90%;
-    padding: 2rem 5rem;
-  }
-
-  .associates-info-contain h1 {
-    font-size: 2rem;
-    text-align: center;
-  }
-}
-
-@media (max-width: 1200px) {
-  .associates-about-section {
-    width: 100%;
-    padding: 2rem 3rem;
-  }
-}
-
-@media (max-width: 870px) {
-  .associates-about-section {
-    flex-direction: column-reverse;
-    padding: 0;
+    flex-direction: column;
+    align-items: center;
     width: 80%;
-  }
-  .back-to-main-associates {
-    position: inherit;
-    top: 1rem;
-    left: 1rem;
+    gap: 1rem;
   }
 
   .associate-img {
     height: auto;
-    width: 100%;
+    width: 30%;
+    border-radius: 100%;
+    border: 5px solid #9e75e5;
+  }
+
+  .associates-info-contain h1 {
+    text-align: center;
+  }
+
+  .back-to-main-associates {
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .associates-about-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .associates-info-contain p {
+    font-size: 16px;
+  }
+
+  .associate-img {
+    height: auto;
+    width: 50%;
+    border-radius: 100%;
+    border: 5px solid #9e75e5;
+  }
+
+  .back-to-main-associates {
+    display: none;
   }
 }
