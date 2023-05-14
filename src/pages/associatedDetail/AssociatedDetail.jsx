@@ -28,7 +28,7 @@ const AssociatedDetail = () => {
       </button>
       <section className="associates-about-section">
         <img src={profile} alt="logo" className="associate-img" />
-        <article className="associates-info-contain">
+        <article className="associates-info">
           <h1>{name}</h1>
           <p>{description}</p>
         </article>

@@ -1,29 +1,34 @@
-import "./styles.css";
+import "./Carousel.css";
 import { AnimatePresence, motion } from "framer-motion";
-import React, { useState } from "react";
-// import React, { useState, useEffect } from "react";
-// import axios from "axios";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function Carousel() {
   const [[activeIndex, direction], setActiveIndex] = useState([0, 0]);
+  const [items, setItems] = useState();
 
-  const items = [
-    "https://rdironworks.com/wp-content/uploads/2017/12/dummy-200x200.png",
-    "https://www.inictel-uni.edu.pe/boletin/2019_noviembre/images/200x200.gif",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTikfoQOntmYpVSQ996xSZKpBRqRPLtS7_PaLO7rNBv8VAg2Qewm4n-kIxorj88t5HrhFg&usqp=CAU",
-    "https://upload.wikimedia.org/wikipedia/commons/6/60/W-200x200-300dpi.png",
-  ];
+  const baseUrl = "http://localhost:8080/api/v1/associates";
 
-  // useEffect(() => {
-  //   axios
-  //     .get("https://akhanta.herokuapp.com/api/v1/items/")
-  //     .then((response) => {
-  //       setitems(response.data.results);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }, []);
+  // const items = [
+  //   "https://rdironworks.com/wp-content/uploads/2017/12/dummy-200x200.png",
+  //   "https://www.inictel-uni.edu.pe/boletin/2019_noviembre/images/200x200.gif",
+  //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTikfoQOntmYpVSQ996xSZKpBRqRPLtS7_PaLO7rNBv8VAg2Qewm4n-kIxorj88t5HrhFg&usqp=CAU",
+  //   "https://upload.wikimedia.org/wikipedia/commons/6/60/W-200x200-300dpi.png",
+  // ];
+
+  useEffect(() => {
+    axios
+      .get(baseUrl)
+      .then((response) => {
+        if (!items) {
+          setItems(response.data.results);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
 
   const handleClick = (newDirection) => {
     setActiveIndex((prevIndex) => [prevIndex[0] + newDirection, newDirection]);
@@ -58,7 +63,7 @@ export default function Carousel() {
                     className={
                       item === visibleItems[1] ? "card" : "card no-show-mb"
                     }
-                    key={item}
+                    key={item.id}
                     layout
                     custom={{
                       direction,
@@ -84,16 +89,18 @@ export default function Carousel() {
                           ? "slider-img card"
                           : "slider-img card no-show-mb"
                       }
-                      src={item}
+                      src={item.profile}
                       alt="img-slider"
                     />
-                    <button
-                      className={
-                        item === visibleItems[1] ? "reel-btn" : " no-show-btn"
-                      }
-                    >
-                      Ver más...
-                    </button>
+                    <Link to={`associates/${item.id}`}>
+                      <button
+                        className={
+                          item === visibleItems[1] ? "reel-btn" : " no-show-btn"
+                        }
+                      >
+                        Ver más...
+                      </button>
+                    </Link>
                   </motion.div>
                 );
               })}

@@ -18,22 +18,22 @@
   gap: 2rem;
   color: #421400;
   margin: 2rem auto;
-  width: 80%;
+  width: 90%;
 }
 
 .associate-img {
   height: auto;
-  width: 25%;
-  border-radius: 100%;
-  border: 5px solid #9e75e5;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
 }
 
-.associates-info-contain p {
+.associates-info p {
   font-size: large;
   text-align: justify;
 }
 
-.associates-info-contain h1 {
+.associates-info h1 {
   color: #f4b74e;
 }
 
@@ -57,11 +57,9 @@
   .associate-img {
     height: auto;
     width: 30%;
-    border-radius: 100%;
-    border: 5px solid #9e75e5;
   }
 
-  .associates-info-contain h1 {
+  .associates-info h1 {
     text-align: center;
   }
 
@@ -77,15 +75,13 @@
     gap: 1rem;
   }
 
-  .associates-info-contain p {
+  .associates-info p {
     font-size: 16px;
   }
 
   .associate-img {
     height: auto;
     width: 50%;
-    border-radius: 100%;
-    border: 5px solid #9e75e5;
   }
 
   .back-to-main-associates {
