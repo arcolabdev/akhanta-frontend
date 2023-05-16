@@ -8,7 +8,7 @@ export default function Carousel() {
   const [[activeIndex, direction], setActiveIndex] = useState([0, 0]);
   const [items, setItems] = useState();
 
-  const baseUrl = "http://ec2-3-86-104-102.compute-1.amazonaws.com:8080/api/v1/associates";
+  const baseUrl = "https://api.ar-colab.com:8443/api/v1/associates/";
 
   useEffect(() => {
     axios
@@ -42,7 +42,7 @@ export default function Carousel() {
   }
   return (
     <div className="reel-container" id="associates">
-      <h2 className="reel-title">Nuestros Asociados</h2>
+      <h2 className="reel-title">Participantes de Akhanta</h2>
       <div className="main-wrapper">
         <div className="wrapper">
           {/*AnimatePresence is necessary to show the items after they are deleted because only max. 3 are shown*/}
