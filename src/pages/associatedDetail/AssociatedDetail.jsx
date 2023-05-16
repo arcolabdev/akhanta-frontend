@@ -8,7 +8,6 @@ import { Context } from "../../Context";
 import { useParams } from "react-router-dom";
 
 const AssociatedDetail = () => {
-
   const { data } = useContext(Context);
   const { id } = useParams();
   const associated = data.find((item) => item.id === parseInt(id));
@@ -21,26 +20,20 @@ const AssociatedDetail = () => {
 
   return (
     <div>
-      <div
-        className="background-banner"
-        style={{ backgroundImage: `url(${banner})` }}
-      ></div>
+      <img src={banner} className="banner-associate" alt="banner" />
       <button className="back-to-main-associates">
         <Link to="/">
-          <MdArrowBackIosNew size={35} color="#9e75e5" />
-          <span style={{ color: "#9e75e5" }}>Volver a Inicio</span>
+          <MdArrowBackIosNew size={25} color="#9e75e5" />
         </Link>
       </button>
       <section className="associates-about-section">
-        <article className="associates-info-contain">
+        <img src={profile} alt="logo" className="associate-img" />
+        <article className="associates-info">
           <h1>{name}</h1>
           <p>{description}</p>
         </article>
-        <aside className="image-contain">
-          <img src={profile} alt="imagen-asociado" className="associate-img" />
-        </aside>
       </section>
-      <footer className="associates-section-footer">
+      <div className="associates-section-footer">
         {links &&
           links.map((link) => {
             switch (link.tag) {
@@ -92,7 +85,7 @@ const AssociatedDetail = () => {
                 return null; // no renderizar nada si el tag no coincide
             }
           })}
-      </footer>
+      </div>
     </div>
   );
 };

@@ -1,30 +1,34 @@
-import "./styles.css";
+import "./Carousel.css";
 import { AnimatePresence, motion } from "framer-motion";
-import React, { useState } from "react";
-// import React, { useState, useEffect } from "react";
-// import axios from "axios";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function Carousel() {
   const [[activeIndex, direction], setActiveIndex] = useState([0, 0]);
-  //   const items = ["🍔", "🍕", "🌭", "🍗"];
-  // const [items, setitems] = useState();
-  const items = [
-    "https://media.npr.org/assets/img/2021/08/11/gettyimages-1279899488_wide-f3860ceb0ef19643c335cb34df3fa1de166e2761-s1100-c50.jpg",
-    "https://hips.hearstapps.com/hmg-prod/images/domestic-cat-lies-in-a-basket-with-a-knitted-royalty-free-image-1592337336.jpg?crop=0.668xw:1.00xh;0.247xw,0&resize=1200:*",
-    "https://media-cldnry.s-nbcnews.com/image/upload/t_social_share_1024x768_scale,f_auto,q_auto:best/rockcms/2022-08/220805-domestic-cat-mjf-1540-382ba2.jpg",
-    "https://www.thesprucepets.com/thmb/uQnGtOt9VQiML2oG2YzAmPErrHo=/5441x0/filters:no_upscale():strip_icc()/all-about-tabby-cats-552489-hero-a23a9118af8c477b914a0a1570d4f787.jpg",
-  ];
+  const [items, setItems] = useState();
 
-  // useEffect(() => {
-  //   axios
-  //     .get("https://akhanta.herokuapp.com/api/v1/items/")
-  //     .then((response) => {
-  //       setitems(response.data.results);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //     });
-  // }, []);
+  const baseUrl = "http://ec2-3-86-104-102.compute-1.amazonaws.com:8080/api/v1/associates";
+
+  // const items = [
+  //   "https://rdironworks.com/wp-content/uploads/2017/12/dummy-200x200.png",
+  //   "https://www.inictel-uni.edu.pe/boletin/2019_noviembre/images/200x200.gif",
+  //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTikfoQOntmYpVSQ996xSZKpBRqRPLtS7_PaLO7rNBv8VAg2Qewm4n-kIxorj88t5HrhFg&usqp=CAU",
+  //   "https://upload.wikimedia.org/wikipedia/commons/6/60/W-200x200-300dpi.png",
+  // ];
+
+  useEffect(() => {
+    axios
+      .get(baseUrl)
+      .then((response) => {
+        if (!items) {
+          setItems(response.data.results);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  });
 
   const handleClick = (newDirection) => {
     setActiveIndex((prevIndex) => [prevIndex[0] + newDirection, newDirection]);
@@ -59,7 +63,7 @@ export default function Carousel() {
                     className={
                       item === visibleItems[1] ? "card" : "card no-show-mb"
                     }
-                    key={i}
+                    key={item.id}
                     layout
                     custom={{
                       direction,
@@ -77,7 +81,7 @@ export default function Carousel() {
                     initial="enter"
                     animate="center"
                     exit="exit"
-                    transition={{ duration: 1 }}
+                    transition={{ duration: 0.2 }}
                   >
                     <img
                       className={
@@ -85,9 +89,18 @@ export default function Carousel() {
                           ? "slider-img card"
                           : "slider-img card no-show-mb"
                       }
-                      src={item}
+                      src={item.profile}
                       alt="img-slider"
                     />
+                    <Link to={`associates/${item.id}`}>
+                      <button
+                        className={
+                          item === visibleItems[1] ? "reel-btn" : " no-show-btn"
+                        }
+                      >
+                        Ver más...
+                      </button>
+                    </Link>
                   </motion.div>
                 );
               })}

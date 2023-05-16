@@ -7,10 +7,12 @@ import { FaTrash } from "react-icons/fa/";
 function AssociateModal({ associateId, associateName }) {
   const [show, setShow] = useState(false);
 
+  const baseUrl = "http://ec2-3-86-104-102.compute-1.amazonaws.com:8080/api/v1/associates";
+
   const handleDelete = async (id) => {
     const token = localStorage.getItem("token");
     await axios
-      .delete(`https://akhanta.herokuapp.com/api/v1/associates/${id}`, {
+      .delete(`${baseUrl}/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((data) => console.log(data));

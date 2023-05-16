@@ -16,8 +16,7 @@ const AssociateForm = ({ edit, associate }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
 
-  //const baseUrl = "http://localhost:8080/api/v1/associates";
-  const baseUrl = "https://akhanta.herokuapp.com/api/v1/associates/";
+  const baseUrl = "http://ec2-3-86-104-102.compute-1.amazonaws.com:8080/api/v1/associates";
 
   const handleCloseEdit = () => setShowEdit(false);
   const handleShowEdit = () => {
@@ -66,6 +65,7 @@ const AssociateForm = ({ edit, associate }) => {
     const imageHeader = {
       headers: {
         "Content-Type": "multipart/form-data",
+        Authorization: `Bearer ${token}`,
       },
     };
 
@@ -76,16 +76,32 @@ const AssociateForm = ({ edit, associate }) => {
         await axios
           .put(`${baseUrl}/${id}`, payload, associateHeader)
           .then((data) => {
-            idResponse = data.data.results.id;
+            console.log(data.data.id);
+            idResponse = data.data.id;
           });
+        if (profile) {
+          await axios.put(
+            `${baseUrl}/${idResponse}/profile`,
+            dataProfile,
+            imageHeader
+          );
+        }
+        if (banner) {
+          await axios.put(
+            `${baseUrl}/${idResponse}/banner`,
+            dataBanner,
+            imageHeader
+          );
+        }
       } else {
         await axios.post(baseUrl, payload, associateHeader).then((data) => {
+          console.log(data.data.results.id);
           idResponse = data.data.results.id;
         });
       }
       if (profile) {
         await axios.post(
-          `${baseUrl}/${idResponse}/profile`,
+          `${baseUrl}/${edit ? id : idResponse}/profile`,
           dataProfile,
           imageHeader
         );
@@ -93,7 +109,7 @@ const AssociateForm = ({ edit, associate }) => {
 
       if (banner) {
         await axios.post(
-          `${baseUrl}/${idResponse}/banner`,
+          `${baseUrl}/${edit ? id : idResponse}/banner`,
           dataBanner,
           imageHeader
         );
