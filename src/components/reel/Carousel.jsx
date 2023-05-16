@@ -10,13 +10,6 @@ export default function Carousel() {
 
   const baseUrl = "http://ec2-3-86-104-102.compute-1.amazonaws.com:8080/api/v1/associates";
 
-  // const items = [
-  //   "https://rdironworks.com/wp-content/uploads/2017/12/dummy-200x200.png",
-  //   "https://www.inictel-uni.edu.pe/boletin/2019_noviembre/images/200x200.gif",
-  //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTikfoQOntmYpVSQ996xSZKpBRqRPLtS7_PaLO7rNBv8VAg2Qewm4n-kIxorj88t5HrhFg&usqp=CAU",
-  //   "https://upload.wikimedia.org/wikipedia/commons/6/60/W-200x200-300dpi.png",
-  // ];
-
   useEffect(() => {
     axios
       .get(baseUrl)
