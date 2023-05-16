@@ -16,7 +16,7 @@ const AssociateForm = ({ edit, associate }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
 
-  const baseUrl = "ec2-3-86-104-102.compute-1.amazonaws.com:8080/api/v1/associates";
+  const baseUrl = "http://ec2-3-86-104-102.compute-1.amazonaws.com:8080/api/v1/associates";
 
   const handleCloseEdit = () => setShowEdit(false);
   const handleShowEdit = () => {
