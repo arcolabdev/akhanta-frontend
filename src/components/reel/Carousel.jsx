@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 export default function Carousel() {
   const [[activeIndex, direction], setActiveIndex] = useState([0, 0]);
   const { data } = useContext(Context);
-  const [items, setItems] = useState(data);
+  const [items, setItems] = useState(data); 
 
   useEffect(() => {
     setItems(data);
