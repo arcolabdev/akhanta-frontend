@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useContext } from "react";
+import { Context } from "../../Context";
 import { Link } from "react-router-dom";
 import { TiArrowLeft } from "react-icons/ti";
 import { Table } from "react-bootstrap";
@@ -9,17 +9,7 @@ import AssociateForm from "./forms/associate/AssociateForm";
 import AssociateModal from "./forms/associate/AssociateModal";
 
 function AssociatePanel() {
-  const [data, setData] = useState([]);
-
-  const baseUrl = "https://api.ar-colab.com:8443/api/v1/associates/";
-
-  const peticionGet = () => {
-    axios.get(baseUrl).then((response) => setData(response.data.results));
-  };
-
-  useEffect(() => {
-    peticionGet();
-  }, []);
+  const { data } = useContext(Context);
 
   return (
     <section

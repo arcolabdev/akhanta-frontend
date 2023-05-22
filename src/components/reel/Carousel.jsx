@@ -1,34 +1,24 @@
 import "./Carousel.css";
 import { AnimatePresence, motion } from "framer-motion";
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect, useContext } from "react";
+import { Context } from "../../Context";
 import { Link } from "react-router-dom";
 
 export default function Carousel() {
   const [[activeIndex, direction], setActiveIndex] = useState([0, 0]);
-  const [items, setItems] = useState();
-
-  const baseUrl = "https://api.ar-colab.com:8443/api/v1/associates/";
+  const { data } = useContext(Context);
+  const [items, setItems] = useState(data);
 
   useEffect(() => {
-    axios
-      .get(baseUrl)
-      .then((response) => {
-        if (!items) {
-          setItems(response.data.results);
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  });
+    setItems(data);
+  }, [data]);
 
   const handleClick = (newDirection) => {
     setActiveIndex((prevIndex) => [prevIndex[0] + newDirection, newDirection]);
   };
 
   let visibleItems;
-  if (items) {
+  if (data) {
     // we want the scope to be always to be in the scope of the array so that the carousel is endless
     const indexInArrayScope =
       ((activeIndex % items.length) + items.length) % items.length;
@@ -46,7 +36,7 @@ export default function Carousel() {
       <div className="main-wrapper">
         <div className="wrapper">
           {/*AnimatePresence is necessary to show the items after they are deleted because only max. 3 are shown*/}
-          {items && (
+          {data && (
             <AnimatePresence mode="popLayout" initial={false}>
               {visibleItems.map((item, i) => {
                 // The layout prop makes the elements change its position as soon as a new one is added
