@@ -1,0 +1,77 @@
+.article {
+  width: 86%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #505050;
+  gap: 20px;
+  margin: 2rem 0;
+}
+.article > .article_info_container > img {
+  border-radius: 20px;
+  width: 34%;
+  object-fit: cover;
+}
+
+/* TODO */
+/* Agregar sombra? */
+.article > .article_info_container > img:hover {
+  background: black;
+  animation: zoom-in 1s ease forwards;
+  cursor: pointer;
+}
+
+.article > .article_info_container {
+  display: flex;
+  justify-content: space-between;
+  height: 260px;
+}
+.article_info {
+  width: 65%;
+}
+.article > div > div > h2 {
+  font-weight: 700;
+  font-size: 2.6rem;
+}
+.article_date {
+  align-self: flex-start;
+  font-size: 1.1rem;
+}
+.article_description {
+  font-size: 1.25rem;
+}
+
+.article > button {
+  margin-top: 20px;
+  padding: 0.2rem 2rem;
+  border-radius: 10px;
+  /* background: none !important; */
+  background-color: rgba(0, 0, 0, 0);
+  font-size: 1.2rem;
+  border-color: #afafaf;
+  color: #505050;
+  box-shadow: none;
+  align-self: flex-start;
+}
+.article > button:hover {
+  background-color: rgba(66, 20, 0, 0.1);
+}
+
+hr {
+  color: #717171;
+  opacity: 100%;
+  z-index: 10000;
+  width: 105%;
+  box-sizing: border-box;
+}
+
+@keyframes zoom-in{
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(1.01, 1.01);
+  }
+}

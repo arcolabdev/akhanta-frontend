@@ -5,6 +5,7 @@ import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import AssociatePanel from "./pages/admin/AssociatePanel";
 import AssociatedDetail from "./pages/associatedDetail/AssociatedDetail";
+import ArticlesPage from "./pages/articles/ArticlesPage";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/associates/:id" element={<AssociatedDetail />} />
           <Route path="/admin" element={<AssociatePanel />} />
+          <Route path="/articles" element={<ArticlesPage />} />
         </Routes>
       </div>
     </BrowserRouter>

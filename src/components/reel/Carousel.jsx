@@ -22,6 +22,7 @@ export default function Carousel() {
         console.log(error);
       });
   });
+  
 
   const handleClick = (newDirection) => {
     setActiveIndex((prevIndex) => [prevIndex[0] + newDirection, newDirection]);
