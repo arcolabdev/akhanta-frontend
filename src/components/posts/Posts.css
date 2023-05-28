@@ -1,0 +1,14 @@
+.posts-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 5rem;
+    
+    
+    
+}
+.posts-content h2{
+    color: #421400;
+}

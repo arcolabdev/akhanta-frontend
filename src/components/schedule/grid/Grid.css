@@ -1,0 +1,43 @@
+.schedule {
+    display: grid;
+    grid-template-columns: auto repeat(5, 1fr);
+    /* width: 100%; */
+    justify-content: center;
+    grid-column-gap: 0.8rem;
+    grid-row-gap:0.8rem;
+  }
+  
+  .time,
+  .day,
+  .course {
+    border: 0.1px solid #421400;
+    padding: 20px;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 6px;
+    
+}
+
+  .day{
+    background-color: #be9684;
+  }
+  
+  .time {
+    background-color: #E2BF8E;
+  }
+  
+  .course {
+    background-color: #e2bf8e3f;
+  }
+
+
+  @media (max-width: 600px) {
+    .time,
+  .day,
+  .course {
+    border: 0.1px solid #421400;
+    padding: 9px;
+    text-align: center;
+    font-size: 0.7rem;
+  }
+  }

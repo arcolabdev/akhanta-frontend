@@ -1,0 +1,14 @@
+.schedule-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 10rem;
+    /* width: 100%; */
+}
+.schedule-content h2{
+    color: #421400;
+}
+
+

@@ -7,6 +7,9 @@ import Footer from "../../components/footer/Footer";
 import ScrollToTopButton from "../../components/autoscroll/ScrollToTopButton";
 import Phrase from "../../components/phrase/Phrase";
 import Carousel from "../../components/reel/Carousel.jsx";
+import Schedule from "../../components/schedule/Schedule";
+import Posts from "../../components/posts/Posts";
+
 
 const Home = () => {
   return (
@@ -19,8 +22,11 @@ const Home = () => {
       <div className="background-about-reel">
         <About />
         <Phrase />
+        <Schedule />
+        
       </div>
         <Carousel />
+        <Posts />
       <Footer />
       <ScrollToTopButton />
     </>
