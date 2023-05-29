@@ -41,3 +41,19 @@
     font-size: 0.7rem;
   }
   }
+
+  @media (max-width: 500px) {
+    .time,
+  .day,
+  .course {
+    border: 0.1px solid #421400;
+    padding: 8px;
+    text-align: center;
+    font-size: 0.5rem;
+  }
+
+  .schedule {
+    grid-column-gap: 0.5rem;
+    grid-row-gap:0.5rem;
+  }
+  }
