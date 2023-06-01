@@ -7,7 +7,6 @@ import Modal from "react-bootstrap/Modal";
 import { BiEdit } from "react-icons/bi";
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-import parse from 'html-react-parser'
 
 const AssociateForm = ({ edit, associate }) => {
   const [id, setId] = useState("");
