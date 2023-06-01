@@ -204,7 +204,6 @@ const AssociateForm = ({ edit, associate }) => {
                 }}
               />
             </Form.Group>
-            <>{parse(description)}</>
             <Form.Group>
               {inputs.map((input, i) => (
                 <div key={i} className="row mb-3">
