@@ -5,6 +5,9 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { BiEdit } from "react-icons/bi";
+import { CKEditor } from "@ckeditor/ckeditor5-react";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import parse from 'html-react-parser'
 
 const AssociateForm = ({ edit, associate }) => {
   const [id, setId] = useState("");
@@ -119,7 +122,7 @@ const AssociateForm = ({ edit, associate }) => {
       console.log(error);
     }
 
-    //window.location.reload();
+    window.location.reload();
   };
 
   const addInput = () => {
@@ -192,15 +195,16 @@ const AssociateForm = ({ edit, associate }) => {
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicDescription">
               <Form.Label>Descripción</Form.Label>
-              <Form.Control
-                required
-                as="textarea"
-                rows={4}
-                style={{ resize: "none" }}
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
+              <CKEditor
+                editor={ClassicEditor}
+                data={description}
+                onChange={(e, editor) => {
+                  const data = editor.getData();
+                  setDescription(data)
+                }}
               />
             </Form.Group>
+            <>{parse(description)}</>
             <Form.Group>
               {inputs.map((input, i) => (
                 <div key={i} className="row mb-3">
