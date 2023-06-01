@@ -1,10 +1,10 @@
 import React from "react";
 import "./Article.css";
 
-const Article = ({ a }) => {
+const Article = ({ a, i, lastIndexOf }) => {
   function truncateText(text) {
     let truncatedText;
-    const maxLen = 580;
+    const maxLen = 350;
     const separator = " ";
 
     if (text.length <= maxLen) {
@@ -21,16 +21,17 @@ const Article = ({ a }) => {
 
   return (
     <div className="article">
-      <p className="article_date">{a.date}</p>
+      <p className="article_date article_date_pc">{a.date}</p>
       <div className="article_info_container">
         <div className="article_info">
+          <p className="article_date article_date_mobile">{a.date}</p>
           <h2>{a.title}</h2>
           <p className="article_description">{truncateText(a.description)}</p>
         </div>
         <img src={a.img} className="article_image" />
       </div>
-      <button>Ver más</button>
-      <hr />
+      <button className="hide_mobile">Ver más</button>
+      {i !== lastIndexOf ? <hr /> : <></>}
     </div>
   );
 };
