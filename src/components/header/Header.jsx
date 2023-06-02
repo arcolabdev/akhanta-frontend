@@ -44,7 +44,7 @@ const Header = () => {
                   : "nav__link "
               }
             >
-              Asociados
+              Participantes
             </a>
           </li>
         </ul>
