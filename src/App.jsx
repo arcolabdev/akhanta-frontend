@@ -3,8 +3,10 @@ import { MyContextProvider } from "./Context";
 import "./App.css";
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
-import AssociatePanel from "./pages/admin/AssociatePanel";
-import AssociatedDetail from "./pages/associatedDetail/AssociatedDetail";
+import AssociatePanel from "./pages/admin/associate/AssociatePanel";
+import ArticlePanel from "./pages/admin/article/ArticlePanel";
+import AdminPanel from "./pages/admin/AdminPanel";
+import AssociateDetail from "./pages/associatedDetail/AssociateDetail";
 
 function App() {
   return (
@@ -14,8 +16,10 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/associates/:id" element={<AssociatedDetail />} />
-          <Route path="/admin" element={<AssociatePanel />} />
+          <Route path="/associates/:id" element={<AssociateDetail />} />
+          <Route path="/admin" element={<AdminPanel />} />
+          <Route path="/admin/asociados" element={<AssociatePanel />} />
+          <Route path="/admin/articulos" element={<ArticlePanel />} />
         </Routes>
       </div>
     </BrowserRouter>

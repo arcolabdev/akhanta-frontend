@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import "./AssociatedDetail.css";
+import "./AssociateDetail.css";
 import { FaInstagram, FaFacebookF } from "react-icons/fa";
 import { MdArrowBackIosNew, MdWhatsapp } from "react-icons/md";
 import { BsTelegram } from "react-icons/bs";

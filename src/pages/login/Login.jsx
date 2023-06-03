@@ -55,7 +55,7 @@ const Login = () => {
                 left: "40px",
               }}
               size="65px"
-              color="#C5D6E6"
+              color="#421400"
             />
           </span>
         </Link>

@@ -1,0 +1,16 @@
+.admin-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.admin-btn {
+  background: white;
+  border: 2px solid #421400;
+  border-radius: 20px;
+  padding: 2rem 0;
+  width: 30rem;
+  font-size: 1.7rem;
+}
