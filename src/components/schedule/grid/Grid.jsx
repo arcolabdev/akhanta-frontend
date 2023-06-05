@@ -3,62 +3,73 @@ import "./Grid.css";
 
 const Grid = () => {
   return (
-    <div class="schedule">
-    <div class="time">Hora</div>
-    <div class="day">Lunes</div>
-    <div class="day">Martes</div>
-    <div class="day">Miércoles</div>
-    <div class="day">Jueves</div>
-    <div class="day">Viernes</div>
-    <div class="time">9:00</div>
-    <div class="course"></div>
-    <div class="course"></div>
-    <div class="course"></div>
-    <div class="course">Meditación</div>
-    <div class="course"></div>
-    <div class="time">10:00</div>
-    <div class="course"></div>
-    <div class="course">Tai Chi</div>
-    <div class="course"></div>
-    <div class="course">Tai Chi</div>
-    <div class="course"></div>
-   <div class="time">14:00</div>
-   <div class="course">Tai Chi</div>
-   <div class="course">Kung Fu (adultos)<br/> Strong</div>
-   <div class="course">Tai Chi</div>
-   <div class="course">Kung Fu (adultos)<br/> Strong</div>
-   <div class="course">Strong</div>
-   <div class="time">16:00</div>
-   <div class="course"></div>
-   <div class="course">Tai Chi</div>
-   <div class="course"></div>
-   <div class="course">Tai Chi</div>
-   <div class="course"></div>
-   <div class="time">17:00</div>
-   <div class="course">Yoga</div>
-   <div class="course"></div>
-   <div class="course">Yoga</div>
-   <div class="course"></div>
-   <div class="course"></div>
-   <div class="time">18:00</div>
-   <div class="course">Kun Fu (Kids)</div>
-   <div class="course"></div>
-   <div class="course"></div>
-   <div class="course">Kun Fu (Kids)</div>
-   <div class="course"></div>
-   <div class="time">19:00</div>
-   <div class="course">Tai Chi</div>
-   <div class="course">Kun Fu (Infantil y juvenil)</div>
-   <div class="course">Tai Chi</div>
-   <div class="course">Kun Fu (Infantil y juvenil)</div>
-   <div class="course"></div>
-   <div class="time">20:00</div>
-   <div class="course">Kung Fu (adultos)</div>
-   <div class="course">Kun Fu (Infantil y juvenil) <br/> Tai Chi</div>
-   <div class="course">Kung Fu (adultos)</div>
-   <div class="course">Kun Fu (Infantil y juvenil) <br/>Tai Chi</div>
-   <div class="course"></div>
-  </div>
+    <div className="schedule">
+      <div className="time">Hora</div>
+      <div className="day">Lunes</div>
+      <div className="day">Martes</div>
+      <div className="day">Miércoles</div>
+      <div className="day">Jueves</div>
+      <div className="day">Viernes</div>
+      <div className="time">9:00</div>
+      <div className="course"></div>
+      <div className="course"></div>
+      <div className="course"></div>
+      <div className="course">Meditación</div>
+      <div className="course"></div>
+      <div className="time">10:00</div>
+      <div className="course"></div>
+      <div className="course">Tai Chi</div>
+      <div className="course"></div>
+      <div className="course">Tai Chi</div>
+      <div className="course"></div>
+      <div className="time">14:00</div>
+      <div className="course">Tai Chi</div>
+      <div className="course">
+        Kung Fu (adultos)
+        <br /> Strong
+      </div>
+      <div className="course">Tai Chi</div>
+      <div className="course">
+        Kung Fu (adultos)
+        <br /> Strong
+      </div>
+      <div className="course">Strong</div>
+      <div className="time">16:00</div>
+      <div className="course"></div>
+      <div className="course">Tai Chi</div>
+      <div className="course"></div>
+      <div className="course">Tai Chi</div>
+      <div className="course"></div>
+      <div className="time">17:00</div>
+      <div className="course">Yoga</div>
+      <div className="course"></div>
+      <div className="course">Yoga</div>
+      <div className="course"></div>
+      <div className="course"></div>
+      <div className="time">18:00</div>
+      <div className="course">Kun Fu (Kids)</div>
+      <div className="course"></div>
+      <div className="course"></div>
+      <div className="course">Kun Fu (Kids)</div>
+      <div className="course"></div>
+      <div className="time">19:00</div>
+      <div className="course">Tai Chi</div>
+      <div className="course">Kun Fu (Infantil y juvenil)</div>
+      <div className="course">Tai Chi</div>
+      <div className="course">Kun Fu (Infantil y juvenil)</div>
+      <div className="course"></div>
+      <div className="time">20:00</div>
+      <div className="course">Kung Fu (adultos)</div>
+      <div className="course">
+        Kun Fu (Infantil y juvenil) <br /> Tai Chi
+      </div>
+      <div className="course">Kung Fu (adultos)</div>
+      <div className="course">
+        Kun Fu (Infantil y juvenil) <br />
+        Tai Chi
+      </div>
+      <div className="course"></div>
+    </div>
   );
 };
 
