@@ -1,41 +1,24 @@
 import "./Carousel.css";
 import { AnimatePresence, motion } from "framer-motion";
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect, useContext } from "react";
+import { Context } from "../../Context";
 import { Link } from "react-router-dom";
 
 export default function Carousel() {
   const [[activeIndex, direction], setActiveIndex] = useState([0, 0]);
-  const [items, setItems] = useState();
-
-  const baseUrl = "http://ec2-3-86-104-102.compute-1.amazonaws.com:8080/api/v1/associates";
-
-  // const items = [
-  //   "https://rdironworks.com/wp-content/uploads/2017/12/dummy-200x200.png",
-  //   "https://www.inictel-uni.edu.pe/boletin/2019_noviembre/images/200x200.gif",
-  //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTikfoQOntmYpVSQ996xSZKpBRqRPLtS7_PaLO7rNBv8VAg2Qewm4n-kIxorj88t5HrhFg&usqp=CAU",
-  //   "https://upload.wikimedia.org/wikipedia/commons/6/60/W-200x200-300dpi.png",
-  // ];
+  const { data } = useContext(Context);
+  const [items, setItems] = useState(data); 
 
   useEffect(() => {
-    axios
-      .get(baseUrl)
-      .then((response) => {
-        if (!items) {
-          setItems(response.data.results);
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  });
+    setItems(data);
+  }, [data]);
 
   const handleClick = (newDirection) => {
     setActiveIndex((prevIndex) => [prevIndex[0] + newDirection, newDirection]);
   };
 
   let visibleItems;
-  if (items) {
+  if (data) {
     // we want the scope to be always to be in the scope of the array so that the carousel is endless
     const indexInArrayScope =
       ((activeIndex % items.length) + items.length) % items.length;
@@ -49,11 +32,11 @@ export default function Carousel() {
   }
   return (
     <div className="reel-container" id="associates">
-      <h2 className="reel-title">Nuestros Asociados</h2>
+      <h2 className="reel-title">Participantes de Akhanta</h2>
       <div className="main-wrapper">
         <div className="wrapper">
           {/*AnimatePresence is necessary to show the items after they are deleted because only max. 3 are shown*/}
-          {items && (
+          {data && (
             <AnimatePresence mode="popLayout" initial={false}>
               {visibleItems.map((item, i) => {
                 // The layout prop makes the elements change its position as soon as a new one is added
