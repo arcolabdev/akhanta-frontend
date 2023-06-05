@@ -5,13 +5,14 @@ import { TiArrowLeft } from "react-icons/ti";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
+
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   //useNavigate es un hook que permite manipular el historial del navegador, se puede cambiar la URL de la página actual sin necesidad de recargarla
   const navigate = useNavigate();
 
-  const baseUrl = "http://ec2-3-86-104-102.compute-1.amazonaws.com:8080/api/v1/auth/login";
+  const baseUrl = "https://api.ar-colab.com:8443/api/v1/auth/login";
 
   const handleSubmit = (event) => {
     event.preventDefault();
