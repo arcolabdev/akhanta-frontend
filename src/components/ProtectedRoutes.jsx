@@ -4,18 +4,23 @@ import jwt_decode from "jwt-decode";
 
 const ProtectedRoutes = ({ children }) => {
   const jwt = localStorage.getItem("token");
-
-  const decoded = jwt_decode(jwt);
+  let decoded = null;
+  try {
+    decoded = jwt_decode(jwt);
+    console.log(decoded);
+  } catch (error) {
+    return <Navigate to="/login" />;
+  }
 
   const expiryDate = new Date(decoded.exp * 1000);
 
   console.log(expiryDate);
 
-  if (expiryDate < Date.now()) {
-    return <Navigate to="/login" />;
+  if (jwt && expiryDate > Date.now()) {
+    return children ? children : <Outlet />;
   }
 
-  return children ? children : <Outlet />;
+  return <Navigate to="/login" />;
 };
 
 export default ProtectedRoutes;

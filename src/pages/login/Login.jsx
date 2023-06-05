@@ -5,7 +5,6 @@ import { TiArrowLeft } from "react-icons/ti";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -76,12 +75,15 @@ const Login = () => {
                   name="email"
                   id="email"
                   placeholder="Email"
+                  autoComplete="email"
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
                 />
                 <input
+                  id="password"
                   type="password"
                   placeholder="Password"
+                  autoComplete="current-password"
                   value={password}
                   onChange={(event) => setPassword(event.target.value)}
                 />
