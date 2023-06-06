@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   color: #505050;
-  gap: 20px;
+  gap: 10px;
   margin-bottom: 1.5rem;
 }
 .article > .article_info_container > img {
@@ -18,7 +18,6 @@
 /* TODO */
 /* Agregar sombra? */
 .article > .article_info_container > img:hover {
-  background: black;
   animation: zoom-in 1s ease forwards;
   cursor: pointer;
 }

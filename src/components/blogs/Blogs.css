@@ -1,0 +1,29 @@
+.blogs-box {
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  width: 80vw;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  padding: 2vw;
+  /* align-self: center; */
+}
+.blog-cards-container {
+  width: 50%;
+}
+
+/* cards fondo */
+.blog-card0,
+.blog-card {
+  background-size: cover;
+  border-radius: 20px;
+}
+
+.blog-card0 {
+  width: 50%;
+  height: 100%;
+}
+
+.blog-card {
+  height: 50%;
+}

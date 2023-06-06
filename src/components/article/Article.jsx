@@ -1,23 +1,8 @@
 import React from "react";
 import "./Article.css";
+import { truncateText } from "../../utils/Utils";
 
 const Article = ({ a, i, lastIndexOf }) => {
-  function truncateText(text) {
-    let truncatedText;
-    const maxLen = 350;
-    const separator = " ";
-
-    if (text.length <= maxLen) {
-      truncatedText = text;
-    } else {
-      let formatedText = text.substr(0, text.lastIndexOf(separator, maxLen));
-      if (formatedText.charAt(formatedText.length - 1) === ",") {
-        formatedText = formatedText.substring(0, formatedText.length - 1);
-      }
-      truncatedText = formatedText + "...";
-    }
-    return truncatedText;
-  }
 
   return (
     <div className="article">
@@ -26,7 +11,9 @@ const Article = ({ a, i, lastIndexOf }) => {
         <div className="article_info">
           <p className="article_date article_date_mobile">{a.date}</p>
           <h2>{a.title}</h2>
-          <p className="article_description">{truncateText(a.description)}</p>
+          <p className="article_description">
+            {truncateText(a.description, 350)}
+          </p>
         </div>
         <img src={a.img} className="article_image" />
       </div>
