@@ -3,6 +3,15 @@ import "./Post.css";
 
 
 const Post = () => {
+  const MAX_CHARACTERS = 200; // Número máximo de caracteres para mostrar en la descripción
+
+  const truncateText = (text, maxLength) => {
+    if (text.length <= maxLength) {
+      return text;
+    }
+    return text.substr(0, maxLength) + "...";
+  };
+
   return (
     <div className="parent">
     <div className="div1">
@@ -12,9 +21,12 @@ const Post = () => {
       <div className="description-container">
       <div className="description">
         <h3>Título publicación</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur 
-        adipiscing elit, sed do eiusmod tempor incididunt 
-        ut labore et dolore magna aliqua ut labore et dolore magna aliqua...</p>
+        <p>
+          {
+            truncateText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut labore et dolore magna aliqua...",
+                MAX_CHARACTERS)
+          }
+        </p>
         <p className="link">Ver mas</p>
       </div>
       </div>
