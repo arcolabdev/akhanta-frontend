@@ -1,7 +1,5 @@
 import React from "react";
 import { truncateText } from "../../utils/Utils";
-import { articlesResponse } from "../../utils/Utils";
-import Article from "../article/Article";
 import "./Blogs.css";
 
 const Blogs = (articles) => {
@@ -10,15 +8,17 @@ const Blogs = (articles) => {
     <section className="blogs-container" id="blogs">
       <h2>Blog</h2>
       <div className="blogs-box">
-        <div
-          className="blog-card0"
-          style={{ backgroundImage: "url(" + articles.articles[0].img + ")" }}
-        >
-          {" "}
-          <h2>{articles.articles[0].title}</h2>
-          <p className="article_description">
-            {truncateText(articles.articles[0].description, 150)}
-          </p>{" "}
+        <div className="blog-card0">
+          <img src={articles.articles[0].img} />
+          <div>
+            <div>
+              <h2>{articles.articles[0].title}</h2>
+              <p>{truncateText(articles.articles[0].description, 100)}</p>
+            </div>
+            <a href="/articles" className="moreButton">
+              Ver más
+            </a>
+          </div>
         </div>
         <div className="blog-cards-container">
           {articles &&
@@ -26,13 +26,24 @@ const Blogs = (articles) => {
               if (i !== 0 && i < 3) {
                 return (
                   <div
-                    className={`blog-card`}
+                    className={`blog-card${i} blog-card`}
                     style={{
                       backgroundImage: "url(" + articles.articles[0].img + ")",
                     }}
                   >
-                    {" "}
-                    <h2>{a.title}</h2>
+                    {/* <h2>{a.title}</h2> */}
+                    {i == 2 ? (
+                      // <a href="/articles" className="moreButton">
+                      //   Ver más
+                      // </a>
+                      <h2>
+                        <a href="/articles" >
+                          Ver más artículos
+                        </a>
+                      </h2>
+                    ) : (
+                      <h2>{a.title}</h2>
+                    )}
                   </div>
                 );
               }

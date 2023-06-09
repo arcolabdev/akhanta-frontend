@@ -23,7 +23,7 @@ const Home = () => {
         <Phrase />
       </div>
       <Carousel />
-      {/* <Blogs articles={articlesResponse}/> */}
+      <Blogs articles={articlesResponse}/>
       <Footer />
       <ScrollToTopButton />
     </>
