@@ -1,9 +1,10 @@
 import React from "react";
-import "./Post.css";
+import './PostCard.css'
 
 
-const Post = () => {
-  const MAX_CHARACTERS = 200; // Número máximo de caracteres para mostrar en la descripción
+
+const PostCard = ({post}) => {
+  const MAX_CHARACTERS = 180; // Número máximo de caracteres para mostrar en la descripción
 
   const truncateText = (text, maxLength) => {
     if (text.length <= maxLength) {
@@ -20,10 +21,10 @@ const Post = () => {
       </div>
       <div className="description-container">
       <div className="description">
-        <h3>Título publicación</h3>
+        <h3>{post.title}</h3>
         <p>
           {
-            truncateText("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut labore et dolore magna aliqua...",
+            truncateText(post.description,
                 MAX_CHARACTERS)
           }
         </p>
@@ -54,4 +55,4 @@ const Post = () => {
   );
 };
 
-export default Post;
+export default PostCard;

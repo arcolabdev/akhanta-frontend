@@ -90,7 +90,7 @@
 
 .title {
   position: absolute;
-  top: 40%;
+  top: 35%;
   left: 50%;
   /* transform: translateY(-50%);
   transform: translateX(-10%); */
@@ -149,11 +149,12 @@
 @media (max-width:576px) {
 
   .description h3{
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+    padding-top: 1rem;
   }
 
   .description p{
-    font-size: 10px;
+    font-size: 9px;
 
   }
 
@@ -162,4 +163,52 @@
   
 }
   
+}
+
+@media (max-width:425px) {
+  
+
+  .description h3{
+    font-size: 1rem;
+    padding-top: 1rem;
+  }
+
+  .description p{
+    font-size: 8px;
+
+  }
+
+  .link{
+    padding-bottom: 1rem;
+  }
+
+  .title {  
+    font-size: 1rem;  
+  
+}
+
+
+@media (max-width:375px) {
+  
+
+  .description h3{
+    font-size: 0.9rem;
+    padding-top: 1rem;
+  }
+
+  .description p{
+    font-size: 7px;
+
+  }
+
+  .link{
+    padding-bottom: 1rem;
+  }
+
+  .title {  
+    font-size: 0.9rem;  
+  
+}
+  
+}
 }
