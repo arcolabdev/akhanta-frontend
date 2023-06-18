@@ -10,7 +10,7 @@ import Carousel from "../../components/reel/Carousel.jsx";
 import Blogs from "../../components/blogs/Blogs";
 import { articlesResponse } from "../../utils/Utils";
 import Schedule from "../../components/schedule/Schedule";
-import Posts from "../../components/posts/Posts";
+// import Posts from "../../components/posts/Posts";
 
 
 const Home = () => {
@@ -29,7 +29,7 @@ const Home = () => {
       </div>
       <Carousel />
       <Blogs articles={articlesResponse}/>
-        <Posts />
+        {/* <Posts /> */}
       <Footer />
       <ScrollToTopButton />
     </>
