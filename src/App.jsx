@@ -7,6 +7,7 @@ import AssociatePanel from "./pages/admin/associate/AssociatePanel";
 import ArticlePanel from "./pages/admin/article/ArticlePanel";
 import AdminPanel from "./pages/admin/AdminPanel";
 import AssociateDetail from "./pages/associatedDetail/AssociateDetail";
+import ArticlesPage from "./pages/articles/ArticlesPage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/admin" element={<AdminPanel />} />
           <Route path="/admin/asociados" element={<AssociatePanel />} />
           <Route path="/admin/articulos" element={<ArticlePanel />} />
+          <Route path="/articles" element={<ArticlesPage />} />
         </Routes>
       </div>
     </BrowserRouter>

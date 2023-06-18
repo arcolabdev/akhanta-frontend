@@ -1,0 +1,26 @@
+.alt-header-container > .header-content {
+  height: 30%!important;
+  background: none;
+  justify-content: space-between!important;
+}
+
+.header-back {
+  align-self: center;
+  height: 40px;
+  padding: 0 2rem;
+  color: #E2E2E2;
+}
+.header-back:hover {
+  cursor: pointer;
+}
+
+.header-filler {
+  opacity: 0;
+}
+.header-filler:hover {
+  cursor: default;
+}
+
+.alt-header-logo{
+  height: 100px;
+}
