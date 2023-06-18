@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";
 import "./AltHeader.css";
 import logo from "../../assets/full-logo-opt.png";
 // import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const AltHeader = () => {

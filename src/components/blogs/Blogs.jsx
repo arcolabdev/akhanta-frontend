@@ -9,7 +9,7 @@ const Blogs = (articles) => {
       <h2>Blog</h2>
       <div className="blogs-box">
         <div className="blog-card0">
-          <img src={articles.articles[0].img} />
+          <img src={articles.articles[0].img} alt={articles.articles[0].title}/>
           <div>
             <div>
               <h2>{articles.articles[0].title}</h2>
@@ -28,11 +28,11 @@ const Blogs = (articles) => {
                   <div
                     className={`blog-card${i} blog-card`}
                     style={{
-                      backgroundImage: "url(" + articles.articles[0].img + ")",
+                      backgroundImage: "url(" + a.img + ")",
                     }}
                   >
                     {/* <h2>{a.title}</h2> */}
-                    {i == 2 ? (
+                    {i === 2 ? (
                       // <a href="/articles" className="moreButton">
                       //   Ver más
                       // </a>
@@ -47,6 +47,7 @@ const Blogs = (articles) => {
                   </div>
                 );
               }
+              return null;
             })}
         </div>
       </div>

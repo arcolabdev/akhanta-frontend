@@ -15,7 +15,7 @@ const Article = ({ a, i, lastIndexOf }) => {
             {truncateText(a.description, 350)}
           </p>
         </div>
-        <img src={a.img} className="article_image" />
+        <img src={a.img}  alt='imagen-articulo' className="article_image" />
       </div>
       <button className="hide_mobile">Ver más</button>
       {i !== lastIndexOf ? <hr /> : <></>}

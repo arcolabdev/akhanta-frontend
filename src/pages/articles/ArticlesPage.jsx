@@ -1,23 +1,25 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./ArticlesPage.css";
 import AltHeader from "../../components/alt-header/AltHeader";
 import Article from "../../components/article/Article";
 import { articlesResponse } from "../../utils/Utils";
 
 const ArticlesPage = () => {
-  const [page, setPage] = useState(1);
+  const [page] = useState(1);
   const [pageMax, setPageMax] = useState(null);
-  const [pages, setPages] = useState(null);
+  // eslint-disable-next-line no-empty-pattern
+  const [] = useState(null);
   const [indexStart, setIndexStart] = useState(0);
   const [indexEnd, setIndexEnd] = useState(4);
-  const [articlesArray, setArticlesArray] = useState(null);
+  const [, setArticlesArray] = useState(null);
   const lastIndex = articlesResponse.length - 1;
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   let pagesArray = [];
 
   useEffect(() => {
     setPageMax(Math.round(articlesResponse.length / 4));
-  }, [articlesResponse]);
+  }, []);
 
   useEffect(() => {
     setIndexStart(page * 4 - 1);
@@ -33,7 +35,7 @@ const ArticlesPage = () => {
       pagesArray.push(i);
     }
     console.log(pagesArray);
-  }, [pageMax]);
+  }, [pageMax, pagesArray]);
 
   return (
     <section className="articles_container">
