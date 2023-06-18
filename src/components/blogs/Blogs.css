@@ -1,5 +1,8 @@
 .blogs-container {
   margin-bottom: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .blogs-container > h2 {
   text-align: center;
@@ -16,6 +19,9 @@
   margin-left: 10vw;
   margin-right: 10vw;
   padding: 2vw;
+  max-height: 700px;
+  width: 100%;
+  max-width: 1200px;
 }
 .blog-cards-container {
   width: 48.5%;
@@ -95,4 +101,55 @@
   font-size: 1.2rem;
   /* font-weight: 600;
   font-size: 2rem; */
+}
+
+@media (max-width: 768px){
+  .blog-card0 > div > div > h2{
+    font-size: 1.8rem;
+  }
+
+  .moreButton{
+    font-size: 1rem;
+  }
+
+  .blog-card0 > div > div > p{
+    font-size: 0.8rem;
+  }
+
+  .blog-card > h2{
+    font-size: 1.5rem;
+  }
+
+  .blog-card > h2 > a{
+    font-size: 1.5rem;
+  }
+
+  .blogs-box {
+    max-height: 500px;
+  }
+  
+}
+
+@media (max-width: 550px){
+
+  .blog-card0 > div > div > h2{
+    font-size: 1.2rem;
+  }
+
+ .moreButton{
+  font-size: 0.8rem;
+ }
+
+
+  .blog-card0 > div > div > p{
+    font-size: 0.6rem;
+  }
+
+  .blog-card > h2, .blog-card > h2 > a{
+    font-size: 1.2rem;
+  }
+
+  .blogs-box {
+    max-height: 420px;
+  }
 }

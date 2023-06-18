@@ -1,49 +1,49 @@
 export const articlesResponse = [
   {
     date: "June 13th, 2022",
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+    title: "Lorem ipsum dolor sit amet",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ",
     img: "https://anoukmeetsfashion.com/wp-content/uploads/2021/04/conscious-design-VsI_74zRzAo-unsplash-scaled.jpg",
   },
   {
     date: "June 13th, 2022",
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+    title: "Lorem ipsum dolor sit amet",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ",
     img: "https://anoukmeetsfashion.com/wp-content/uploads/2021/04/conscious-design-VsI_74zRzAo-unsplash-scaled.jpg",
   },
   {
     date: "June 13th, 2022",
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+    title: "Lorem ipsum dolor sit amet",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ",
     img: "https://anoukmeetsfashion.com/wp-content/uploads/2021/04/conscious-design-VsI_74zRzAo-unsplash-scaled.jpg",
   },
   {
     date: "June 13th, 2022",
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+    title: "Lorem ipsum dolor sit amet",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ",
     img: "https://anoukmeetsfashion.com/wp-content/uploads/2021/04/conscious-design-VsI_74zRzAo-unsplash-scaled.jpg",
   },
   {
     date: "June 13th, 2022",
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+    title: "Lorem ipsum dolor sit amet",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ",
     img: "https://anoukmeetsfashion.com/wp-content/uploads/2021/04/conscious-design-VsI_74zRzAo-unsplash-scaled.jpg",
   },
   {
     date: "June 13th, 2022",
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+    title: "Lorem ipsum dolor sit amet",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ",
     img: "https://anoukmeetsfashion.com/wp-content/uploads/2021/04/conscious-design-VsI_74zRzAo-unsplash-scaled.jpg",
   },
   {
     date: "June 13th, 2022",
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing",
+    title: "Lorem ipsum dolor sit amet",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco ",
     img: "https://anoukmeetsfashion.com/wp-content/uploads/2021/04/conscious-design-VsI_74zRzAo-unsplash-scaled.jpg",

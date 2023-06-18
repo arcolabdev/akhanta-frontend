@@ -5,7 +5,7 @@ import "./Blogs.css";
 const Blogs = (articles) => {
   console.log(articles);
   return (
-    <section className="blogs-container" id="blogs">
+    <section className="blogs-container container" id="blogs">
       <h2>Blog</h2>
       <div className="blogs-box">
         <div className="blog-card0">
