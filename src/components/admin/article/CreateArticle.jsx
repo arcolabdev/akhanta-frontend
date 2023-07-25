@@ -17,7 +17,7 @@ const AssociateForm = ({ edit, article }) => {
   const [showEdit, setShowEdit] = useState(false);
 
   const baseUrl =
-    "http://ec2-3-86-104-102.compute-1.amazonaws.com:8080/api/v1/articles";
+    "https://api.ar-colab.com:8443/api/v1/posts";
 
   const handleCloseEdit = () => setShowEdit(false);
   const handleShowEdit = () => {
@@ -65,7 +65,6 @@ const AssociateForm = ({ edit, article }) => {
         await axios
           .put(`${baseUrl}/${id}`, payload, associateHeader)
           .then((data) => {
-            console.log(data.data.id);
             idResponse = data.data.id;
           });
         if (image) {
@@ -77,7 +76,6 @@ const AssociateForm = ({ edit, article }) => {
         }
       } else {
         await axios.post(baseUrl, payload, associateHeader).then((data) => {
-          console.log(data.data.results.id);
           idResponse = data.data.results.id;
         });
       }
@@ -93,7 +91,7 @@ const AssociateForm = ({ edit, article }) => {
       console.log(error);
     }
 
-    window.location.reload();
+    // window.location.reload();
   };
 
   return (

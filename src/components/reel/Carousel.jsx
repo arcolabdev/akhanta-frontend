@@ -8,7 +8,7 @@ export default function Carousel() {
   const [[activeIndex, direction], setActiveIndex] = useState([0, 0]);
   const [items, setItems] = useState();
 
-  const baseUrl = "http://ec2-3-86-104-102.compute-1.amazonaws.com:8080/api/v1/associates";
+  const baseUrl = "https://api.ar-colab.com:8443/api/v1/associates";
 
   // const items = [
   //   "https://rdironworks.com/wp-content/uploads/2017/12/dummy-200x200.png",

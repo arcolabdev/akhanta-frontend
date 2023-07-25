@@ -11,7 +11,7 @@ function AssociatePanel() {
   const [data, setData] = useState([]);
 
   const baseUrl =
-    "http://ec2-3-86-104-102.compute-1.amazonaws.com:8080/api/v1/associates/";
+    "https://api.ar-colab.com:8443/api/v1/associates/";
 
   const peticionGet = () => {
     axios.get(baseUrl).then((response) => setData(response.data.results));
