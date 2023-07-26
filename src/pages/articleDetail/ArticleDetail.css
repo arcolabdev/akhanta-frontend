@@ -26,13 +26,11 @@
   width: 70vw;
   height: 35vw;
   object-fit: cover;
-  /* width: 70vw; */
   border-radius: 20px;
   margin: 40px 0;
 }
 .article_detail > .article_description {
   width: 95%;
-  /* font-size: 1.5rem; */
   font-size: 1.25rem;
   line-height: 170%;
   color: #505050;
@@ -40,7 +38,6 @@
   text-align: justify;
 }
 .article_error{
-  /* padding: 20vw 0; */
   text-align: center;
   width: auto!important;
 }

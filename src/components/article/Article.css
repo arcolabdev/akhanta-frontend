@@ -15,8 +15,6 @@
   object-fit: cover;
 }
 
-/* TODO */
-/* Agregar sombra? */
 .article > .article_info_container > img:hover {
   animation: zoom-in 1s ease forwards;
   cursor: pointer;
@@ -87,10 +85,6 @@ hr {
 }
 
 @media (max-width: 768px) {
-  /* .article > .article_info_container  {
-    display: flex;
-    gap: 20px;
-  } */
   .article > .article_info_container > img {
     width: 45%;
   }

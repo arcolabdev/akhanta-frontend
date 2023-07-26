@@ -1,7 +1,6 @@
 .schedule {
     display: grid;
     grid-template-columns: auto repeat(5, 1fr);
-    /* width: 100%; */
     justify-content: center;
     grid-column-gap: 0.8rem;
     grid-row-gap:0.8rem;

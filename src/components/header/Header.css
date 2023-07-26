@@ -27,9 +27,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  /* background: red; */
   list-style: none;
-  /* gap: 7rem; */
   padding-inline-start: 0;
 }
 
@@ -127,7 +125,6 @@ a {
     margin: 0 auto;
   }
 
-  /* TO DO Cambiar color*/
   .nav-mobile {
     display: flex;
     background-color: #fffcf0;
@@ -183,9 +180,6 @@ a {
   .nav-mobile ul li a button {
     color: #421401;
   }
-  /* .nav-ul > li {
-    padding: 1rem;
-  } */
 
   .hamburger {
     position: absolute;
