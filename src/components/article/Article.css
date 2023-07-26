@@ -7,7 +7,7 @@
   align-items: center;
   color: #505050;
   gap: 10px;
-  margin-bottom: 1.5rem;
+  margin-bottom: 20px;
 }
 .article > .article_info_container > img {
   border-radius: 20px;
@@ -32,26 +32,30 @@
 }
 .article > div > div > h2 {
   font-weight: 700;
-  font-size: 2.6rem;
+  font-size: 38px;
 }
 .article_date {
   align-self: flex-start;
-  font-size: 1.1rem;
+  font-size: 16px;
+  margin-bottom: 5px;
 }
 .article_description {
-  font-size: 1.25rem;
+  font-size: 18px;
 }
-
 .article > button {
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 0.2rem 2rem;
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0);
-  font-size: 1.2rem;
+  font-size: 16px;
   border-color: #afafaf;
   color: #505050;
   box-shadow: none;
   align-self: flex-start;
+}
+.article > button > a {
+  border-color: #afafaf;
+  color: #505050;
 }
 .article > button:hover {
   background-color: rgba(66, 20, 0, 0.1);

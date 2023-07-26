@@ -5,8 +5,6 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import { BiEdit } from "react-icons/bi";
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 const AssociateForm = ({ edit, associate }) => {
   const [id, setId] = useState("");
@@ -18,7 +16,7 @@ const AssociateForm = ({ edit, associate }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
 
-  const baseUrl = "https://api.ar-colab.com:8443/api/v1/associates";
+  const baseUrl = "http://ec2-3-86-104-102.compute-1.amazonaws.com:8080/api/v1/associates";
 
   const handleCloseEdit = () => setShowEdit(false);
   const handleShowEdit = () => {
@@ -121,7 +119,7 @@ const AssociateForm = ({ edit, associate }) => {
       console.log(error);
     }
 
-    window.location.reload();
+    //window.location.reload();
   };
 
   const addInput = () => {
@@ -194,13 +192,13 @@ const AssociateForm = ({ edit, associate }) => {
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicDescription">
               <Form.Label>Descripción</Form.Label>
-              <CKEditor
-                editor={ClassicEditor}
-                data={description}
-                onChange={(e, editor) => {
-                  const data = editor.getData();
-                  setDescription(data)
-                }}
+              <Form.Control
+                required
+                as="textarea"
+                rows={4}
+                style={{ resize: "none" }}
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
               />
             </Form.Group>
             <Form.Group>

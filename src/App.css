@@ -52,6 +52,12 @@ html {
 
 .container {
   margin: 0 auto;
-  max-width: 160vh;
+  max-width: 130vh;
   padding: 1rem 2rem;
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
 }

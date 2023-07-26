@@ -3,6 +3,7 @@ import "./ArticlesPage.css";
 import AltHeader from "../../components/alt-header/AltHeader";
 import Article from "../../components/article/Article";
 import { articlesResponse } from "../../utils/Utils";
+import ScrollToTopButton from "../../components/autoscroll/ScrollToTopButton";
 
 const ArticlesPage = () => {
   const [page, setPage] = useState(1);
@@ -32,18 +33,28 @@ const ArticlesPage = () => {
     for (let i = 1; i <= pageMax; i++) {
       pagesArray.push(i);
     }
-    console.log(pagesArray);
   }, [pageMax]);
+
+  useEffect(
+    () =>
+      window.scrollTo({
+        top: 0,
+        behavior: "instant",
+      }),
+    []
+  );
 
   return (
     <section className="articles_container">
       <div className="articles_background">
         <AltHeader />
       </div>
+      <h2 className="articles_title">Conocimientos</h2>
       {articlesResponse &&
         articlesResponse.map((a, i) => {
           return <Article a={a} i={i} lastIndexOf={lastIndex} />;
         })}
+      <ScrollToTopButton />
     </section>
   );
 };

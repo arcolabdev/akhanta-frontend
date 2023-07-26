@@ -4,28 +4,25 @@
 .blogs-container > h2 {
   text-align: center;
   color: #421400;
-  font-size: 2.8rem;
-  font-weight: 700;
+  font-size: 30px;
+  line-height: 1.2;
   padding-bottom: 0.8em;
 }
 .blogs-box {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 620px;
-  margin-left: 10vw;
-  margin-right: 10vw;
+  margin-left: 15vw;
+  margin-right: 15vw;
   padding: 2vw;
 }
 .blog-cards-container {
   width: 48.5%;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-/* cards fondo */
 .blog-card {
   background-size: cover;
   background-position: center;
@@ -37,28 +34,32 @@
   height: 100%;
   flex-direction: column;
 }
-.blog-card0 > img {
+.blog-card0 > a > img {
   width: auto;
   height: 55%;
   border-radius: 15px 15px 0 0;
   object-fit: cover;
 }
-.blog-card0 > div {
-  height: 45%;
+.blog-card0 > a {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.blog-card0 > a > div {
+  height: 52%;
   padding: 15px;
   background-color: #fffcf0;
   border-radius: 0 0 15px 15px;
-  border: 1px solid #505050;
+  border: 0.2px solid rgba(80, 80, 80, 0.5);
   border-top: none;
   display: flex;
   flex-direction: column;
 }
-.blog-card0 > div > div {
+.blog-card0 > a > div > div {
   height: 92%;
 }
 .moreButton {
   color: #505050;
-  /* height: 8%; */
   width: auto;
   margin: 0;
   font-size: 1.25rem;
@@ -67,32 +68,116 @@
   align-self: flex-end;
 }
 .moreButton:hover {
- cursor: pointer;
+  cursor: pointer;
 }
 .blog-card {
   height: 48%;
   display: flex;
   align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 .blog-card2 {
   align-items: end;
 }
-.blog-card > h2, .blog-card > h2 > a {
+
+.blog-card > a > h2,
+.blog-card > a > h2 > a {
   font-weight: 600;
   font-size: 2rem;
   text-align: right;
   color: white;
   padding: 10px;
+  width: 100%;
+  z-index: 9;
 }
-
-.blog-card0 > div > div > h2 {
+.blog-card > h2 > a {
+  width: 100%;
+}
+.blog-card > h2 > a:hover {
+  cursor: pointer;
+  width: 100%;
+}
+.blog-card0 > a > div > div > h2 {
   color: #505050;
   font-weight: 600;
   font-size: 2.3rem;
 }
-.blog-card0 > div > div > p {
+.blog-card0 > a > div > div > p {
   color: #505050;
   font-size: 1.2rem;
-  /* font-weight: 600;
-  font-size: 2rem; */
+}
+
+.blog-filter {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  position: absolute;
+  z-index: 1;
+}
+
+.card-link {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+.blog-card2 > .card-link {
+  align-items: end;
+}
+
+@media (max-width: 1024px) {
+  .blogs-box {
+    margin-left: 10vw;
+    margin-right: 10vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .blogs-box {
+    margin: 0 5vw;
+    height: 90vw;
+  }
+  .blog-card0 > a > div > div > h2 {
+    font-size: 30px;
+  }
+  .blog-card0 > a > div > div > p {
+    font-size: 18px;
+  }
+  .blog-card0 > a > div {
+    padding: 10px;
+  }
+}
+@media (max-width: 550px) {
+  .blog-card0 > a > img {
+    height: 90%;
+  }
+  .blog-card0 > a > div {
+    height: auto;
+    padding: 8px;
+  }
+  .blog-card0 > a > div > div > h2 {
+    font-size: 31px;
+  }
+  .blog-card0 > a > div > div > p {
+    display: none;
+  }
+
+  .moreButton {
+    display: none;
+  }
+  .blog-card > a > h2,
+  .blog-card > a > h2 > a {
+    font-size: 25px;
+  }
+}
+@media (max-width: 430px) {
+  .blog-card0 > a > div > div > h2 {
+    font-size: 25px;
+  }
+  .blog-card > h2,
+  .blog-card > h2 > a {
+    font-size: 25px;
+  }
 }

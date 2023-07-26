@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./Article.css";
 import { truncateText } from "../../utils/Utils";
+import { Link } from "react-router-dom";
+import { Context } from "../../Context";
+import { useEffect } from "react";
+import { Camelize } from "../../utils/Utils";
 
 const Article = ({ a, i, lastIndexOf }) => {
+  const { setArticle } = useContext(Context);
+  const [pathname, setPathname] = useState(null);
+
+  useEffect(() => setPathname(Camelize(a.title)), [a]);
 
   return (
     <div className="article">
@@ -15,9 +23,19 @@ const Article = ({ a, i, lastIndexOf }) => {
             {truncateText(a.description, 350)}
           </p>
         </div>
-        <img src={a.img} className="article_image" />
+        <img src={a.img} className="article_image" alt="Portada del articulo"/>
       </div>
-      <button className="hide_mobile">Ver más</button>
+
+      <button className="hide_mobile" onClick={() => setArticle(a)}>
+        <Link
+          to={{
+            pathname: `/articles/${pathname}`,
+          }}
+        >
+          Ver más
+        </Link>
+      </button>
+
       {i !== lastIndexOf ? <hr /> : <></>}
     </div>
   );

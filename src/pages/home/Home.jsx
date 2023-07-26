@@ -7,6 +7,7 @@ import Footer from "../../components/footer/Footer";
 import ScrollToTopButton from "../../components/autoscroll/ScrollToTopButton";
 import Phrase from "../../components/phrase/Phrase";
 import Carousel from "../../components/reel/Carousel.jsx";
+import Schedule from "../../components/schedule/Schedule";
 import Blogs from "../../components/blogs/Blogs";
 import { articlesResponse } from "../../utils/Utils";
 
@@ -21,9 +22,10 @@ const Home = () => {
       <div className="background-about-reel">
         <About />
         <Phrase />
+        <Schedule />
       </div>
       <Carousel />
-      <Blogs articles={articlesResponse}/>
+      <Blogs articles={articlesResponse} />
       <Footer />
       <ScrollToTopButton />
     </>

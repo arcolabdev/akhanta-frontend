@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
-import "./AssociatedDetail.css";
+import "./AssociateDetail.css";
 import { FaInstagram, FaFacebookF } from "react-icons/fa";
 import { MdArrowBackIosNew, MdWhatsapp } from "react-icons/md";
 import { BsTelegram } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { Context } from "../../Context";
 import { useParams } from "react-router-dom";
-import parse from "html-react-parser";
 
 const AssociatedDetail = () => {
   const { data } = useContext(Context);
@@ -31,7 +30,7 @@ const AssociatedDetail = () => {
         <img src={profile} alt="logo" className="associate-img" />
         <article className="associates-info">
           <h1>{name}</h1>
-          <>{parse(description)}</>
+          <p>{description}</p>
         </article>
       </section>
       <div className="associates-section-footer">

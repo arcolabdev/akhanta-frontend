@@ -17,6 +17,11 @@
   background-size: cover;
   background-position: 70% 100%;
   margin-bottom: 2rem;
-  /* position: sticky;
-  top: 0px; */
+}
+
+.articles_title {
+  color: #e36f20;
+  font-weight: 700;
+  font-size: 44px;
+  margin-bottom: 2rem;
 }

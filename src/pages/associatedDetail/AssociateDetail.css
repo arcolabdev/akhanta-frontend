@@ -18,12 +18,12 @@
   gap: 2rem;
   color: #421400;
   margin: 2rem auto;
-  width: 80%;
+  width: 90%;
 }
 
 .associate-img {
   height: auto;
-  width: 25%;
+  width: 100%;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
 }
@@ -31,7 +31,6 @@
 .associates-info p {
   font-size: large;
   text-align: justify;
-  width: 75%;
 }
 
 .associates-info h1 {
@@ -78,7 +77,6 @@
 
   .associates-info p {
     font-size: 16px;
-    width: 100%;
   }
 
   .associate-img {
