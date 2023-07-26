@@ -16,7 +16,6 @@ const Blogs = (articles) => {
           <Link
             onClick={() => setArticle(articles.articles[0])}
             to={`/articles/${Camelize(articles.articles[0].title)}`}
-            // className="card-link"
           >
             <img src={articles.articles[0].img} alt="Portada del artículo"/>
             <div>

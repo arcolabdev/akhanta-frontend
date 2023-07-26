@@ -15,9 +15,9 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin-left: 15vw;
-  margin-right: 15vw;
-  padding: 2vw;
+  width: 70vw;
+  padding-right: 15vw;
+  padding-left: 15vw;
   max-height: 700px;
   width: 100%;
   max-width: 1200px;
@@ -135,14 +135,14 @@
 
 @media (max-width: 1024px) {
   .blogs-box {
-    margin-left: 10vw;
-    margin-right: 10vw;
+    padding-left: 10vw;
+    padding-right: 10vw;
   }
 }
 
 @media (max-width: 768px) {
   .blogs-box {
-    margin: 0 5vw;
+    padding: 0 5vw;
     height: 90vw;
   }
   .blog-card0 > a > div > div > h2 {
