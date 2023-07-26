@@ -12,7 +12,7 @@ export const MyContextProvider = ({ children }) => {
     axios
       .get(baseUrl)
       .then((response) => {
-        setData(response.data.results);
+        setData(response.data);
       })
       .catch((error) => {
         console.log(error);

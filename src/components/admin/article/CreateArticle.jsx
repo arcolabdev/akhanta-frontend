@@ -24,7 +24,7 @@ const AssociateForm = ({ edit, article }) => {
     if (article) {
       setId(article.id);
       setTitle(article.title);
-      setContent(article.description);
+      setContent(article.content);
     }
     setShowEdit(true);
   };
@@ -41,6 +41,7 @@ const AssociateForm = ({ edit, article }) => {
     const payload = {
       title: title,
       content: content,
+      date: new Date(),
       user_id: 1,
     };
 
@@ -91,7 +92,7 @@ const AssociateForm = ({ edit, article }) => {
       console.log(error);
     }
 
-    // window.location.reload();
+    window.location.reload();
   };
 
   return (

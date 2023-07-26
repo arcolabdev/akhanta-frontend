@@ -13,7 +13,7 @@ function ArticlePanel() {
     "https://api.ar-colab.com:8443/api/v1/posts/";
 
   const peticionGet = () => {
-    axios.get(baseUrl).then((response) => setData(response.data.results));
+    axios.get(baseUrl).then((response) => setData(response.data));
   };
 
   useEffect(() => {
