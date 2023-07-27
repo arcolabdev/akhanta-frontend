@@ -27,7 +27,8 @@ function App() {
           {/* <Route path="/associates/:id" element={<AssociatedDetail />} />
           <Route path="/admin" element={<AssociatePanel />} /> */}
           <Route path="/articles" element={<ArticlesPage />} />
-          <Route path="/articles/:title" element={<ArticleDetail/>} />
+          {/* <Route path="/articles/:title" element={<ArticleDetail/>} /> */}
+          <Route path="/articles/:id" element={<ArticleDetail/>} />
         </Routes>
       </div>
     </BrowserRouter>

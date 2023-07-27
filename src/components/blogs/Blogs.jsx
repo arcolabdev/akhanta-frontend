@@ -16,7 +16,8 @@ const Blogs = ({ articles }) => {
             <div className="blog-card0">
               <Link
                 onClick={() => setArticle(articles[0])}
-                to={`/articles/${Camelize(articles[0].title)}`}
+                // to={`/articles/${Camelize(articles[0].title)}`}
+                to={`/articles/${articles[0].id}`}
               >
                 <img src={articles[0].image} alt="Portada del artículo" />
                 <div>
@@ -26,7 +27,8 @@ const Blogs = ({ articles }) => {
                   </div>
                   <Link
                     onClick={() => setArticle(articles[0])}
-                    to={`/articles/${Camelize(articles[0].title)}`}
+                    // to={`/articles/${Camelize(articles[0].title)}`}
+                    to={`/articles/${articles[0].id}`}
                     className="moreButton"
                   >
                     Ver más
@@ -156,8 +158,6 @@ const Blogs = ({ articles }) => {
         </section>
       )}
     </>
-    // articles && (<p>Hola</p>)
-    // articles && (<p>{articles[0].title}</p>)
   );
 };
 
