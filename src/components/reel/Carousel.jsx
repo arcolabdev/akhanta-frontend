@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export default function Carousel() {
   const [[activeIndex, direction], setActiveIndex] = useState([0, 0]);
-  const [items, setItems] = useState();
+  const [items, setItems] = useState([]);
 
   const baseUrl = "https://api.ar-colab.com:8443/api/v1/associates";
 
@@ -14,14 +14,12 @@ export default function Carousel() {
     axios
       .get(baseUrl)
       .then((response) => {
-        if (!items) {
-          setItems(response.data.results);
-        }
+        setItems(response.data);
       })
       .catch((error) => {
         console.log(error);
       });
-  });
+  }, []);
 
   const handleClick = (newDirection) => {
     setActiveIndex((prevIndex) => [prevIndex[0] + newDirection, newDirection]);
@@ -83,7 +81,7 @@ export default function Carousel() {
                           ? "slider-img card"
                           : "slider-img card no-show-mb"
                       }
-                      src={item.profile}
+                      src={item.banner}
                       alt="img-slider"
                     />
                     <Link to={`associates/${item.id}`}>
