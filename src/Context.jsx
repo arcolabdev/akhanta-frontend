@@ -6,9 +6,13 @@ export const Context = createContext();
 export const MyContextProvider = ({ children }) => {
   const [data, setData] = useState([]);
   const [article, setArticle] = useState({});
+  const [articles, setArticles] = useState({});
 
   const baseUrl =
-    "http://ec2-3-86-104-102.compute-1.amazonaws.com:8080/api/v1/associates";
+    "https://api.ar-colab.com:8443/api/v1/associates";
+  const baseUrlPosts =
+    "https://api.ar-colab.com:8443/api/v1/posts";
+
 
   useEffect(() => {
     axios
@@ -20,6 +24,17 @@ export const MyContextProvider = ({ children }) => {
         console.log(error);
       });
   }, []);
+  
+  useEffect(() => {
+    axios
+      .get(baseUrlPosts)
+      .then((response) => {
+        setArticles(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
-  return <Context.Provider value={{ data, article, setArticle }}>{children}</Context.Provider>;
+  return <Context.Provider value={{ data, article, setArticle, articles, setArticles }}>{children}</Context.Provider>;
 };

@@ -25,8 +25,8 @@ const ArticleDetail = () => {
         <section className="article_detail">
           <p className="article_date">{article.date}</p>
           <h2>{article.title}</h2>
-          <img className="article_img" src={article.img} />
-          <p className="article_description">{article.description}</p>
+          <img className="article_img" alt="Portada del articulo" src={article.image} />
+          <p className="article_description">{article.content}</p>
           <ScrollToTopButton />
         </section>
       ) : (

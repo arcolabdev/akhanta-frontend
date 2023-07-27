@@ -19,11 +19,13 @@ const Article = ({ a, i, lastIndexOf }) => {
         <div className="article_info">
           <p className="article_date article_date_mobile">{a.date}</p>
           <h2>{a.title}</h2>
-          <p className="article_description">
-            {truncateText(a.description, 350)}
-          </p>
+          <p className="article_description">{truncateText(a.content, 400)}</p>
         </div>
-        <img src={a.img} className="article_image" alt="Portada del articulo"/>
+        <img
+          src={a.image}
+          className="article_image"
+          alt="Portada del articulo"
+        />
       </div>
 
       <button className="hide_mobile" onClick={() => setArticle(a)}>

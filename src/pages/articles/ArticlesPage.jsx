@@ -1,10 +1,9 @@
-import React, { useEffect } from "react";
-// import React, { useContext, useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./ArticlesPage.css";
 import AltHeader from "../../components/alt-header/AltHeader";
 import Article from "../../components/article/Article";
-import { articlesResponse } from "../../utils/Utils";
 import ScrollToTopButton from "../../components/autoscroll/ScrollToTopButton";
+import axios from "axios";
 
 const ArticlesPage = () => {
   // const [page, setPage] = useState(1);
@@ -13,7 +12,23 @@ const ArticlesPage = () => {
   // const [indexStart, setIndexStart] = useState(0);
   // const [indexEnd, setIndexEnd] = useState(4);
   // const [articlesArray, setArticlesArray] = useState(null);
-  const lastIndex = articlesResponse.length - 1;
+  
+  const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const baseUrlPosts = "https://api.ar-colab.com:8443/api/v1/posts";
+  const lastIndex = articles.length - 1;
+
+  useEffect(() => {
+    axios
+      .get(baseUrlPosts)
+      .then((response) => {
+        setArticles(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => setLoading(false));
+  }, []);
 
   // let pagesArray = [];
 
@@ -46,17 +61,21 @@ const ArticlesPage = () => {
   );
 
   return (
-    <section className="articles_container">
-      <div className="articles_background">
-        <AltHeader />
-      </div>
-      <h2 className="articles_title">Conocimientos</h2>
-      {articlesResponse &&
-        articlesResponse.map((a, i) => {
-          return <Article a={a} i={i} lastIndexOf={lastIndex} />;
-        })}
-      <ScrollToTopButton />
-    </section>
+    <>
+      {!loading && articles && (
+        <section className="articles_container">
+          <div className="articles_background">
+            <AltHeader />
+          </div>
+          <h2 className="articles_title">Conocimientos</h2>
+          {articles &&
+            articles.map((a, i) => {
+              return <Article a={a} i={i} lastIndexOf={lastIndex} />;
+            })}
+          <ScrollToTopButton />
+        </section>
+      )}
+    </>
   );
 };
 
