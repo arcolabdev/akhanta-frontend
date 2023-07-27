@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { truncateText, Camelize } from "../../utils/Utils";
 import { Context } from "../../Context";
 import "./Blogs.css";
@@ -36,6 +36,7 @@ const Blogs = ({ articles }) => {
             </div>
             <div className="blog-cards-container">
               {articles &&
+              // eslint-disable-next-line
                 articles.map((a, i) => {
                   if (i !== 0 && i < 3) {
                     return (
