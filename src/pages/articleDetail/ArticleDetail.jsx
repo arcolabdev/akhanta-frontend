@@ -36,7 +36,7 @@ const ArticleDetail = () => {
     } else {
       setLoading(false)
     }
-  }, [article]);
+  }, [article, baseUrlPosts]);
 
   return (
     <section className="article_detail_container">
