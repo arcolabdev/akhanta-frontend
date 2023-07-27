@@ -23,7 +23,8 @@ function App() {
           <Route path="/admin/asociados" element={<AssociatePanel />} />
           <Route path="/admin/articulos" element={<ArticlePanel />} />
           <Route path="/articles" element={<ArticlesPage />} />
-          <Route path="/articles/:title" element={<ArticleDetail/>} />
+          {/* <Route path="/articles/:title" element={<ArticleDetail/>} /> */}
+          <Route path="/articles/:id" element={<ArticleDetail/>} />
         </Routes>
       </div>
     </BrowserRouter>

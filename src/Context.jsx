@@ -5,7 +5,7 @@ export const Context = createContext();
 
 export const MyContextProvider = ({ children }) => {
   const [data, setData] = useState([]);
-  const [article, setArticle] = useState({});
+  const [article, setArticle] = useState(null);
   const [articles, setArticles] = useState({});
 
   const baseUrl =
