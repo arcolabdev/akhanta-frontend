@@ -7,16 +7,7 @@ import { Link } from "react-router-dom";
 const Blogs = ({ articles }) => {
   const { setArticle } = useContext(Context);
 
-  useEffect(() => {
-    console.log(articles);
-    console.log(articles[0]);
-  }, [articles]);
-
   return (
-    // articles &&
-    // articles.articles.map((a, i) => {
-    //   return (<p>hola</p>)
-    // })
     <>
       {articles && (
         <section className="blogs-container" id="blogs">
@@ -48,49 +39,75 @@ const Blogs = ({ articles }) => {
                 articles.map((a, i) => {
                   if (i !== 0 && i < 3) {
                     return (
-                      <div
-                        className={`blog-card${i} blog-card`}
-                        style={{
-                          backgroundImage:
-                            "url(" + articles.articles[i].image + ")",
-                        }}
-                      >
-                        {i === 2 ? (
-                          <Link
-                            onClick={() => setArticle(articles.articles[1])}
-                            to="/articles"
-                            className="card-link"
+                      <>
+                        <div
+                          className={`blog-card${i} blog-card`}
+                          style={{
+                            backgroundImage: "url(" + articles[i].image + ")",
+                          }}
+                        >
+                          {i === 2 ? (
+                            <Link
+                              onClick={() => setArticle(articles[1])}
+                              to="/articles"
+                              className="card-link"
+                            >
+                              <h2>
+                                <Link
+                                  onClick={() => setArticle(articles[1])}
+                                  to="/articles"
+                                >
+                                  Ver más artículos
+                                </Link>
+                              </h2>
+                              <div className="blog-filter"> </div>
+                            </Link>
+                          ) : (
+                            <Link
+                              onClick={() => setArticle(articles[1])}
+                              to={`/articles/${Camelize(a.title)}`}
+                              className="card-link"
+                            >
+                              <div className="blog-filter"> </div>
+                              <h2>
+                                <Link
+                                  onClick={() => setArticle(articles[1])}
+                                  to={`/articles/${Camelize(a.title)}`}
+                                >
+                                  {a.title}
+                                </Link>
+                              </h2>
+                            </Link>
+                          )}
+                        </div>
+                        {articles[1] && !articles[2] && (
+                          <div
+                            className={`blog-card${i} blog-card`}
+                            style={{
+                              backgroundImage: "url(" + articles[i].image + ")",
+                            }}
                           >
-                            <h2>
-                              <Link
-                                onClick={() => setArticle(articles.articles[1])}
-                                to="/articles"
-                              >
-                                Ver más artículos
-                              </Link>
-                            </h2>
-                            <div className="blog-filter"> </div>
-                          </Link>
-                        ) : (
-                          <Link
-                            onClick={() => setArticle(articles.articles[1])}
-                            to={`/articles/${Camelize(a.title)}`}
-                            className="card-link"
-                          >
-                            <div className="blog-filter"> </div>
-                            <h2>
-                              <Link
-                                onClick={() => setArticle(articles.articles[1])}
-                                to={`/articles/${Camelize(a.title)}`}
-                              >
-                                {a.title}
-                              </Link>
-                            </h2>
-                          </Link>
+                            {" "}
+                            <Link
+                              onClick={() => setArticle(articles[1])}
+                              to="/articles"
+                              className="card-link"
+                            >
+                              <h2>
+                                <Link
+                                  onClick={() => setArticle(articles[1])}
+                                  to="/articles"
+                                >
+                                  Ver más artículos
+                                </Link>
+                              </h2>
+                              <div className="blog-filter"> </div>
+                            </Link>{" "}
+                          </div>
                         )}
-                      </div>
+                      </>
                     );
-                  } else if (i === 0) {
+                  } else if (i === 0 && !articles[1]) {
                     return (
                       <>
                         <div
