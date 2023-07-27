@@ -10,7 +10,6 @@ export default function Carousel() {
   const { data } = useContext(Context);
 
   const handleClick = (newDirection) => {
-    console.log(data);
     setActiveIndex((prevIndex) => [prevIndex[0] + newDirection, newDirection]);
   };
 
@@ -44,7 +43,7 @@ export default function Carousel() {
                     className={
                       item === visibleData[1] ? "card" : "card no-show-mb"
                     }
-                    key={i}
+                    key={item.id}
                     layout
                     custom={{
                       direction,
@@ -70,7 +69,7 @@ export default function Carousel() {
                           ? "slider-img card"
                           : "slider-img card no-show-mb"
                       }
-                      src={item.banner}
+                      src={item.profile}
                       alt="img-slider"
                     />
                     <Link to={`associates/${item.id}`}>
