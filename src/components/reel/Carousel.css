@@ -27,7 +27,6 @@
 }
 .wrapper {
   display: flex;
-  margin: 20px;
 }
 
 .slider-img {
@@ -53,7 +52,6 @@
   color: #421400;
   font-size: 400;
   font-size: 30px;
-  padding-bottom: 0.8em;
 }
 
 .card > a {

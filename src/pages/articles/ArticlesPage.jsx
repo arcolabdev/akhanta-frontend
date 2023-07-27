@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./ArticlesPage.css";
 import AltHeader from "../../components/alt-header/AltHeader";
 import Article from "../../components/article/Article";
