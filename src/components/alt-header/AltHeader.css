@@ -1,14 +1,14 @@
 .alt-header-container > .header-content {
-  height: 30%!important;
+  height: 30% !important;
   background: none;
-  justify-content: space-between!important;
+  justify-content: space-between !important;
 }
 
 .header-back {
   align-self: center;
   height: 40px;
   padding: 0 2rem;
-  color: #E2E2E2;
+  color: #e2e2e2;
 }
 .header-back:hover {
   cursor: pointer;
@@ -21,6 +21,29 @@
   cursor: default;
 }
 
-.alt-header-logo{
+.alt-header-logo {
   height: 100px;
+}
+.alt-header-container {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-evenly; */
+  height: 100%;
+}
+.header_title_container {
+  height: 100%;
+  display: block;
+  justify-content: center;
+  justify-content: space-evenly;
+  position: relative;
+  /* align-items: ; */
+}
+.titulo_header {
+  text-align: center;
+  color: #e2e2e2;
+  font-size: 55px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
 }

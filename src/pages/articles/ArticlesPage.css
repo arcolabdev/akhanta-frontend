@@ -3,6 +3,7 @@
   flex-direction: column;
   gap: 20px;
   align-items: center;
+  padding-bottom: 100px;
 }
 
 .articles_background {
@@ -24,4 +25,23 @@
   font-weight: 700;
   font-size: 44px;
   margin-bottom: 2rem;
+}
+
+.articles_container > .articles_background {
+  height: 350px !important;
+}
+
+.articles_container
+  > .articles_background
+  > .alt-header-container
+  > .header_title_container
+  > .titulo_header {
+  text-align: center;
+  color: #e36f20;
+  font-weight: 500;
+  font-size: 55px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
 }

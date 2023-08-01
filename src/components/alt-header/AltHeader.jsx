@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
-const AltHeader = () => {
+const AltHeader = ({ title }) => {
   const navigate = useNavigate();
 
   return (
@@ -22,6 +22,12 @@ const AltHeader = () => {
           icon={faArrowLeft}
         />
       </header>
+
+      {title && (
+        <div className="header_title_container">
+          <h2 className="titulo_header">{title}</h2>{" "}
+        </div>
+      )}
     </section>
   );
 };

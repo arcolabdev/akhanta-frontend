@@ -34,34 +34,40 @@ const ArticleDetail = () => {
           setLoading(false);
         });
     } else {
-      setLoading(false)
+      setLoading(false);
     }
+    // eslint-disable-next-line
   }, [article]);
 
   return (
     <section className="article_detail_container">
-      <div className="articles_background">
-        <AltHeader />
-      </div>
       {!loading && article && (
-        <section className="article_detail">
-          <p className="article_date">{article.date}</p>
-          <h2>{article.title}</h2>
-          <img
-            className="article_img"
-            alt="Portada del articulo"
-            src={article.image}
-          />
-          <p className="article_description">{article.content}</p>
-          <ScrollToTopButton />
-        </section>
+        <>
+          <div className="articles_background">
+            <AltHeader title={article.title} />
+          </div>
+          <section className="article_detail">
+            <img
+              className="article_img"
+              alt="Portada del articulo"
+              src={article.image}
+            />
+            <p className="article_description">{article.content}</p>
+            <ScrollToTopButton />
+          </section>
+        </>
       )}
       {!loading && !article && (
-        <section className="article_detail">
-          <h2 className="article_error">
-            Lo sentimos, no pudimos encontrar esa publicación
-          </h2>
-        </section>
+        <>
+          <div className="articles_background">
+            <AltHeader />
+          </div>
+          <section className="article_detail">
+            <h2 className="article_error">
+              Lo sentimos, no pudimos encontrar esa publicación
+            </h2>
+          </section>
+        </>
       )}
     </section>
   );

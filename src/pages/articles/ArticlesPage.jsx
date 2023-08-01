@@ -65,9 +65,9 @@ const ArticlesPage = () => {
       {!loading && articles && (
         <section className="articles_container">
           <div className="articles_background">
-            <AltHeader />
+            <AltHeader title="Conocimientos"/>
           </div>
-          <h2 className="articles_title">Conocimientos</h2>
+          {/* <h2 className="articles_title">Conocimientos</h2> */}
           {articles &&
             articles.map((a, i) => {
               return <Article a={a} i={i} lastIndexOf={lastIndex} />;

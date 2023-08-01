@@ -4,13 +4,13 @@ import { truncateText } from "../../utils/Utils";
 import { Link } from "react-router-dom";
 import { Context } from "../../Context";
 import { useEffect } from "react";
-import { Camelize } from "../../utils/Utils";
 
 const Article = ({ a, i, lastIndexOf }) => {
   const { setArticle } = useContext(Context);
   const [pathname, setPathname] = useState(null);
+  //  const navigate = useNavigate();
 
-  useEffect(() => setPathname(Camelize(a.title)), [a]);
+  useEffect(() => setPathname(a.id), [a]);
 
   return (
     <div className="article">
@@ -21,11 +21,17 @@ const Article = ({ a, i, lastIndexOf }) => {
           <h2>{a.title}</h2>
           <p className="article_description">{truncateText(a.content, 400)}</p>
         </div>
-        <img
-          src={a.image}
-          className="article_image"
-          alt="Portada del articulo"
-        />
+        <Link
+          to={{
+            pathname: `/articles/${pathname}`,
+          }}
+        >
+          <img
+            src={a.image}
+            className="article_image"
+            alt="Portada del articulo"
+          />
+        </Link>
       </div>
 
       <button className="hide_mobile" onClick={() => setArticle(a)}>
