@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { truncateText, Camelize } from "../../utils/Utils";
+import { truncateText } from "../../utils/Utils";
 import { Context } from "../../Context";
 import "./Blogs.css";
 import { Link } from "react-router-dom";
@@ -16,8 +16,7 @@ const Blogs = ({ articles }) => {
             <div className="blog-card0">
               <Link
                 onClick={() => setArticle(articles[0])}
-                // to={`/articles/${Camelize(articles[0].title)}`}
-                to={`/articles/${articles[0].id}`}
+                to={`/articulos/${articles[0].id}`}
               >
                 <img src={articles[0].image} alt="Portada del artículo" />
                 <div>
@@ -27,8 +26,7 @@ const Blogs = ({ articles }) => {
                   </div>
                   <Link
                     onClick={() => setArticle(articles[0])}
-                    // to={`/articles/${Camelize(articles[0].title)}`}
-                    to={`/articles/${articles[0].id}`}
+                    to={`/articulos/${articles[0].id}`}
                     className="moreButton"
                   >
                     Ver más
@@ -52,13 +50,13 @@ const Blogs = ({ articles }) => {
                           {i === 2 ? (
                             <Link
                               onClick={() => setArticle(articles[1])}
-                              to="/articles"
+                              to="/articulos"
                               className="card-link"
                             >
                               <h2>
                                 <Link
                                   onClick={() => setArticle(articles[1])}
-                                  to="/articles"
+                                  to="/articulos"
                                 >
                                   Ver más artículos
                                 </Link>
@@ -68,14 +66,14 @@ const Blogs = ({ articles }) => {
                           ) : (
                             <Link
                               onClick={() => setArticle(articles[1])}
-                              to={`/articles/${Camelize(a.title)}`}
+                              to={`/articulos/${articles[1].id}`}
                               className="card-link"
                             >
                               <div className="blog-filter"> </div>
                               <h2>
                                 <Link
                                   onClick={() => setArticle(articles[1])}
-                                  to={`/articles/${Camelize(a.title)}`}
+                                  to={`/articulos/${articles[1].id}`}
                                 >
                                   {a.title}
                                 </Link>
@@ -93,13 +91,13 @@ const Blogs = ({ articles }) => {
                             {" "}
                             <Link
                               onClick={() => setArticle(articles[1])}
-                              to="/articles"
+                              to="/articulos"
                               className="card-link"
                             >
                               <h2>
                                 <Link
                                   onClick={() => setArticle(articles[1])}
-                                  to="/articles"
+                                  to="/articulos"
                                 >
                                   Ver más artículos
                                 </Link>
@@ -121,7 +119,7 @@ const Blogs = ({ articles }) => {
                         >
                           <Link
                             onClick={() => setArticle(articles[0])}
-                            to="/articles"
+                            to="/articulos"
                             className="card-link"
                           >
                             <div className="blog-filter"> </div>
@@ -136,13 +134,13 @@ const Blogs = ({ articles }) => {
                         >
                           <Link
                             onClick={() => setArticle(articles[0])}
-                            to="/articles"
+                            to="/articulos"
                             className="card-link"
                           >
                             <h2>
                               <Link
                                 onClick={() => setArticle(articles[0])}
-                                to="/articles"
+                                to="/articulos"
                               >
                                 Ver más artículos
                               </Link>

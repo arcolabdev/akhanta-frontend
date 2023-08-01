@@ -9,26 +9,28 @@ import AdminPanel from "./pages/admin/AdminPanel";
 import AssociateDetail from "./pages/associatedDetail/AssociateDetail";
 import ArticlesPage from "./pages/articles/ArticlesPage";
 import ArticleDetail from "./pages/articleDetail/ArticleDetail";
+import ProtectedRoutes from "./utils/ProtectedRoutes";
 
 function App() {
   return (
-   <MyContextProvider>
-     <BrowserRouter>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/associates/:id" element={<AssociateDetail />} />
-          <Route path="/admin" element={<AdminPanel />} />
-          <Route path="/admin/asociados" element={<AssociatePanel />} />
-          <Route path="/admin/articulos" element={<ArticlePanel />} />
-          <Route path="/articles" element={<ArticlesPage />} />
-          {/* <Route path="/articles/:title" element={<ArticleDetail/>} /> */}
-          <Route path="/articles/:id" element={<ArticleDetail/>} />
-        </Routes>
-      </div>
-    </BrowserRouter>
-   </MyContextProvider>
+    <MyContextProvider>
+      <BrowserRouter>
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/asociados/:id" element={<AssociateDetail />} />
+            <Route element={<ProtectedRoutes />}>
+              <Route path="/admin" element={<AdminPanel />} />
+              <Route path="/admin/asociados" element={<AssociatePanel />} />
+              <Route path="/admin/articulos" element={<ArticlePanel />} />
+            </Route>
+            <Route path="/articulos" element={<ArticlesPage />} />
+            <Route path="/articulos/:id" element={<ArticleDetail />} />
+          </Routes>
+        </div>
+      </BrowserRouter>
+    </MyContextProvider>
   );
 }
 

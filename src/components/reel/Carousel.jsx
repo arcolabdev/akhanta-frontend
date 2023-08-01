@@ -29,7 +29,7 @@ export default function Carousel() {
 
   return (
     <div className="reel-container" id="associates">
-      <h2 className="reel-title">Nuestros Asociados</h2>
+      <h2 className="reel-title">Participantes de Akhanta</h2>
       <div className="main-wrapper">
         <div className="wrapper">
           {/*AnimatePresence is necessary to show the data after they are deleted because only max. 3 are shown*/}

@@ -22,7 +22,7 @@ const Article = ({ a, i, lastIndexOf }) => {
         </div>
         <Link
           to={{
-            pathname: `/articles/${pathname}`,
+            pathname: `/articulos/${pathname}`,
           }}
           onClick={() => setArticle(a)}
         >
@@ -37,7 +37,7 @@ const Article = ({ a, i, lastIndexOf }) => {
       <button className="hide_mobile" onClick={() => setArticle(a)}>
         <Link
           to={{
-            pathname: `/articles/${pathname}`,
+            pathname: `/articulos/${pathname}`,
           }}
         >
           Ver más
