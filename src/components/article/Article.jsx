@@ -8,7 +8,6 @@ import { useEffect } from "react";
 const Article = ({ a, i, lastIndexOf }) => {
   const { setArticle } = useContext(Context);
   const [pathname, setPathname] = useState(null);
-  //  const navigate = useNavigate();
 
   useEffect(() => setPathname(a.id), [a]);
 
@@ -25,6 +24,7 @@ const Article = ({ a, i, lastIndexOf }) => {
           to={{
             pathname: `/articles/${pathname}`,
           }}
+          onClick={() => setArticle(a)}
         >
           <img
             src={a.image}
