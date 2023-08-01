@@ -10,6 +10,7 @@ import AssociateDetail from "./pages/associatedDetail/AssociateDetail";
 import ArticlesPage from "./pages/articles/ArticlesPage";
 import ArticleDetail from "./pages/articleDetail/ArticleDetail";
 import ProtectedRoutes from "./utils/ProtectedRoutes";
+import NotFound from "./components/not-found/not-found";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
             </Route>
             <Route path="/articulos" element={<ArticlesPage />} />
             <Route path="/articulos/:id" element={<ArticleDetail />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
       </BrowserRouter>
