@@ -1,7 +1,7 @@
 import "./AltHeader.css";
 import logo from "../../assets/full-logo-opt.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const AltHeader = ({ title }) => {
@@ -15,7 +15,9 @@ const AltHeader = ({ title }) => {
           icon={faArrowLeft}
           onClick={() => navigate(-1)}
         />
-        <img className="header-logo alt-header-logo" src={logo} alt="logo" />
+        <Link to="/">
+          <img className="header-logo alt-header-logo" src={logo} alt="logo" />
+        </Link>
         <FontAwesomeIcon
           className="header-back header-filler"
           icon={faArrowLeft}
