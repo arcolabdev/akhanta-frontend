@@ -1,39 +1,27 @@
 import "./Carousel.css";
 import { AnimatePresence, motion } from "framer-motion";
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useContext } from "react";
+
 import { Link } from "react-router-dom";
+import { Context } from "../../Context";
 
 export default function Carousel() {
   const [[activeIndex, direction], setActiveIndex] = useState([0, 0]);
-  const [items, setItems] = useState([]);
-
-  const baseUrl = "https://api.ar-colab.com:8443/api/v1/associates";
-
-  useEffect(() => {
-    axios
-      .get(baseUrl)
-      .then((response) => {
-        setItems(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  const { data } = useContext(Context);
 
   const handleClick = (newDirection) => {
     setActiveIndex((prevIndex) => [prevIndex[0] + newDirection, newDirection]);
   };
 
-  let visibleItems;
-  if (items) {
+  let visibleData;
+  if (data) {
     // we want the scope to be always to be in the scope of the array so that the carousel is endless
     const indexInArrayScope =
-      ((activeIndex % items.length) + items.length) % items.length;
+      ((activeIndex % data.length) + data.length) % data.length;
 
-    // so that the carousel is endless, we need to repeat the items twice
-    // then, we slice the the array so that we only have 3 items visible at the same time
-    visibleItems = [...items, ...items].slice(
+    // so that the carousel is endless, we need to repeat the data twice
+    // then, we slice the the array so that we only have 3 data visible at the same time
+    visibleData = [...data, ...data].slice(
       indexInArrayScope,
       indexInArrayScope + 3
     );
@@ -44,25 +32,25 @@ export default function Carousel() {
       <h2 className="reel-title">Nuestros Asociados</h2>
       <div className="main-wrapper">
         <div className="wrapper">
-          {/*AnimatePresence is necessary to show the items after they are deleted because only max. 3 are shown*/}
-          {items && (
+          {/*AnimatePresence is necessary to show the data after they are deleted because only max. 3 are shown*/}
+          {data && (
             <AnimatePresence mode="popLayout" initial={false}>
-              {visibleItems.map((item, i) => {
+              {visibleData.map((item, i) => {
                 // The layout prop makes the elements change its position as soon as a new one is added
                 // The key tells framer-motion that the elements changed its position
                 return (
                   <motion.div
                     className={
-                      item === visibleItems[1] ? "card" : "card no-show-mb"
+                      item === visibleData[1] ? "card" : "card no-show-mb"
                     }
                     key={item.id}
                     layout
                     custom={{
                       direction,
                       position: () => {
-                        if (item === visibleItems[0]) {
+                        if (item === visibleData[0]) {
                           return "left";
-                        } else if (item === visibleItems[1]) {
+                        } else if (item === visibleData[1]) {
                           return "center";
                         } else {
                           return "right";
@@ -77,17 +65,17 @@ export default function Carousel() {
                   >
                     <img
                       className={
-                        item === visibleItems[1]
+                        item === visibleData[1]
                           ? "slider-img card"
                           : "slider-img card no-show-mb"
                       }
-                      src={item.banner}
+                      src={item.profile}
                       alt="img-slider"
                     />
                     <Link to={`associates/${item.id}`}>
                       <button
                         className={
-                          item === visibleItems[1] ? "reel-btn" : " no-show-btn"
+                          item === visibleData[1] ? "reel-btn" : " no-show-btn"
                         }
                       >
                         Ver más...

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./ArticlesPage.css";
 import AltHeader from "../../components/alt-header/AltHeader";
 import Article from "../../components/article/Article";
@@ -67,7 +67,6 @@ const ArticlesPage = () => {
           <div className="articles_background">
             <AltHeader title="Conocimientos"/>
           </div>
-          {/* <h2 className="articles_title">Conocimientos</h2> */}
           {articles &&
             articles.map((a, i) => {
               return <Article a={a} i={i} lastIndexOf={lastIndex} />;

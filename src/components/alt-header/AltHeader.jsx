@@ -1,4 +1,3 @@
-import React from "react";
 import "./AltHeader.css";
 import logo from "../../assets/full-logo-opt.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

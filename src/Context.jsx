@@ -13,12 +13,11 @@ export const MyContextProvider = ({ children }) => {
   const baseUrlPosts =
     "https://api.ar-colab.com:8443/api/v1/posts";
 
-
   useEffect(() => {
     axios
       .get(baseUrl)
       .then((response) => {
-        setData(response.data.results);
+        setData(response.data);
       })
       .catch((error) => {
         console.log(error);
