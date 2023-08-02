@@ -10,7 +10,7 @@ import AssociateDetail from "./pages/associatedDetail/AssociateDetail";
 import ArticlesPage from "./pages/articles/ArticlesPage";
 import ArticleDetail from "./pages/articleDetail/ArticleDetail";
 import ProtectedRoutes from "./utils/ProtectedRoutes";
-import NotFound from "./components/not-found/not-found";
+import NotFound from "./components/not-found/NotFound";
 
 function App() {
   return (
