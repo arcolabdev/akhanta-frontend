@@ -19,7 +19,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="footer-section" id="contact">
+    <footer className="footer-section" id="contacto">
       <div className="footer-content container">
         <span className="footer-title">Solicitar una cita</span>
         <div className="footer-box">

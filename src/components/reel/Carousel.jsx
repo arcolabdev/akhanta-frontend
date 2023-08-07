@@ -28,7 +28,7 @@ export default function Carousel() {
   }
 
   return (
-    <div className="reel-container" id="associates">
+    <div className="reel-container" id="asociados">
       <h2 className="reel-title">Participantes de Akhanta</h2>
       <div className="main-wrapper">
         <div className="wrapper">
@@ -72,7 +72,7 @@ export default function Carousel() {
                       src={item.profile}
                       alt="img-slider"
                     />
-                    <Link to={`associates/${item.id}`}>
+                    <Link to={`asociados/${item.id}`}>
                       <button
                         className={
                           item === visibleData[1] ? "reel-btn" : " no-show-btn"

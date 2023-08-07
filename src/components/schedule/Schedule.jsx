@@ -4,7 +4,7 @@ import './Schedule.css';
 
 const Schedule = () => {
   return (
-    <section className="schedule-section ">
+    <section className="schedule-section " id="horarios">
       <div className="schedule-content ">
         <h2>Horarios</h2>
         <Grid />

@@ -10,7 +10,7 @@ const Blogs = ({ articles }) => {
   return (
     <>
       {articles && (
-        <section className="blogs-container" id="blogs">
+        <section className="blogs-container" id="publicaciones">
           <h2>Publicaciones</h2>
           <div className="blogs-box">
             <div className="blog-card0">
@@ -36,7 +36,7 @@ const Blogs = ({ articles }) => {
             </div>
             <div className="blog-cards-container">
               {articles &&
-              // eslint-disable-next-line
+                // eslint-disable-next-line
                 articles.map((a, i) => {
                   if (i !== 0 && i < 3) {
                     return (

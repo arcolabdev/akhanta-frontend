@@ -4,6 +4,7 @@ import AltHeader from "../../components/alt-header/AltHeader";
 import { Context } from "../../Context";
 import ScrollToTopButton from "../../components/autoscroll/ScrollToTopButton";
 import axios from "axios";
+import parse from 'html-react-parser';
 
 const ArticleDetail = () => {
   const { article, setArticle } = useContext(Context);
@@ -52,7 +53,7 @@ const ArticleDetail = () => {
               alt="Portada del articulo"
               src={article.image}
             />
-            <p className="article_description">{article.content}</p>
+            <p className="article_description">{parse(article.content)}</p>
             <ScrollToTopButton />
           </section>
         </>

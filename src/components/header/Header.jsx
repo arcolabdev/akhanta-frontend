@@ -11,9 +11,9 @@ const Header = () => {
 
   useEffect(() => {
     if (
-      activeNav === "#associates" ||
-      activeNav === "#about" ||
-      activeNav === "#contact"
+      activeNav === "#asociados" ||
+      activeNav === "#quienes-somos" ||
+      activeNav === "#contacto"
     ) {
       setOpenNav(false);
     }
@@ -25,10 +25,10 @@ const Header = () => {
         <ul>
           <li>
             <a
-              href="#about"
-              onClick={() => setActiveNav("#about")}
+              href="#quienes-somos"
+              onClick={() => setActiveNav("#quienes-somos")}
               className={
-                activeNav === "#about" ? "nav__link active-link" : "nav__link"
+                activeNav === "#quienes-somos" ? "nav__link active-link" : "nav__link"
               }
             >
               Quienes somos
@@ -36,10 +36,23 @@ const Header = () => {
           </li>
           <li>
             <a
-              href="#associates"
-              onClick={() => setActiveNav("#associates")}
+              href="#horarios"
+              onClick={() => setActiveNav("#horarios")}
               className={
-                activeNav === "#associates"
+                activeNav === "#horarios"
+                  ? "nav__link active-link"
+                  : "nav__link "
+              }
+            >
+              Horarios
+            </a>
+          </li>
+          <li>
+            <a
+              href="#asociados"
+              onClick={() => setActiveNav("#asociados")}
+              className={
+                activeNav === "#asociados"
                   ? "nav__link active-link"
                   : "nav__link "
               }
@@ -52,12 +65,23 @@ const Header = () => {
       <img className="header-logo" src={logo} alt="logo" />
       <nav className={openNav ? "noshow" : "header-nav"}>
         <ul>
+        <li>
+            <a
+              href="#publicaciones"
+              onClick={() => setActiveNav("#publicaciones")}
+              className={
+                activeNav === "#publicaciones" ? "nav__link active-link" : "nav__link"
+              }
+            >
+              Publicaciones
+            </a>
+          </li>
           <li>
             <a
-              href="#contact"
-              onClick={() => setActiveNav("#contact")}
+              href="#contacto"
+              onClick={() => setActiveNav("#contacto")}
               className={
-                activeNav === "#contact" ? "nav__link active-link" : "nav__link"
+                activeNav === "#contacto" ? "nav__link active-link" : "nav__link"
               }
             >
               Contacto
@@ -81,10 +105,10 @@ const Header = () => {
           <ul>
             <li>
               <a
-                href="#about"
-                onClick={() => setActiveNav("#about")}
+                href="#quienes-somos"
+                onClick={() => setActiveNav("#quienes-somos")}
                 className={
-                  activeNav === "#about" ? "nav__link active-link" : "nav__link"
+                  activeNav === "#quienes-somos" ? "nav__link active-link" : "nav__link"
                 }
               >
                 Quienes somos
@@ -92,10 +116,10 @@ const Header = () => {
             </li>
             <li>
               <a
-                href="#associates"
-                onClick={() => setActiveNav("#associates")}
+                href="#asociados"
+                onClick={() => setActiveNav("#asociados")}
                 className={
-                  activeNav === "#associates"
+                  activeNav === "#asociados"
                     ? "nav__link active-link"
                     : "nav__link "
                 }
@@ -105,10 +129,10 @@ const Header = () => {
             </li>
             <li>
               <a
-                href="#contact"
-                onClick={() => setActiveNav("#contact")}
+                href="#contacto"
+                onClick={() => setActiveNav("#contacto")}
                 className={
-                  activeNav === "#contact"
+                  activeNav === "#contacto"
                     ? "nav__link active-link"
                     : "nav__link"
                 }

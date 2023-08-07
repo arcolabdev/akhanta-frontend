@@ -8,7 +8,7 @@ import mandala_mobile_right from "../../assets/mandalas-mobile-right.png"
 
 const About = () => {
   return (
-    <section className="about-container" id="about">
+    <section className="about-container" id="quienes-somos">
       <div className="mandala-desktop">
         <img src={mandala_left} alt="decoration" className="about-mandala mandala-desktop" />
       </div>

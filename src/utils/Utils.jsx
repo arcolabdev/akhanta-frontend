@@ -1,3 +1,5 @@
+import HTMLReactParser from "html-react-parser";
+
 export const articlesResponse = [
   {
     date: "June 13th, 2022",
@@ -64,7 +66,7 @@ export const truncateText = (text, maxLen) => {
     }
     truncatedText = formatedText + "...";
   }
-  return truncatedText;
+  return HTMLReactParser(truncatedText);
 };
 
 export const Camelize = (str) => {
