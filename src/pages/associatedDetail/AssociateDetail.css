@@ -14,7 +14,8 @@
 
 .associates-about-section {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  flex-direction: column;
   gap: 2rem;
   color: #421400;
   margin: 2rem auto;
@@ -23,9 +24,13 @@
 
 .associate-img {
   height: auto;
-  width: 100%;
+  width: 20%;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+}
+
+.associates-info {
+  width: 100%;
 }
 
 .associates-info p {
