@@ -13,7 +13,7 @@
   padding: 0.7rem;
   text-align: center;
   font-size: 1rem;
-  border-radius: 3px;
+  border-radius: 4px;
 
 }
 
@@ -22,7 +22,7 @@
   font-weight: 700;
 }
 
-.time {
+.time { 
   background-color: #e2bf8e;
   font-weight: 700;
 }
@@ -36,9 +36,7 @@
   .day,
   .course {
     border: 0.1px solid #421400;
-    padding: 9px;
     text-align: center;
-    font-size: 0.7rem;
   }
 }
 
@@ -47,13 +45,8 @@
   .day,
   .course {
     border: 0.1px solid #421400;
-    padding: 8px;
     text-align: center;
-    font-size: 0.5rem;
-  }
-
-  .schedule {
-    grid-column-gap: 0.5rem;
-    grid-row-gap: 0.5rem;
+    padding: 0.3rem;
+    font-size: 0.7rem;
   }
 }

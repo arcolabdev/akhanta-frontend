@@ -32,7 +32,7 @@
 .blog-card {
   background-size: cover;
   background-position: center;
-  border-radius: 15px;
+  border-radius: 4px;
 }
 .blog-card0 {
   display: flex;
@@ -43,7 +43,7 @@
 .blog-card0 > a > img {
   width: auto;
   height: 55%;
-  border-radius: 15px 15px 0 0;
+  border-radius: 4px 4px 0 0;
   object-fit: cover;
 }
 .blog-card0 > a {
@@ -55,7 +55,7 @@
   height: 52%;
   padding: 15px;
   background-color: #fffcf0;
-  border-radius: 0 0 15px 15px;
+  border-radius: 0 0 4px 4px;
   border: 0.2px solid rgba(80, 80, 80, 0.5);
   border-top: none;
   display: flex;

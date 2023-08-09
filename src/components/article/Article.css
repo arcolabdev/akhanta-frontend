@@ -16,14 +16,14 @@
   height: auto;
 }
 .article > .article_info_container > a {
-  /* border-radius: 15px; */
+  /* border-radius: 4px; */
   width: 35%;
   /* height: 100%; */
   /* object-fit: cover; */
   height: fit-content;
 }
 .article > .article_info_container > a > img {
-  border-radius: 20px;
+  border-radius: 4px;
   /* width: 34%; */
   object-fit: cover;
   width: 100%;
@@ -52,7 +52,7 @@
 .article > button {
   margin-top: 10px;
   padding: 0.2rem 2rem;
-  border-radius: 10px;
+  border-radius: 4px;
   background-color: rgba(0, 0, 0, 0);
   font-size: 16px;
   border-color: #afafaf;

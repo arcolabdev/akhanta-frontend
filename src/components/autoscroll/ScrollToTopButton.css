@@ -10,7 +10,7 @@
   background-color: #be9684;
   color: #fff;
   border: none;
-  border-radius: 10%;
+  border-radius: 4px;
   cursor: pointer;
   z-index: 9;
   transition: background-color 0.3s ease-in-out;
