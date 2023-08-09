@@ -82,7 +82,7 @@ const AssociateForm = ({ edit, article }) => {
       }
       if (image) {
         await axios.post(
-          `${baseUrl}/${edit ? id : idResponse}/profile`,
+          `${baseUrl}/${edit ? id : idResponse}/image`,
           dataImage,
           imageHeader
         );

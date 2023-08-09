@@ -24,10 +24,10 @@ const Grid = () => {
     <div className="course"></div>
    <div className="time">14:00</div>
    <div className="course">Tai Chi</div>
-   <div className="course">Kung Fu (adultos)<br/> Strong</div>
+   <div className="course">Kung Fu (adultos)<br/></div>
    <div className="course">Tai Chi</div>
-   <div className="course">Kung Fu (adultos)<br/> Strong</div>
-   <div className="course">Strong</div>
+   <div className="course">Kung Fu (adultos)<br/></div>
+   <div className="course"></div>
    <div className="time">16:00</div>
    <div className="course"></div>
    <div className="course">Tai Chi</div>

@@ -1,37 +1,38 @@
 .schedule {
-    display: grid;
-    grid-template-columns: auto repeat(5, 1fr);
-    justify-content: center;
-    grid-column-gap: 0.8rem;
-    grid-row-gap:0.8rem;
-  }
-  
-  .time,
-  .day,
-  .course {
-    border: 0.1px solid #421400;
-    padding: 20px;
-    text-align: center;
-    font-size: 1rem;
-    border-radius: 6px;
-    
+  display: grid;
+  grid-template-columns: auto repeat(5, 1fr);
+  justify-content: center;
+  grid-column-gap: 0.3rem;
+  grid-row-gap: 0.3rem;
 }
 
-  .day{
-    background-color: #be9684;
-  }
-  
-  .time {
-    background-color: #E2BF8E;
-  }
-  
-  .course {
-    background-color: #e2bf8e3f;
-  }
+.time,
+.day,
+.course {
+  border: 0.1px solid #421400;
+  padding: 0.7rem;
+  text-align: center;
+  font-size: 1rem;
+  border-radius: 3px;
 
+}
 
-  @media (max-width: 600px) {
-    .time,
+.day {
+  background-color: #be9684;
+  font-weight: 700;
+}
+
+.time {
+  background-color: #e2bf8e;
+  font-weight: 700;
+}
+
+.course {
+  background-color: #e2bf8e3f;
+}
+
+@media (max-width: 600px) {
+  .time,
   .day,
   .course {
     border: 0.1px solid #421400;
@@ -39,10 +40,10 @@
     text-align: center;
     font-size: 0.7rem;
   }
-  }
+}
 
-  @media (max-width: 500px) {
-    .time,
+@media (max-width: 500px) {
+  .time,
   .day,
   .course {
     border: 0.1px solid #421400;
@@ -53,6 +54,6 @@
 
   .schedule {
     grid-column-gap: 0.5rem;
-    grid-row-gap:0.5rem;
+    grid-row-gap: 0.5rem;
   }
-  }
+}

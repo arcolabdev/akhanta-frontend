@@ -6,6 +6,7 @@ import { TiArrowLeft } from "react-icons/ti";
 import { Table } from "react-bootstrap";
 import DeleteAssociate from "../../../components/admin/associate/DeleteAssociate";
 import CreateAssociate from "../../../components/admin/associate/CreateAssociate";
+import HTMLReactParser from "html-react-parser";
 
 function AssociatePanel() {
   const { data } = useContext(Context);
@@ -40,8 +41,8 @@ function AssociatePanel() {
                   <td>{associate.name}</td>
                   <td>
                     {associate.description.length > 100
-                      ? associate.description.substring(0, 120) + "..."
-                      : associate.description}
+                      ? HTMLReactParser(associate.description.substring(0, 120) + "...")
+                      : HTMLReactParser(associate.description)}
                   </td>
                   <td>
                     {associate.links.map((link) => {

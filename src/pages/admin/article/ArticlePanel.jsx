@@ -5,6 +5,7 @@ import { TiArrowLeft } from "react-icons/ti";
 import { Table } from "react-bootstrap";
 import DeleteArticle from "../../../components/admin/article/DeleteArticle";
 import CreateArticle from "../../../components/admin/article/CreateArticle";
+import HTMLReactParser from "html-react-parser";
 
 function ArticlePanel() {
   const [data, setData] = useState([]);
@@ -49,8 +50,8 @@ function ArticlePanel() {
                   <td>{article.title}</td>
                   <td>
                     {article.content.length > 100
-                      ? article.content.substring(0, 120) + "..."
-                      : article.content}
+                      ? HTMLReactParser(article.content.substring(0, 120) + "...")
+                      : HTMLReactParser(article.content)}
                   </td>
                   <td style={{ display: "flex", gap: "0.5rem" }}>
                     <CreateArticle edit={true} article={article} />
