@@ -22,7 +22,7 @@
 }
 
 .alt-header-logo {
-  height: 100px;
+  height: 60px;
 }
 .alt-header-container {
   display: flex;
@@ -41,7 +41,7 @@
 .titulo_header {
   text-align: center;
   color: #e2e2e2;
-  font-size: 55px;
+  font-size: 45px;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);

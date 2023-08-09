@@ -58,7 +58,7 @@ const Blogs = ({ articles }) => {
                                   onClick={() => setArticle(articles[1])}
                                   to="/articulos"
                                 >
-                                  Ver más artículos
+                                  Más artículos
                                 </Link>
                               </h2>
                               <div className="blog-filter"> </div>
@@ -99,7 +99,7 @@ const Blogs = ({ articles }) => {
                                   onClick={() => setArticle(articles[1])}
                                   to="/articulos"
                                 >
-                                  Ver más artículos
+                                  Más artículos
                                 </Link>
                               </h2>
                               <div className="blog-filter"> </div>
@@ -142,7 +142,7 @@ const Blogs = ({ articles }) => {
                                 onClick={() => setArticle(articles[0])}
                                 to="/articulos"
                               >
-                                Ver más artículos
+                                Más artículos
                               </Link>
                             </h2>
                             <div className="blog-filter"> </div>
