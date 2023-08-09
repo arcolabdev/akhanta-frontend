@@ -98,7 +98,7 @@ const AssociateForm = ({ edit, associate }) => {
       } else {
         await axios.post(baseUrl, payload, associateHeader).then((data) => {
           console.log(data.data.results.id);
-          idResponse = data.data.results.id;
+          idResponse = data.data.id;
         });
       }
       if (profile) {
