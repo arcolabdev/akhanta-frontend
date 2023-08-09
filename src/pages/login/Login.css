@@ -1,12 +1,4 @@
-.login-container {
-  display: flex;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-}
-
 .login-title {
-  /* padding-top: 2rem; */
   text-align: center;
   padding-bottom: 1rem;
   font-family: "Times2";
@@ -44,10 +36,4 @@
   border-radius: 4px;
   cursor: pointer;
   background-color: #421400;
-}
-
-.arrow {
-  position: absolute;
-  top: 10rem;
-  left: 10rem;
 }

@@ -42,19 +42,10 @@ const Login = () => {
   };
 
   return (
-    <div className="login-container">
+    <div className="container">
       <Link to="/">
         <span>
-          <TiArrowLeft
-            className="icon"
-            style={{
-              position: "absolute",
-              top: "40px",
-              left: "40px",
-            }}
-            size="65px"
-            color="#a889de"
-          />
+          <TiArrowLeft className="icon" size="65px" color="#421400" />
         </span>
       </Link>
       <section>
@@ -77,7 +68,9 @@ const Login = () => {
               value={password}
               onChange={(event) => setPassword(event.target.value)}
             />
-            <button type="submit" className="login-btn">Log In</button>
+            <button type="submit" className="login-btn">
+              Log In
+            </button>
           </form>
         </div>
       </section>
