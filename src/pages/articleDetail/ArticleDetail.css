@@ -34,6 +34,9 @@
   border-radius: 10px;
   float: right;
 }
+.article_detail > .article_description{
+  display: block;
+}
 .article_detail > .article_description > p {
   font-size: larger;
   margin: 0;
