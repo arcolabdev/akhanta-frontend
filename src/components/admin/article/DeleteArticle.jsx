@@ -7,7 +7,7 @@ import { FaTrash } from "react-icons/fa/";
 function DeleteArticle({ articleId, articleName }) {
   const [show, setShow] = useState(false);
   const baseUrl =
-    "https://api.ar-colab.com:8443/api/v1/articles";
+    "https://api.ar-colab.com:8443/api/v1/posts";
 
   const handleDelete = async (id) => {
     const token = localStorage.getItem("token");
