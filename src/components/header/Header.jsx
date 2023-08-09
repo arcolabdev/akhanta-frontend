@@ -8,8 +8,10 @@ import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
 const Header = () => {
   const [activeNav, setActiveNav] = useState("#home");
   const [openNav, setOpenNav] = useState(false);
+  const [jwt, setJwt] = useState(null);
 
   useEffect(() => {
+    setJwt(localStorage.getItem("token"));
     if (
       activeNav === "#asociados" ||
       activeNav === "#quienes-somos" ||
@@ -28,7 +30,9 @@ const Header = () => {
               href="#quienes-somos"
               onClick={() => setActiveNav("#quienes-somos")}
               className={
-                activeNav === "#quienes-somos" ? "nav__link active-link" : "nav__link"
+                activeNav === "#quienes-somos"
+                  ? "nav__link active-link"
+                  : "nav__link"
               }
             >
               Quienes somos
@@ -65,12 +69,14 @@ const Header = () => {
       <img className="header-logo" src={logo} alt="logo" />
       <nav className={openNav ? "noshow" : "header-nav"}>
         <ul>
-        <li>
+          <li>
             <a
               href="#publicaciones"
               onClick={() => setActiveNav("#publicaciones")}
               className={
-                activeNav === "#publicaciones" ? "nav__link active-link" : "nav__link"
+                activeNav === "#publicaciones"
+                  ? "nav__link active-link"
+                  : "nav__link"
               }
             >
               Publicaciones
@@ -81,16 +87,27 @@ const Header = () => {
               href="#contacto"
               onClick={() => setActiveNav("#contacto")}
               className={
-                activeNav === "#contacto" ? "nav__link active-link" : "nav__link"
+                activeNav === "#contacto"
+                  ? "nav__link active-link"
+                  : "nav__link"
               }
             >
               Contacto
             </a>
           </li>
           <li>
-            <Link to="/login">
+          {jwt ? (
+                <Link to="/admin">
+                  <button className="login-button">Admin</button>
+                </Link>
+              ) : (
+                <Link to="/login">
+                  <button className="login-button">Login</button>
+                </Link>
+              )}
+            {/* <Link to="/login">
               <button className="login-button">Login</button>
-            </Link>
+            </Link> */}
           </li>
         </ul>
       </nav>
@@ -108,7 +125,9 @@ const Header = () => {
                 href="#quienes-somos"
                 onClick={() => setActiveNav("#quienes-somos")}
                 className={
-                  activeNav === "#quienes-somos" ? "nav__link active-link" : "nav__link"
+                  activeNav === "#quienes-somos"
+                    ? "nav__link active-link"
+                    : "nav__link"
                 }
               >
                 Quienes somos
@@ -141,9 +160,18 @@ const Header = () => {
               </a>
             </li>
             <li>
-              <Link to="/login">
+              {jwt ? (
+                <Link to="/admin">
+                  <button className="login-button">Admin</button>
+                </Link>
+              ) : (
+                <Link to="/login">
+                  <button className="login-button">Login</button>
+                </Link>
+              )}
+              {/* <Link to="/login">
                 <button className="login-button">Login</button>
-              </Link>
+              </Link> */}
             </li>
           </ul>
         </nav>
