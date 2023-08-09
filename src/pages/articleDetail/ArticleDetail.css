@@ -1,6 +1,10 @@
+* {
+  font-family: "Times2";
+}
 .article_detail_container {
   display: flex;
   flex-direction: column;
+  color: #421400;
 }
 .article_detail {
   padding-top: 20px;
@@ -10,16 +14,17 @@
   display: inline;
 }
 .article_detail > .article_date {
-  color: #505050;
   font-size: 1.2rem;
+  /* NEWF */
 }
 .article_detail > h2 {
-  color: #505050;
-  font-size: 3rem;
+  /* color: #505050; */
+  font-size: 35px;
   font-weight: 600;
   padding-top: 20px;
   width: 95%;
   text-align: justify;
+  /* NEWF */
 }
 .article_img {
   margin: 15px 20px;
@@ -29,13 +34,14 @@
   border-radius: 10px;
   float: right;
 }
-.article_detail > .article_description {
-  /* width: 95%; */
-  font-size: 1.25rem;
-  line-height: 170%;
-  color: #505050;
+.article_detail > .article_description > p {
+  font-size: larger;
+  margin: 0;
+  line-height: 2rem;
   display: block;
   text-align: justify;
+  padding-bottom: 4px;
+  display: block;
 }
 .article_error {
   text-align: center;
@@ -44,16 +50,57 @@
 .article_detail_container > .articles_background {
   height: 300px !important;
 }
+@media (max-width: 1200px) {
+  .article_detail > .article_description > p {
+    font-size: 17px;
+    /* line-height: 2.5rem; */
+    line-height: 2rem;
+  }
+}
+@media (max-width: 1012px) {
+  .article_detail > h2 {
+    font-size: 30px;
+  }
 
+  .article_detail > .article_description > p {
+    font-size: 16px;
+    /* line-height: 2.5rem; */
+    line-height: 2rem;
+  }
+}
+@media (max-width: 820px) {
+  .article_detail > .article_description > p {
+    font-size: 17px;
+    line-height: 2rem;
+  }
+}
 @media (max-width: 768px) {
   .article_img {
     width: 50vw;
+  }
+  .article_detail > .article_description > p {
+    font-size: 15px;
+    line-height: 2rem;
+  }
+  .article_detail {
+    padding-top: 20px;
+    margin: 0 5vw;
+    width: 90vw;
+    padding-bottom: 15vh;
+    display: inline;
   }
 }
 @media (max-width: 550px) {
   .article_img {
     margin: 0;
     margin-bottom: 15px;
-    width: 80vw;
+    width: 90vw;
+  }
+}
+
+@media (max-width: 450px) {
+  .article_detail > .article_description > p > p {
+    font-size: 14px;
+    line-height: 2rem;
   }
 }
