@@ -35,12 +35,10 @@ const Home = () => {
         <Header />
         <Banner />
       </div>
-      <div className="background-about-reel">
-        <About />
-        <Phrase />
-        <Schedule />
-      </div>
+      <About />
+      <Phrase />
       <Carousel />
+      <Schedule />
       {!loading && articles && <Blogs articles={articles} />}
       <Footer />
       <ScrollToTopButton />
