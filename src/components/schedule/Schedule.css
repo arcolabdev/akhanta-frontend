@@ -3,13 +3,13 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
     margin-bottom: 6rem;
     padding-left: 5rem;
     padding-right: 5rem;
 }
 .schedule-content h2{
     color: #421400;
+    margin: 0 0 2rem 0;
 }
 
 

@@ -9,7 +9,7 @@
   color: #421400;
   font-size: 30px;
   line-height: 1.2;
-  padding-bottom: 0.8em;
+  margin: 0 0 2rem 0;
 }
 .blogs-box {
   display: flex;
@@ -65,7 +65,7 @@
   height: 92%;
 }
 .moreButton {
-  color: #505050;
+  color: #421400;
   width: auto;
   margin: 0;
   font-size: 1.25rem;
@@ -90,7 +90,7 @@
 .blog-card > a > h2,
 .blog-card > a > h2 > a {
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 26px;
   text-align: right;
   color: white;
   padding: 10px;
@@ -105,13 +105,13 @@
   width: 100%;
 }
 .blog-card0 > a > div > div > h2 {
-  color: #505050;
+  color: #421400;
   font-weight: 600;
-  font-size: 2.3rem;
+  font-size: 28px;
 }
 .blog-card0 > a > div > div > p {
-  color: #505050;
-  font-size: 1.2rem;
+  color: #421400;
+  font-size: 17px;
 }
 
 .blog-filter {

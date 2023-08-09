@@ -53,6 +53,7 @@
   color: #421400;
   font-size: 400;
   font-size: 30px;
+  margin: 0 0 2rem 0;
 }
 
 .card > a {
@@ -77,6 +78,9 @@
 
 .no-show-btn {
   display: none;
+}
+.buttons{
+  margin-top: 10px;
 }
 
 @media (max-width: 550px) {

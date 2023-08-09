@@ -22,7 +22,7 @@ const Blogs = ({ articles }) => {
                 <div>
                   <div>
                     <h2>{articles[0].title}</h2>
-                    <p>{truncateText(articles[0].content, 100)}</p>
+                    <p>{truncateText(articles[0].content, 150)}</p>
                   </div>
                   <Link
                     onClick={() => setArticle(articles[0])}
