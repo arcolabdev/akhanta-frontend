@@ -128,7 +128,7 @@ a {
   .nav-mobile {
     display: flex;
     background-color: #fffcf0;
-    position: absolute;
+    position: fixed;
     z-index: 999;
     right: 0;
     top: 0;

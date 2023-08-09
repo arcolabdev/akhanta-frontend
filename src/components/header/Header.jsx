@@ -8,10 +8,8 @@ import { faBars, faClose } from "@fortawesome/free-solid-svg-icons";
 const Header = () => {
   const [activeNav, setActiveNav] = useState("#home");
   const [openNav, setOpenNav] = useState(false);
-  const [jwt, setJwt] = useState(null);
 
   useEffect(() => {
-    setJwt(localStorage.getItem("token"));
     if (
       activeNav === "#asociados" ||
       activeNav === "#quienes-somos" ||
@@ -96,18 +94,9 @@ const Header = () => {
             </a>
           </li>
           <li>
-          {jwt ? (
-                <Link to="/admin">
-                  <button className="login-button">Admin</button>
-                </Link>
-              ) : (
-                <Link to="/login">
-                  <button className="login-button">Login</button>
-                </Link>
-              )}
-            {/* <Link to="/login">
+            <Link to="/login">
               <button className="login-button">Login</button>
-            </Link> */}
+            </Link>
           </li>
         </ul>
       </nav>
@@ -135,6 +124,19 @@ const Header = () => {
             </li>
             <li>
               <a
+                href="#horarios"
+                onClick={() => setActiveNav("#horarios")}
+                className={
+                  activeNav === "#horarios"
+                    ? "nav__link active-link"
+                    : "nav__link "
+                }
+              >
+                Horarios
+              </a>
+            </li>
+            <li>
+              <a
                 href="#asociados"
                 onClick={() => setActiveNav("#asociados")}
                 className={
@@ -144,6 +146,19 @@ const Header = () => {
                 }
               >
                 Asociados
+              </a>
+            </li>
+            <li>
+              <a
+                href="#publicaciones"
+                onClick={() => setActiveNav("#publicaciones")}
+                className={
+                  activeNav === "#publicaciones"
+                    ? "nav__link active-link"
+                    : "nav__link"
+                }
+              >
+                Publicaciones
               </a>
             </li>
             <li>
@@ -160,18 +175,9 @@ const Header = () => {
               </a>
             </li>
             <li>
-              {jwt ? (
-                <Link to="/admin">
-                  <button className="login-button">Admin</button>
-                </Link>
-              ) : (
-                <Link to="/login">
-                  <button className="login-button">Login</button>
-                </Link>
-              )}
-              {/* <Link to="/login">
+              <Link to="/login">
                 <button className="login-button">Login</button>
-              </Link> */}
+              </Link>
             </li>
           </ul>
         </nav>
