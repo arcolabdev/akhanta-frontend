@@ -73,11 +73,11 @@ const AssociateForm = ({ edit, article }) => {
             `${baseUrl}/${idResponse}/image`,
             dataImage,
             imageHeader
-          );
+          ).then(data => console.log(data));
         }
       } else {
         await axios.post(baseUrl, payload, associateHeader).then((data) => {
-          idResponse = data.data.results.id;
+          idResponse = data.data.id;
         });
       }
       if (image) {
@@ -92,7 +92,7 @@ const AssociateForm = ({ edit, article }) => {
       console.log(error);
     }
 
-    window.location.reload();
+    //window.location.reload();
   };
 
   return (
