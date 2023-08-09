@@ -56,7 +56,7 @@ function ArticlePanel() {
                     <CreateArticle edit={true} article={article} />
                     <DeleteArticle
                       articleId={article.id}
-                      articleName={article.name}
+                      articleName={article.title}
                     />
                   </td>
                 </tr>

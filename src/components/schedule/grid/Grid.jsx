@@ -40,23 +40,23 @@ const Grid = () => {
    <div className="course">Yoga</div>
    <div className="course"></div>
    <div className="course"></div>
-   <div className="time">18:00</div>
-   <div className="course">Kun Fu (Kids)</div>
+   <div className="time">18:15</div>
+   <div className="course">Kung Fu (Kids)</div>
    <div className="course"></div>
    <div className="course"></div>
-   <div className="course">Kun Fu (Kids)</div>
+   <div className="course">Kung Fu (Kids)</div>
    <div className="course"></div>
    <div className="time">19:00</div>
    <div className="course">Tai Chi</div>
-   <div className="course">Kun Fu (Infantil y juvenil)</div>
+   <div className="course">Kung Fu (Infantil y juvenil)</div>
    <div className="course">Tai Chi</div>
-   <div className="course">Kun Fu (Infantil y juvenil)</div>
+   <div className="course">Kung Fu (Infantil y juvenil)</div>
    <div className="course"></div>
    <div className="time">20:00</div>
    <div className="course">Kung Fu (adultos)</div>
-   <div className="course">Kun Fu (Infantil y juvenil) <br/> Tai Chi</div>
+   <div className="course">Kung Fu (Infantil y juvenil) <br/> Tai Chi</div>
    <div className="course">Kung Fu (adultos)</div>
-   <div className="course">Kun Fu (Infantil y juvenil) <br/>Tai Chi</div>
+   <div className="course">Kung Fu (Infantil y juvenil) <br/>Tai Chi</div>
    <div className="course"></div>
   </div>
   );
