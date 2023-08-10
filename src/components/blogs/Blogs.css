@@ -132,7 +132,12 @@
 .blog-card2 > .card-link {
   align-items: end;
 }
-
+.mandala-mobile {
+  display: none;
+}
+/* .about-mandala {
+  width: 100%;
+} */
 @media (max-width: 1024px) {
   .blogs-box {
     padding-left: 10vw;
