@@ -1,0 +1,53 @@
+{
+  "activities": [
+    {
+      "name": "kung fu",
+      "days": [
+        { "day": "martes", "time": "9" },
+        { "day": "lunes", "time": "14" },
+        { "day": "miercoles", "time": "18" }
+      ]
+    },
+    {
+      "name": "meditacion",
+      "days": [
+        { "day": "Jueves", "time": "21" },
+        { "day": "Martes", "time": "12" }
+      ]
+    }
+  ],
+  "lunes": {
+    "9": [],
+    "10": [],
+    "14": ["tai chi"],
+    "1530":[],
+    "16":[],
+    "17":["yoga"],
+    "1815":["kung fu (kids)"],
+    "19": ["tai chi"],
+    "20":["kung fu (adultos)"]
+  },
+  "martes": {
+    "9": [],
+    "10": ["tai chi"],
+    "14": ["kung fu (adultos)"],
+    "1530":["flexibilidad"],
+    "16":["tai chi"],
+    "17":[],
+    "1815":[],
+    "19": ["kung fu (infantil y juvenil)"],
+    "20":["kung fu (infantil y juvenil)", "tai chi"]
+  },
+  "miercoles": {
+    "9": [],
+    "10": [],
+    "14": ["tai chi"],
+    "1530":[],
+    "16":[],
+    "17":["yoga"],
+    "1815":[],
+    "19": ["tai chi"],
+    "20":["kung fu (adultos)"]
+  },
+  "jueves": {}
+}
