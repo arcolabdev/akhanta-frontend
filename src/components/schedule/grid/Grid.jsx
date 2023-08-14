@@ -57,7 +57,7 @@ const Grid = () => {
    <div className="course">Kung Fu (Infantil y juvenil)</div>
    <div className="course">Tai Chi</div>
    <div className="course">Kung Fu (Infantil y juvenil)</div>
-   <div className="course"></div>
+   <div className="course">Encuentros Akhanta</div>
    <div className="time">20:00</div>
    <div className="course">Kung Fu (adultos)</div>
    <div className="course">Kung Fu (Infantil y juvenil) <br/> Tai Chi</div>
