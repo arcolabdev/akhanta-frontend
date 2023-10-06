@@ -6,7 +6,7 @@ import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import { useBack } from "use-back";
 
 const AltHeader = ({ title }) => {
-  const {hasBack, handleBack} = useBack();
+  const { handleBack } = useBack();
 
   return (
     <section className="alt-header-container">
