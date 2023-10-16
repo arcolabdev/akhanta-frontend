@@ -1,0 +1,12 @@
+.day-card {
+  height: 100%;
+  background-color: black;
+  padding: 10px 25px 25px 25px;
+}
+.activity-card {
+  background-color: white;
+  padding: 10px;
+}
+.day-name{
+    color: white;
+}

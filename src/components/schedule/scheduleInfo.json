@@ -1,0 +1,51 @@
+[
+  {
+    "day": "Lunes",
+    "activities": [
+      { "name": "Tai Chi", "time": "14" },
+      { "name": "yoga", "time": "17" },
+      { "name": "kung fu (kids)", "time": "18:15" },
+      { "name": "Tai Chi", "time": "19" },
+      { "name": "kung fu (adultos)", "time": "20" }
+    ]
+  },
+  {
+    "day": "Martes",
+    "activities": [
+      { "name": "Tai Chi", "time": "10" },
+      { "name": "kung fu (adultos)", "time": "14" },
+      { "name": "flexibilidad", "time": "15:30" },
+      { "name": "Tai Chi", "time": "16" },
+      { "name": "Kung Fu (Infantil y juvenil)", "time": "19" },
+      { "name": "Kung Fu (Infantil y juvenil)", "time": "20" },
+      { "name": "tai chi", "time": "20" }
+    ]
+  },
+  {
+    "day": "Miercoles",
+    "activities": [
+      { "name": "Tai Chi", "time": "14" },
+      { "name": "Yoga", "time": "17" },
+      { "name": "Tai Chi", "time": "19" },
+      { "name": "Kung Fu (adultos)", "time": "20" }
+    ]
+  },
+  {
+    "day": "Jueves",
+    "activities": [
+      { "name": "Meditación", "time": "9" },
+      { "name": "Tai Chi", "time": "10" },
+      { "name": "Kung Fu (adultos)", "time": "14" },
+      { "name": "flexibilidad", "time": "15:30" },
+      { "name": "Tai Chi", "time": "16" },
+      { "name": "Kung Fu (Kids)", "time": "18:15" },
+      { "name": "Kung Fu (Infantil y juvenil)", "time": "19" },
+      { "name": "Kung Fu (Infantil y juvenil)", "time": "20" },
+      { "name": "Tai Chi", "time": "20" }
+    ]
+  },
+  {
+    "day": "Viernes",
+    "activities": [{ "name": "Encuentros Akhanta", "time": "19" }]
+  }
+]

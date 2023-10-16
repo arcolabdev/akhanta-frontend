@@ -11,5 +11,11 @@
     color: #421400;
     margin: 0 0 2rem 0;
 }
+.days-container{
+    display: flex;
+    height: auto;
+    width: 80vw;
+    justify-content: space-evenly;
+}
 
 
