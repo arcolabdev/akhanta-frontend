@@ -4,15 +4,17 @@ import scheduleInfo from "./scheduleInfo.json";
 import DayCard from "./dayCard/index";
 
 const Schedule = () => {
-  useEffect(() => {
-    console.log(scheduleInfo);
-  });
   return (
     <section className="schedule-section " id="horarios">
       <div className="schedule-content ">
         <h2>Horarios</h2>
-        <div className="days-container">
-          {scheduleInfo && scheduleInfo.map((d) => <DayCard dayInfo={d}></DayCard>)}
+        {/* <div className="days-container">
+          {scheduleInfo &&
+            scheduleInfo.map((d) => <h3 className="day-name"> {d.day}</h3>)}
+        </div> */}
+        <div className="times-container">
+          {scheduleInfo &&
+            scheduleInfo.map((d) => <DayCard dayInfo={d}></DayCard>)}
         </div>
       </div>
     </section>

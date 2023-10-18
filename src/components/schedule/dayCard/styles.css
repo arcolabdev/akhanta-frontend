@@ -1,12 +1,40 @@
 .day-card {
-  height: 100%;
-  background-color: black;
-  padding: 10px 25px 25px 25px;
+  /* height: 100%; */
+  width: 20%;
+  background-color: rgba(255, 206, 161, 0.2);
+  padding: 10px 15px 25px 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
 }
 .activity-card {
-  background-color: white;
-  padding: 10px;
+  background-color: #dfcab3;
+  width: 100%;
+  /* height: auto; */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  color: white;
 }
-.day-name{
-    color: white;
+.activity-card0 {
+  margin-top: 35px;
+}
+.activity-card-single {
+  margin-top: 35px;
+  flex-grow: 0.3;
+}
+.activity-name {
+  text-align: center;
+}
+.day-name {
+  color: #cbab91;
+  font-size: 30px;
+  /* padding: 0 15px; */
+  position: absolute;
+  top: 0;
 }
