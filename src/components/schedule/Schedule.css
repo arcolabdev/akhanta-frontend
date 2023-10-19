@@ -15,8 +15,8 @@
   display: flex;
   height: auto;
   width: 80vw;
-  justify-content: space-evenly;
-  /* position: relative; */
+  /* justify-content: space-evenly; */
+  justify-content: space-between;
 }
 .days-container {
   display: flex;
@@ -25,19 +25,3 @@
   justify-content: space-evenly;
   /* position: relative; */
 }
-
-/* .day-name {
-  color: #cbab91;
-  font-size: 35px; */
-  /* padding: 0 15px; */
-/* } */
-
-/* .day-card {
-  width: 20%;
-  background-color: rgba(255, 206, 161, 0.2);
-  padding: 10px 15px 25px 15px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-} */
