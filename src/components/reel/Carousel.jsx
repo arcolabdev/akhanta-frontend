@@ -1,9 +1,12 @@
 import "./Carousel.css";
 import { AnimatePresence, motion } from "framer-motion";
 import React, { useState, useContext } from "react";
-
 import { Link } from "react-router-dom";
 import { Context } from "../../Context";
+import mandala_left from "../../assets/mandalas-left.png";
+import mandala_right from "../../assets/mandalas-right.png";
+import mandala_mobile_left from "../../assets/mandalas-mobile-left.png";
+import mandala_mobile_right from "../../assets/mandalas-mobile-right.png";
 
 export default function Carousel() {
   const [[activeIndex, direction], setActiveIndex] = useState([0, 0]);
@@ -29,8 +32,24 @@ export default function Carousel() {
 
   return (
     <div className="reel-container" id="asociados">
-      <h2 className="reel-title">Participantes de Akhanta</h2>
-      <div className="main-wrapper">
+      <div className="mandala-desktop">
+        <img
+          src={mandala_left}
+          alt="decoration"
+          className="mandala-image mandala-desktop"
+        />
+      </div>
+      <div className="mandala-mobile">
+        <img
+          src={mandala_mobile_left}
+          alt="decoration"
+          className="mandala-image"
+        />
+      </div>
+
+      <div className="reel-section">
+        <h2 className="reel-title">Participantes de Akhanta</h2>
+        <div className="main-wrapper"></div>
         <div className="wrapper">
           {/*AnimatePresence is necessary to show the data after they are deleted because only max. 3 are shown*/}
           {data && (
@@ -103,6 +122,17 @@ export default function Carousel() {
             ▶︎
           </motion.button>
         </div>
+      </div>
+
+      <div className="mandala-desktop">
+        <img src={mandala_right} alt="decoration" className="mandala-image" />
+      </div>
+      <div className="mandala-mobile">
+        <img
+          src={mandala_mobile_right}
+          alt="decoration"
+          className="mandala-image"
+        />
       </div>
     </div>
   );
