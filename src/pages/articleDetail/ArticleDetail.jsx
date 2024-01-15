@@ -4,7 +4,8 @@ import AltHeader from "../../components/alt-header/AltHeader";
 import { Context } from "../../Context";
 import ScrollToTopButton from "../../components/autoscroll/ScrollToTopButton";
 import axios from "axios";
-import parse from 'html-react-parser';
+import parse from "html-react-parser";
+import { Helmet } from "react-helmet";
 
 const ArticleDetail = () => {
   const { article, setArticle } = useContext(Context);
@@ -13,14 +14,6 @@ const ArticleDetail = () => {
   id = id[id.length - 1];
   const baseUrlPosts = `https://api.ar-colab.com:8443/api/v1/posts/${id}`;
 
-  useEffect(
-    () =>
-      window.scrollTo({
-        top: 0,
-        behavior: "instant",
-      }),
-    []
-  );
   useEffect(() => {
     if (!article) {
       axios
@@ -38,12 +31,29 @@ const ArticleDetail = () => {
       setLoading(false);
     }
     // eslint-disable-next-line
-  }, [article]);
+  }, [article, setArticle, baseUrlPosts]);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [article, id]);
 
   return (
     <section className="article_detail_container">
       {!loading && article && (
         <>
+          <Helmet>
+            <meta property="og:title" content={article.title} />
+            <meta
+              property="og:description"
+              content={article.content.substring(2, 100) + "..."}
+            />
+            <meta property="og:type" content="artículo" />
+            <meta
+              property="og:url"
+              content="https://es.ryte.com/magazine/este-articulo"
+            ></meta>
+          </Helmet>
+
           <div className="articles_background">
             <AltHeader title={article.title} />
           </div>
